@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<file>
+    <fruit>
+        <name>Apple</name>
+        <color>Red</color>
+
+    </fruit>
+    <fruit>
+        <name>Grapes</name>
+        <color>Green</color>
+    </fruit>
+    <fruit>
+        <name>Strawberries</name>
+        <color>Red</color>
+    </fruit>
+</file>
