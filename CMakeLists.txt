@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME} main.cpp
 		tinyxml/tinyxmlparser.cpp tinyxml/tinyxmlerror.cpp
 		tinyxml/tinyxml.cpp tinyxml/tinyxml.h
 		tinyxml/tinystr.cpp tinyxml/tinystr.h
-		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h)
+		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h Transformations.cpp Transformations.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

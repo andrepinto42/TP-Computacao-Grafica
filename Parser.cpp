@@ -5,10 +5,13 @@
 #include "Parser.h"
 #include <stdio.h>
 #include <iostream>
+#include <vector>
 
 #include "tinyxml/tinyxml.h"
 #include "tinyxml/tinystr.h"
 #include "CameraStatus.h"
+#include "Transformations.h"
+using namespace std;
 
 
 void Parser::XML_Parse()
@@ -20,15 +23,35 @@ void Parser::XML_Parse()
         std::cout << "Error loading file " << nameFile;
     }
 
-    TiXmlElement *pRoot, *pBody, *pParms;
+    TiXmlElement *pRoot, *pCamera,*pGroup,*pModels,*pModel, *pParms;
     pRoot = doc.FirstChildElement( "world" );
     if ( pRoot )
     {
-        pBody= pRoot->FirstChildElement( "camera" );
-        if (pBody) {
-            CameraStatus *cam = getCameraStatus(pBody, pParms);
-            std::cout << cam->far;
+        pCamera= pRoot->FirstChildElement( "camera" );
+        if (pCamera) {
+            CameraStatus *cam = getCameraStatus(pCamera, pParms);
         }
+        pGroup = pRoot->FirstChildElement("group");
+        if (pGroup)
+        {
+            pModels = pGroup->FirstChildElement("models");
+            if (pModels)
+            {
+                pModel = pModels->FirstChildElement();
+                vector<const char*> names;
+                while(pModel)
+                {
+                    names.push_back(pModel->Attribute("file"));
+                    pModel = pModel->NextSiblingElement();
+                }
+                Transformations* t = new Transformations(&names);
+
+                for(const char* x : t->allNamesModels)
+                    std::cout << x<< std::endl;
+
+            }
+        }
+
     }
 }
 
