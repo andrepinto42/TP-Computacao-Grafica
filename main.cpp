@@ -59,22 +59,24 @@ void renderScene(void)
     // put drawing instructions here
     Axes::DrawAxes();
     DrawPlanesY(5.0f,5.0f);
-//    DrawPlanesX(5.0f,5.0f);
+    DrawPlanesX(5.0f,5.0f);
 
     // End of frame
 	glutSwapBuffers();
 }
 
 void DrawPlanesX(float length, float divisions) {
-    float offset = (sqrt(length * length *2.0f) / -2.0f);
-    float tam = (offset* (-2.0f))/ divisions;
-    float newtam = length/divisions;
-    std::cout << "Start\n";
+    float startZX = (sqrt(length * length *2.0f) / 2.0f);
+    float endZX = startZX - length ;
+    float tam = length / divisions;
 
-    for (float i = 0.f; i < length; i+=newtam) {
-        for (float j = -offset; j > offset; j-=newtam) {
+    std::cout << "Start at z ="<<startZX-tam<<" \n";
+
+
+    for (float i = 0.0f; i < length; i+=tam) {
+        for (float j = startZX-tam; j > endZX-tam; j-=tam) {
             std::cout << i << " and " << j << "\n";
-            DrawSquareAxisX(-offset, i, j, newtam);
+            DrawSquareAxisX(startZX-tam, i, j,tam);
         }
     }
     std::cout << "End\n";
@@ -93,6 +95,11 @@ void DrawPlanesY(float length, float divisions) {
         }
     }
 
+    for (float i = startZX-tam; i > endZX-tam; i-=tam) {
+        for (float j = startZX-tam; j > endZX-tam; j-=tam) {
+            DrawSquareAxisY(i, length, j,tam);
+        }
+    }
 }
 
 void DrawSquareAxisY(float x, float y, float z, float length) {
