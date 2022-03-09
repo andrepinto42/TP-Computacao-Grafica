@@ -6,9 +6,12 @@
 
 #define _USE_MATH_DEFINES
 
-void DrawSquare(float d, float d1, float d2);
+void DrawSquareAxisY(float x, float y, float z, float length);
+void DrawSquareAxisX(float x, float y, float z, float length);
 
-void DrawAxes();
+void DrawPlanesY(float length, float divisions);
+
+void DrawPlanesX(float length, float divisions);
 
 #include <math.h>
 #include <stdio.h>
@@ -17,6 +20,7 @@ void DrawAxes();
 #include "tinyxml/tinystr.h"
 #include <math.h>
 #include "Parser.h"
+#include "Axes.h"
 
 void changeSize(int w, int h)
 {
@@ -48,59 +52,75 @@ void renderScene(void)
 	
 	// set camera
 	glLoadIdentity();
-	gluLookAt(5.0f, 2.0f, 5.0f,
+	gluLookAt(10.0f, 10.0f, 10.0f,
 		0.0f, 0.0f, -1.0f,
-		0.0f, 1.0f, 0.0f);
+		0.0f, 3.0f, 0.0f);
 
-//    DrawAxes();
-
-    float length = 3.0f;
-    float divisions = 3.0f;
-
-	// put drawing instructions here
-    float offset = (sqrt(length * length *2.0f) / -2.0f);
-    float tam = (offset* (-2.0f))/ divisions;
-
-    for (float i = offset+tam; i < -offset+tam; i+=tam) {
-        for (float j = offset+tam; j < -offset+tam; j+=tam) {
-            DrawSquare(i, j, tam);
-        }
-    }
+    // put drawing instructions here
+    Axes::DrawAxes();
+    DrawPlanesY(5.0f,5.0f);
+//    DrawPlanesX(5.0f,5.0f);
 
     // End of frame
 	glutSwapBuffers();
 }
 
-void DrawAxes() {
-    glBegin(GL_LINES);
-    // X axis in red
-    glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(-100.0f, 0.0f, 0.0f);
-    glVertex3f( 100.0f, 0.0f, 0.0f);
-    // Y Axis in Green
-    glColor3f(0.0f, 1.0f, 0.0f);
-    glVertex3f(0.0f, -100.0f, 0.0f);
-    glVertex3f(0.0f, 100.0f, 0.0f);
-    // Z Axis in White
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glVertex3f(0.0f, 0.0f, -100.0f);
-    glVertex3f(0.0f, 0.0f, 100.0f);
-    glEnd();
+void DrawPlanesX(float length, float divisions) {
+    float offset = (sqrt(length * length *2.0f) / -2.0f);
+    float tam = (offset* (-2.0f))/ divisions;
+    float newtam = length/divisions;
+    std::cout << "Start\n";
+
+    for (float i = 0.f; i < length; i+=newtam) {
+        for (float j = -offset; j > offset; j-=newtam) {
+            std::cout << i << " and " << j << "\n";
+            DrawSquareAxisX(-offset, i, j, newtam);
+        }
+    }
+    std::cout << "End\n";
+
 }
 
-void DrawSquare(float x, float z, float length) {
+void DrawPlanesY(float length, float divisions) {
+    float tam = length / divisions;
+    float startZX = (sqrt(length * length *2.0f) / 2.0f);
+    float endZX = startZX - length ;
+
+
+    for (float i = startZX-tam; i > endZX-tam; i-=tam) {
+        for (float j = startZX-tam; j > endZX-tam; j-=tam) {
+            DrawSquareAxisY(i, 0.0f, j,tam);
+        }
+    }
+
+}
+
+void DrawSquareAxisY(float x, float y, float z, float length) {
     glBegin(GL_TRIANGLES);
     glColor3f(0.f,0.f,1.f);
-    glVertex3d(x,0.0f,z);
-    glVertex3d(x,0.0f,z-length);
-    glVertex3d(x-length,0.0f,z-length);
+    glVertex3d(x,y,z);
+    glVertex3d(x,y,z-length);
+    glVertex3d(x-length,y,z-length);
 
-    glVertex3d(x,0.0f,z);
-    glVertex3d(x-length,0.0f,z-length);
-    glVertex3d(x-length,0.0f,z);
+    glVertex3d(x,y,z);
+    glVertex3d(x-length,y,z-length);
+    glVertex3d(x-length,y,z);
     glEnd();
 }
 
+void DrawSquareAxisX(float x, float y, float z, float length) {
+
+    glBegin(GL_TRIANGLES);
+    glColor3f(0.f,1.f,0.f);
+    glVertex3d(x,y,z);
+    glVertex3d(x,y,z-length);
+    glVertex3d(x,y+length,z-length);
+
+    glVertex3d(x,y,z);
+    glVertex3d(x,y+length,z-length);
+    glVertex3d(x,y+length,z);
+    glEnd();
+}
 
 void printInfo() {
 
