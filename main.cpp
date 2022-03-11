@@ -15,6 +15,7 @@
 #include "Parser.h"
 #include "Axes.h"
 #include "HandlerDrawSquare.h"
+#include "Helper.h"
 
 void changeSize(int w, int h)
 {
@@ -47,18 +48,20 @@ void renderScene(void)
 	
 	// set camera
 	glLoadIdentity();
-	gluLookAt(10.0f * cos(moveRotate), 10.0f * sin(moveY), 10.0f * sin(moveRotate) ,
+	gluLookAt(10.0f * cos(moveRotate)+5.f, 10.0f * sin(moveY)+5.f, 10.0f * sin(moveRotate)+5.f ,
 		0.0f, 0.0f, -1.0f,
 		0.0f, 3.0f, 0.0f);
 
-    moveY += 0.01f;
-    moveRotate +=0.01f;
+//    moveY += 0.01f;
+//    moveRotate +=0.01f;
 
     // put drawing instructions here
     Axes::DrawAxes();
-    HandlerDrawSquare::DrawPlanesY(5.0f,5.0f);
-    HandlerDrawSquare::DrawPlanesX(5.0f,5.0f);
-    HandlerDrawSquare::DrawPlanesZ(5.0f,5.0f);
+//    HandlerDrawSquare::DrawPlanesY(5.0f,5.0f);
+//    HandlerDrawSquare::DrawPlanesX(5.0f,5.0f);
+//    HandlerDrawSquare::DrawPlanesZ(5.0f,5.0f);
+    Helper::drawCilinder(5.0f,5.0f,20.0f);
+
 
     // End of frame
 	glutSwapBuffers();
