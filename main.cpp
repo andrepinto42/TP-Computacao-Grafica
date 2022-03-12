@@ -52,8 +52,8 @@ void renderScene(void)
 		0.0f, 0.0f, -1.0f,
 		0.0f, 3.0f, 0.0f);
 
-//    moveY += 0.01f;
-//    moveRotate +=0.01f;
+    moveY += 0.01f;
+    moveRotate +=0.01f;
 
     // put drawing instructions here
     Axes::DrawAxes();

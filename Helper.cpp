@@ -12,6 +12,7 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <stdio.h>
+#include <iostream>
 
 
 float Helper::polar2CartX(float radius,float angle)
@@ -26,17 +27,39 @@ float Helper::polar2CartZ(float radius, float angle)
 
 void Helper::drawCilinder(float radius , float height, int slice)
 {
-    int stack = 5;
+    int stack = 4;
+    float stepHeight = radius/stack;
     float step = 360.f / (float) slice;
-    for (int j = 0; j < stack; ++j) {
+
+    float partition = (radius*2) / (float)stack;
+    float previousRadius=radius;
+    //Draws the upper part of the sphere
+    for (int j = 0; j < 2; j+=1) {
+
+        float nextRadius = sqrt(pow(radius,2) - pow((j+1)*partition,2));
+        std::cout << nextRadius<< " and " << previousRadius <<"\n";
 
         for (float i = 0; i < 360.f; i+=step) {
-//        drawBaseCilinderTriangle(0, radius, i, i + step);
-//        drawBaseCilinderTriangle(height, radius-.5f, i, i + step);
-            drawSideCilinderTriangle( height-j-1,height-j,radius,radius-j,i,i+step);
-        }
-    }
 
+            drawSideCilinderTriangle( j,j+1,previousRadius,nextRadius,i,i+step);
+        }
+        previousRadius = nextRadius;
+
+    }
+    previousRadius = radius;
+
+    //Draw the lower Bound of the sphere
+    for (int j = 0; j > -2; j-=1) {
+
+        float nextRadius = sqrt(pow(radius,2) - pow((j-1)*partition,2));
+        std::cout << "Upper "<<nextRadius<< " and Down"  << previousRadius <<"\n";
+
+        for (float i = 0; i < 360.f; i+=step) {
+            drawSideCilinderTriangle( j-1,j,nextRadius,previousRadius,i,i+step);
+        }
+        previousRadius = nextRadius;
+    }
+    std::cout << "END\n";
 }
 
 void Helper::drawBaseCilinderTriangle(float base, float radius, float angle1, float angle2)
