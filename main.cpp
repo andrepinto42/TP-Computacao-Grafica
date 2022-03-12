@@ -15,7 +15,7 @@
 #include "Parser.h"
 #include "Axes.h"
 #include "HandlerDrawSquare.h"
-#include "Helper.h"
+#include "HandleDrawSphere.h"
 #include "DrawCone.h"
 
 float beta = 0;
@@ -51,23 +51,15 @@ void renderScene(void)
 	
 	// set camera
 	glLoadIdentity();
-    /*	gluLookAt(10.0f * cos(moveRotate)+5.f, 10.0f * sin(moveY)+5.f, 10.0f * sin(moveRotate)+5.f ,
-        0.0f, 0.0f, -1.0f,
-        0.0f, 3.0f, 0.0f);*/
-    /*gluLookAt(5.0f, 2.0f, 5.0f,
-        0.0f, 0.0f, -1.0f,
-        0.0f, 1.0f, 0.0f);*/
+
     gluLookAt(r*cosf(beta)*sinf(alpha), r*sinf(beta), r*cosf(beta)*cosf(alpha),
               0.0,0.0,0.0,
               0.0,1.0,0.0);
 
-   // moveY += 0.01f;
-    //moveRotate +=0.01f;
-
     // put drawing instructions here
     Axes::DrawAxes();
 
-    Helper::DrawSphere(5.0f, 20.0f,5.0f);
+    HandleDrawSphere::DrawSphere(5.0f, 10.0f, 20.0f);
 
     DrawCone::DrawConeFunc(1,2,30,3);
 
@@ -96,9 +88,7 @@ void processKeys(unsigned char c, int xx, int yy) {
             break;
     }
     glutPostRedisplay();
-
 }
-
 
 void processSpecialKeys(int key, int xx, int yy) {
     switch (key) {
@@ -113,7 +103,6 @@ void processSpecialKeys(int key, int xx, int yy) {
     }
     glutPostRedisplay();
 }
-
 
 void printInfo() {
 

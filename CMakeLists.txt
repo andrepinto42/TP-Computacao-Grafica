@@ -13,7 +13,7 @@ add_executable(${PROJECT_NAME} main.cpp
 		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h Transformations.cpp Transformations.h
 		Axes.cpp Axes.h
 		HandlerDrawSquare.cpp HandlerDrawSquare.h
-		Helper.cpp Helper.h DrawCone.cpp DrawCone.h)
+		HandleDrawSphere.cpp HandleDrawSphere.h DrawCone.cpp DrawCone.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

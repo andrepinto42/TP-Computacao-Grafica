@@ -1,16 +1,19 @@
 # ninja log v5
 1	71	1646407099503941313	CMakeFiles/class1.dir/tinyxml/tinystr.cpp.o	54b503a4a4bd57e4
-247	318	1647095512545724667	class1	4938b26a188d6662
+254	323	1647095764414816630	class1	e18b16c0f4ae263a
 1	105	1646407217299999856	CMakeFiles/class1.dir/tinyxml/tinyxmlparser.cpp.o	fe7d62279f2efab3
 1	660	1646748395829987473	CMakeFiles/class1.dir/Parser.cpp.o	2be8e7a0a70cd552
-0	247	1647095512477725324	CMakeFiles/class1.dir/main.cpp.o	5854326926c72df4
+0	254	1647095764346819606	CMakeFiles/class1.dir/main.cpp.o	5854326926c72df4
 0	250	1647095127514632967	CMakeFiles/class1.dir/Helper.cpp.o	ccf59810a6aba6e9
 1	253	1646833177776190488	CMakeFiles/class1.dir/Axes.cpp.o	80307c14834a5b26
 1	257	1646941660158289710	CMakeFiles/class1.dir/HandlerDrawSquare.cpp.o	b4c9cf08bf87611e
 2	210	1646407099639941330	CMakeFiles/class1.dir/tinyxml/tinyxml.cpp.o	1093e79cb0a2f3cb
 1	33	1646407217227999794	CMakeFiles/class1.dir/tinyxml/tinyxmlerror.cpp.o	79d752ad616dc346
+1	89	1647095764178826960	CMakeFiles/class1.dir/DrawCone.cpp.o	4e9d46452fdbf885
 1	16	1646652766091253320	CMakeFiles/class1.dir/CameraStatus.cpp.o	40e2801daa5eb6fa
 1	303	1646748395473985461	CMakeFiles/class1.dir/Transformations.cpp.o	4f84305a83d62d40
-1	89	1647095764178826960	CMakeFiles/class1.dir/DrawCone.cpp.o	4e9d46452fdbf885
-0	254	1647095764346819606	CMakeFiles/class1.dir/main.cpp.o	5854326926c72df4
-254	323	1647095764414816630	class1	e18b16c0f4ae263a
+1	253	1647096064861049875	CMakeFiles/class1.dir/HandleDrawSphere.cpp.o	40a26a3e3ae44d3c
+1	261	1647096064869049676	CMakeFiles/class1.dir/main.cpp.o	5854326926c72df4
+261	332	1647096064937047983	class1	eb2f4a38cf73c5e7
+1	253	1647096135499369230	CMakeFiles/class1.dir/main.cpp.o	5854326926c72df4
+253	324	1647096135571367588	class1	eb2f4a38cf73c5e7
