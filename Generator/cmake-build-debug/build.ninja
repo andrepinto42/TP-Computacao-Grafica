@@ -108,6 +108,12 @@ build CMakeFiles/Generator.dir/GenerateCube.cpp.o: CXX_COMPILER__Generator_Debug
   OBJECT_DIR = CMakeFiles/Generator.dir
   OBJECT_FILE_DIR = CMakeFiles/Generator.dir
 
+build CMakeFiles/Generator.dir/GenerateSphere.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/GenerateSphere.cpp || cmake_object_order_depends_target_Generator
+  DEP_FILE = CMakeFiles/Generator.dir/GenerateSphere.cpp.o.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles/Generator.dir
+  OBJECT_FILE_DIR = CMakeFiles/Generator.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Generator
@@ -116,7 +122,7 @@ build CMakeFiles/Generator.dir/GenerateCube.cpp.o: CXX_COMPILER__Generator_Debug
 #############################################
 # Link the executable Generator
 
-build Generator: CXX_EXECUTABLE_LINKER__Generator_Debug CMakeFiles/Generator.dir/main.cpp.o CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o CMakeFiles/Generator.dir/tinyxml/tinyxmlerror.cpp.o CMakeFiles/Generator.dir/tinyxml/tinyxml.cpp.o CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o CMakeFiles/Generator.dir/GenerateCube.cpp.o
+build Generator: CXX_EXECUTABLE_LINKER__Generator_Debug CMakeFiles/Generator.dir/main.cpp.o CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o CMakeFiles/Generator.dir/tinyxml/tinyxmlerror.cpp.o CMakeFiles/Generator.dir/tinyxml/tinyxml.cpp.o CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o CMakeFiles/Generator.dir/GenerateCube.cpp.o CMakeFiles/Generator.dir/GenerateSphere.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Generator.dir
   POST_BUILD = :
