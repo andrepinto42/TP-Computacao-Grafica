@@ -16,6 +16,11 @@
 #include "Axes.h"
 #include "HandlerDrawSquare.h"
 #include "Helper.h"
+#include "DrawCone.h"
+
+float beta = 0;
+float alpha = 0;
+float r = 10;
 
 void changeSize(int w, int h)
 {
@@ -39,8 +44,6 @@ void changeSize(int w, int h)
 	glViewport(0, 0, w, h);
 }
 
-float moveY = 0.0f;
-float moveRotate = 0.0f;
 void renderScene(void)
 {
 	// clear buffers
@@ -48,25 +51,67 @@ void renderScene(void)
 	
 	// set camera
 	glLoadIdentity();
-    float xPosition =  15.f*cos(moveRotate);
-    float zPosition =  15.f*sin(moveRotate);
-	gluLookAt( xPosition,15.f,zPosition,
-		0.0f, 0.0f, 0.0f,
-		0.0f, 3.0f, 0.0f);
+    /*	gluLookAt(10.0f * cos(moveRotate)+5.f, 10.0f * sin(moveY)+5.f, 10.0f * sin(moveRotate)+5.f ,
+        0.0f, 0.0f, -1.0f,
+        0.0f, 3.0f, 0.0f);*/
+    /*gluLookAt(5.0f, 2.0f, 5.0f,
+        0.0f, 0.0f, -1.0f,
+        0.0f, 1.0f, 0.0f);*/
+    gluLookAt(r*cosf(beta)*sinf(alpha), r*sinf(beta), r*cosf(beta)*cosf(alpha),
+              0.0,0.0,0.0,
+              0.0,1.0,0.0);
 
-    moveY += 0.01f;
-    moveRotate +=0.01f;
+   // moveY += 0.01f;
+    //moveRotate +=0.01f;
 
     // put drawing instructions here
     Axes::DrawAxes();
-//    HandlerDrawSquare::DrawPlanesY(5.0f,5.0f);
-//    HandlerDrawSquare::DrawPlanesX(5.0f,5.0f);
-//    HandlerDrawSquare::DrawPlanesZ(5.0f,5.0f);
+
     Helper::DrawSphere(5.0f, 20.0f,5.0f);
 
+    DrawCone::DrawConeFunc(1,2,30,3);
 
     // End of frame
 	glutSwapBuffers();
+}
+
+void processKeys(unsigned char c, int xx, int yy) {
+    // put code to process regular keys in here
+    switch (c) {
+        case 'a':
+            alpha-=0.1;
+            break;
+        case 'd' :
+            alpha+=0.1;
+            break;
+        case 's':
+            if((beta-0.1) >= -M_PI/2) {
+                beta -= 0.1;
+            }
+            break;
+        case 'w':
+            if((beta+0.1) <= M_PI/2) {
+                beta += 0.1;
+            }
+            break;
+    }
+    glutPostRedisplay();
+
+}
+
+
+void processSpecialKeys(int key, int xx, int yy) {
+    switch (key) {
+        case GLUT_KEY_DOWN:
+            if(r-1>0) {
+                r--;
+            }
+            break;
+        case GLUT_KEY_UP :
+            r++;
+            break;
+    }
+    glutPostRedisplay();
 }
 
 
@@ -95,6 +140,9 @@ int main(int argc, char** argv)
 	glutReshapeFunc(changeSize);
 	glutIdleFunc(renderScene);
 	glutDisplayFunc(renderScene);
+
+    glutKeyboardFunc(processKeys);
+    glutSpecialFunc(processSpecialKeys);
 
 	// some OpenGL settings
 	glEnable(GL_DEPTH_TEST);
