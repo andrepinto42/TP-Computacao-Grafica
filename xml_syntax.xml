@@ -7,8 +7,9 @@
     </camera>
     <group>
         <models>
-            <model file="cone.3d" />
-            <model file="plane.3d" />
+            <model file="cone_01.3d" />
+            <model file="sphere.3d" />
+            <model file="sphere.3d" />
         </models>
     </group>
 </world>

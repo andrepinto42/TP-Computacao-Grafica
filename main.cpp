@@ -8,22 +8,20 @@
 
 #include <math.h>
 #include <stdio.h>
-#include <iostream>
-#include "tinyxml/tinyxml.h"
-#include "tinyxml/tinystr.h"
-#include <math.h>
 #include "Parser.h"
 #include "Axes.h"
-#include "HandlerDrawSquare.h"
 #include "HandleDrawSphere.h"
-#include "DrawCone.h"
+#include "Generator/Vector3.h"
+#include "HandlerModel.h"
+#include "StoreModels.h"
 
-#include <fstream>
+
 using namespace std;
 
 float beta = 0;
 float alpha = 0;
 float r = 10;
+vector<HandlerModel> allModelsClass;
 
 void changeSize(int w, int h)
 {
@@ -62,9 +60,13 @@ void renderScene(void)
     // put drawing instructions here
     Axes::DrawAxes();
 
-    HandleDrawSphere::DrawSphere(5.0f, 10.0f, 20.0f);
+    for (int i = 0; i < allModelsClass.size(); ++i) {
+        allModelsClass[i].Draw();
+    }
 
-    DrawCone::DrawConeFunc(1,2,30,3);
+    //HandleDrawSphere::DrawSphere(5.0f, 10.0f, 20.0f);
+
+    //DrawCone::DrawConeFunc(1,2,30,3);
 
     // End of frame
 	glutSwapBuffers();
@@ -116,14 +118,23 @@ void printInfo() {
 
 std::vector<const char*> allNameModels;
 
+
 int main(int argc, char** argv)
 {
     allNameModels = Parser::XML_Parse();
 
-    for (int i = 0; i < allNameModels.size(); ++i) {
+    vector<const char*> duplicadoAllNameModels;
+    for (int i = 0; i <allNameModels.size() ; ++i) {
 
+        duplicadoAllNameModels.push_back(strdup(allNameModels[i]));
     }
 
+    //ERRO DEMASIADO ESTUPIDO
+    //StoreModels::Store(allNameModels[0],&allModelsClass);
+    for (int i = 0; i < allNameModels.size(); ++i) {
+        StoreModels::Store(duplicadoAllNameModels[i], &allModelsClass);
+
+    }
 
 	// put GLUT�s init here
 	glutInit(&argc, argv);

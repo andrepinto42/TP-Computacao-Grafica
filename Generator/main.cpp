@@ -6,26 +6,10 @@
 #include "GenerateCube.h"
 #include "GenerateSphere.h"
 #include "GenerateCone.h"
-
+#include "Vector3.h"
 
 void DrawSquare(float x, float z, float length);
 
-class Vector3{
-public:
-    float x;
-    float y;
-    float z;
-    Vector3(float x1,float y1,float z1){
-        x = x1;
-        y = y1;
-        z = z1;
-    }
-    std::basic_string<char> PrintVector()
-    {
-        const std::string s = "x =" + std::to_string(x) + " y =" + std::to_string(y) + " z=" +std::to_string(z);
-        return s;
-    }
-};
 
 static std::vector<Vector3> allVectors;
 
