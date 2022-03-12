@@ -2,15 +2,40 @@
 #include "tinyxml/tinyxml.h"
 #include "tinyxml/tinystr.h"
 #include <math.h>
+#include "main.h"
 #include "GenerateCube.h"
+#include "GenerateSphere.h"
+#include "GenerateCone.h"
 
 
 void DrawSquare(float x, float z, float length);
 
+class Vector3{
+public:
+    float x;
+    float y;
+    float z;
+    Vector3(float x1,float y1,float z1){
+        x = x1;
+        y = y1;
+        z = z1;
+    }
+    std::basic_string<char> PrintVector()
+    {
+        const std::string s = "x =" + std::to_string(x) + " y =" + std::to_string(y) + " z=" +std::to_string(z);
+        return s;
+    }
+};
+
+static std::vector<Vector3> allVectors;
+
+void main::PushVertex(float x, float y, float z) {
+    Vector3 *v1 =  new Vector3(x,y,z);
+    allVectors.push_back(*v1);
+}
 
 
-
-void SaveBoxAllVertexXML(char* nameFile) {
+void SaveAllVerticesXML(char* nameFile) {
     TiXmlDocument doc;
     TiXmlDeclaration* decl = new TiXmlDeclaration( "1.0", "", "" );
     doc.LinkEndChild( decl );
@@ -18,7 +43,6 @@ void SaveBoxAllVertexXML(char* nameFile) {
     TiXmlElement * root = new TiXmlElement( "Model" );
     doc.LinkEndChild( root );
 
-    std::vector<Vector3> allVectors = GenerateCube::GetAllVertices();
 
     TiXmlElement * config = new TiXmlElement( "Configuration" );
     root->LinkEndChild( config );
@@ -55,7 +79,7 @@ int main(int argc, char* argv[]) {
         GenerateCube::DrawPlanesX(size,divisions);
         GenerateCube::DrawPlanesZ(size,divisions);
 
-        SaveBoxAllVertexXML(argv[4]);
+        SaveAllVerticesXML(argv[4]);
     }
     if (strcmp("plane",argv[1]) == 0)
     {
@@ -64,7 +88,35 @@ int main(int argc, char* argv[]) {
         float divisions = atof( argv[3]);
         GenerateCube::DrawPlaneY(size,divisions);
 
-        SaveBoxAllVertexXML(argv[4]);
+        SaveAllVerticesXML(argv[4]);
+    }
+
+    if (strcmp("sphere",argv[1]) == 0)
+    {
+        if (argc == 4)
+        {
+            std::cout << "Not enough arguments for the sphere";
+            return -1;
+        }
+        float radius = atof( argv[2]);
+        int slices = atoi( argv[3]);
+        int stacks = atoi( argv[4]);
+        GenerateSphere::DrawSphere(radius,slices,stacks);
+
+        SaveAllVerticesXML(argv[5]);
+    }
+
+    if (strcmp("cone",argv[1]) == 0)
+    {
+        std::cout << "cone";
+        float radius = atof( argv[2]);
+        float height = atof( argv[3]);
+        int slices = atoi( argv[4]);
+        int stacks = atoi( argv[5]);
+
+        GenerateCone::GenerateConeFunc(radius,height,slices,stacks);
+
+        SaveAllVerticesXML(argv[6]);
     }
 
 

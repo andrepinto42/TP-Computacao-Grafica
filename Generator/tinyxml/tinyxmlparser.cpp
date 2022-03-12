@@ -1573,7 +1573,7 @@ const char* TiXmlDeclaration::Parse( const char* p, TiXmlParsingData* data, TiXm
 {
 	p = SkipWhiteSpace( p, _encoding );
 	// Find the beginning, find the end, and look for
-	// the SaveBoxAllVertexXML in-between.
+	// the SaveAllVerticesXML in-between.
 	TiXmlDocument* document = GetDocument();
 	if ( !p || !*p || !StringEqual( p, "<?xml", true, _encoding ) )
 	{

@@ -14,7 +14,7 @@
 using namespace std;
 
 
-void Parser::XML_Parse()
+vector<const char*> Parser::XML_Parse()
 {
     char nameFile[] = "../xml_syntax.xml";
     TiXmlDocument doc;
@@ -31,6 +31,7 @@ void Parser::XML_Parse()
         if (pCamera) {
             CameraStatus *cam = getCameraStatus(pCamera, pParms);
         }
+
         pGroup = pRoot->FirstChildElement("group");
         if (pGroup)
         {
@@ -44,11 +45,11 @@ void Parser::XML_Parse()
                     names.push_back(pModel->Attribute("file"));
                     pModel = pModel->NextSiblingElement();
                 }
-                Transformations* t = new Transformations(&names);
 
-                for(const char* x : t->allNamesModels)
+                for(const char* x : names)
                     std::cout << x<< std::endl;
 
+                return names;
             }
         }
 

@@ -8,10 +8,11 @@
 
 #include "CameraStatus.h"
 #include "tinyxml/tinyxml.h"
+#include <vector>
 
 class Parser {
 public:
-    static void XML_Parse();
+    static std::vector<const char*> XML_Parse();
 
     static CameraStatus *getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms);
 };

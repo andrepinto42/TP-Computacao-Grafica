@@ -18,6 +18,9 @@
 #include "HandleDrawSphere.h"
 #include "DrawCone.h"
 
+#include <fstream>
+using namespace std;
+
 float beta = 0;
 float alpha = 0;
 float r = 10;
@@ -111,10 +114,16 @@ void printInfo() {
 	printf("Version: %s\n", glGetString(GL_VERSION));
 }
 
+std::vector<const char*> allNameModels;
 
 int main(int argc, char** argv)
 {
-    Parser::XML_Parse();
+    allNameModels = Parser::XML_Parse();
+
+    for (int i = 0; i < allNameModels.size(); ++i) {
+
+    }
+
 
 	// put GLUT�s init here
 	glutInit(&argc, argv);

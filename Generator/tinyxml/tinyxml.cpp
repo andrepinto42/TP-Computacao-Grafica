@@ -1083,7 +1083,7 @@ bool TiXmlDocument::LoadFile( FILE* file, TiXmlEncoding encoding )
 
 bool TiXmlDocument::SaveFile( const char * filename ) const
 {
-	// The old c SaveBoxAllVertexXML lives on...
+	// The old c SaveAllVerticesXML lives on...
 	FILE* fp = TiXmlFOpen( filename, "w" );
 	if ( fp )
 	{

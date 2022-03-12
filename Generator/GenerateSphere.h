@@ -7,7 +7,8 @@
 
 
 class GenerateSphere {
-
+public:
+    void static DrawSphere(float radius, int slices, int stacks);
 };
 
 

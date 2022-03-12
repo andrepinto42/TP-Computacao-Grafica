@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Generator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Generator-Debug-3551121129222613b056.json",
+					"jsonFile" : "target-Generator-Debug-3fef1683ee4165a29aea.json",
 					"name" : "Generator",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/Generator/cmake-build-debug",
-		"source" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/Generator"
+		"build" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator/cmake-build-debug",
+		"source" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator"
 	},
 	"version" : 
 	{

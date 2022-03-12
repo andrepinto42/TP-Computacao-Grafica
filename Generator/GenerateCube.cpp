@@ -6,22 +6,7 @@
 #include <vector>
 #include <math.h>
 #include <iostream>
-
-static std::vector<Vector3> allVertices;
-
-std::vector<Vector3> GenerateCube::GetAllVertices() {
-    return allVertices;
-}
-void GenerateCube::PushVertex(float x, float y, float z) {
-    Vector3 *v1 =  new Vector3(x,y,z);
-    allVertices.push_back(*v1);
-}
-
-void GenerateCube::PrintAllVertices() {
-    for (int i = 0; i < allVertices.size(); ++i) {
-        std::cout << allVertices[i].PrintVector()<< "\n";
-    }
-}
+#include "main.h"
 
 void GenerateCube::DrawPlanesZ(float length, float divisions) {
     float startZX = (sqrt(length * length *2.0f) / 2.0f);
@@ -95,65 +80,65 @@ void GenerateCube::DrawPlaneY(float length, float divisions) {
     }
 }
 void GenerateCube::DrawSquareAxisY_Forward(float x, float y, float z, float length) {
-    PushVertex(x,y,z);
-    PushVertex(x,y,z-length);
-    PushVertex(x-length,y,z-length);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x,y,z-length);
+    main::PushVertex(x-length,y,z-length);
 
-    PushVertex(x,y,z);
-    PushVertex(x-length,y,z-length);
-    PushVertex(x-length,y,z);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x-length,y,z-length);
+    main::PushVertex(x-length,y,z);
 }
 
 void GenerateCube::DrawSquareAxisY_Backwards(float x, float y, float z, float length) {
-    PushVertex(x,y,z);
-    PushVertex(x-length,y,z-length);
-    PushVertex(x,y,z-length);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x-length,y,z-length);
+    main::PushVertex(x,y,z-length);
 
-    PushVertex(x,y,z);
-    PushVertex(x-length,y,z);
-    PushVertex(x-length,y,z-length);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x-length,y,z);
+    main::PushVertex(x-length,y,z-length);
 }
 
 void GenerateCube::DrawSquareAxisX_Forward(float x, float y, float z, float length) {
 
-    PushVertex(x,y,z);
-    PushVertex(x,y,z-length);
-    PushVertex(x,y+length,z-length);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x,y,z-length);
+    main::PushVertex(x,y+length,z-length);
 
-    PushVertex(x,y,z);
-    PushVertex(x,y+length,z-length);
-    PushVertex(x,y+length,z);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x,y+length,z-length);
+    main::PushVertex(x,y+length,z);
 }
 
 void GenerateCube::DrawSquareAxisX_Backwards(float x, float y, float z, float length) {
 
-    PushVertex(x,y,z);
-    PushVertex(x,y+length,z-length);
-    PushVertex(x,y,z-length);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x,y+length,z-length);
+    main::PushVertex(x,y,z-length);
 
-    PushVertex(x,y,z);
-    PushVertex(x,y+length,z);
-    PushVertex(x,y+length,z-length);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x,y+length,z);
+    main::PushVertex(x,y+length,z-length);
 }
 
 void GenerateCube::DrawSquareAxisZ_Forward(float x, float y, float z, float length) {
-    PushVertex(x,y,z);
-    PushVertex(x-length,y+length,z);
-    PushVertex(x-length,y,z);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x-length,y+length,z);
+    main::PushVertex(x-length,y,z);
 
-    PushVertex(x,y,z);
-    PushVertex(x,y+length,z);
-    PushVertex(x-length,y+length,z);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x,y+length,z);
+    main::PushVertex(x-length,y+length,z);
 }
 
 void GenerateCube::DrawSquareAxisZ_Backwards(float x, float y, float z, float length) {
-    PushVertex(x,y,z);
-    PushVertex(x-length,y,z);
-    PushVertex(x-length,y+length,z);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x-length,y,z);
+    main::PushVertex(x-length,y+length,z);
 
-    PushVertex(x,y,z);
-    PushVertex(x-length,y+length,z);
-    PushVertex(x,y+length,z);
+    main::PushVertex(x,y,z);
+    main::PushVertex(x-length,y+length,z);
+    main::PushVertex(x,y+length,z);
 }
 
 
