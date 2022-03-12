@@ -39,13 +39,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/Generator/cmake-build-debug/
+cmake_ninja_workdir = /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/cmake-build-debug/
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/pinto/Documents/2 Semestre/Computacao Grafica/Generator/cmake-build-debug" && /opt/clion-2021.3.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator/cmake-build-debug" && /opt/clion-2021.3.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -56,7 +56,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/pinto/Documents/2 Semestre/Computacao Grafica/Generator/cmake-build-debug" && /opt/clion-2021.3.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/pinto/Documents/2 Semestre/Computacao Grafica/Generator" -B"/home/pinto/Documents/2 Semestre/Computacao Grafica/Generator/cmake-build-debug"
+  COMMAND = cd "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator/cmake-build-debug" && /opt/clion-2021.3.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator" -B"/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator/cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -72,37 +72,37 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_Generator: phony || CMakeFiles/Generator.dir
 
-build CMakeFiles/Generator.dir/main.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/Generator/main.cpp || cmake_object_order_depends_target_Generator
+build CMakeFiles/Generator.dir/main.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/main.cpp || cmake_object_order_depends_target_Generator
   DEP_FILE = CMakeFiles/Generator.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Generator.dir
   OBJECT_FILE_DIR = CMakeFiles/Generator.dir
 
-build CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/Generator/tinyxml/tinyxmlparser.cpp || cmake_object_order_depends_target_Generator
+build CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/tinyxml/tinyxmlparser.cpp || cmake_object_order_depends_target_Generator
   DEP_FILE = CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Generator.dir
   OBJECT_FILE_DIR = CMakeFiles/Generator.dir/tinyxml
 
-build CMakeFiles/Generator.dir/tinyxml/tinyxmlerror.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/Generator/tinyxml/tinyxmlerror.cpp || cmake_object_order_depends_target_Generator
+build CMakeFiles/Generator.dir/tinyxml/tinyxmlerror.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/tinyxml/tinyxmlerror.cpp || cmake_object_order_depends_target_Generator
   DEP_FILE = CMakeFiles/Generator.dir/tinyxml/tinyxmlerror.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Generator.dir
   OBJECT_FILE_DIR = CMakeFiles/Generator.dir/tinyxml
 
-build CMakeFiles/Generator.dir/tinyxml/tinyxml.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/Generator/tinyxml/tinyxml.cpp || cmake_object_order_depends_target_Generator
+build CMakeFiles/Generator.dir/tinyxml/tinyxml.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/tinyxml/tinyxml.cpp || cmake_object_order_depends_target_Generator
   DEP_FILE = CMakeFiles/Generator.dir/tinyxml/tinyxml.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Generator.dir
   OBJECT_FILE_DIR = CMakeFiles/Generator.dir/tinyxml
 
-build CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/Generator/tinyxml/tinystr.cpp || cmake_object_order_depends_target_Generator
+build CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/tinyxml/tinystr.cpp || cmake_object_order_depends_target_Generator
   DEP_FILE = CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Generator.dir
   OBJECT_FILE_DIR = CMakeFiles/Generator.dir/tinyxml
 
-build CMakeFiles/Generator.dir/GenerateCube.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/Generator/GenerateCube.cpp || cmake_object_order_depends_target_Generator
+build CMakeFiles/Generator.dir/GenerateCube.cpp.o: CXX_COMPILER__Generator_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/tentativaTP01/Generator/GenerateCube.cpp || cmake_object_order_depends_target_Generator
   DEP_FILE = CMakeFiles/Generator.dir/GenerateCube.cpp.o.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles/Generator.dir
@@ -133,7 +133,7 @@ build Generator: CXX_EXECUTABLE_LINKER__Generator_Debug CMakeFiles/Generator.dir
 # =============================================================================
 
 #############################################
-# Folder: /home/pinto/Documents/2 Semestre/Computacao Grafica/Generator/cmake-build-debug
+# Folder: /home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator/cmake-build-debug
 
 build all: phony Generator
 
