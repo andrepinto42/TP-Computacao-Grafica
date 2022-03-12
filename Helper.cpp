@@ -25,41 +25,61 @@ float Helper::polar2CartZ(float radius, float angle)
     return radius * cos(angle *  M_PI / 180.f);
 }
 
-void Helper::drawCilinder(float radius , float height, int slice)
+void Helper::DrawSphere(float radius,int slices,int stacks)
 {
-    int stack = 4;
-    float stepHeight = radius/stack;
-    float step = 360.f / (float) slice;
 
-    float partition = (radius*2) / (float)stack;
-    float previousRadius=radius;
-    //Draws the upper part of the sphere
-    for (int j = 0; j < 2; j+=1) {
+    float step = 360.f / (float) slices;
+    float heightStack = 2*radius / (float) stacks;
+    float bottomRadius = 0.0f;
 
-        float nextRadius = sqrt(pow(radius,2) - pow((j+1)*partition,2));
-        std::cout << nextRadius<< " and " << previousRadius <<"\n";
+    for (int j = 0; j < stacks; ++j) {
+        float distance2Center = abs( radius - heightStack*(j+1));
+        //Pythagoran theorem to discover the new radius
+        float topRadius =  sqrt(pow(radius,2)- pow(distance2Center,2));
 
         for (float i = 0; i < 360.f; i+=step) {
-
-            drawSideCilinderTriangle( j,j+1,previousRadius,nextRadius,i,i+step);
+            drawSideCilinderTriangle( heightStack*j,heightStack*(j+1),bottomRadius,topRadius,i,i+step);
         }
-        previousRadius = nextRadius;
-
+        bottomRadius = topRadius;
     }
-    previousRadius = radius;
 
-    //Draw the lower Bound of the sphere
-    for (int j = 0; j > -2; j-=1) {
+//
+//    for (int j = 0; j < stacks; ++j) {
+//
+//        for (float i = 0; i < 360.f; i+=step) {
+//            drawSideCilinderTriangle( j,j+1,previousRadius,nextRadius,i,i+step);
+//        }
+//    }
 
-        float nextRadius = sqrt(pow(radius,2) - pow((j-1)*partition,2));
-        std::cout << "Upper "<<nextRadius<< " and Down"  << previousRadius <<"\n";
-
-        for (float i = 0; i < 360.f; i+=step) {
-            drawSideCilinderTriangle( j-1,j,nextRadius,previousRadius,i,i+step);
-        }
-        previousRadius = nextRadius;
-    }
-    std::cout << "END\n";
+//    int halfstacks = stacks/2;
+//
+//    float step = 360.f / (float) slices;
+//    float partition = (radius*2) / (float)stacks;
+//    float previousRadius=radius;
+//
+//    //Draws the upper part of the sphere
+//    for (int j = 0; j < halfstacks; j+=1) {
+//        float nextRadius = sqrt(pow(radius,2) - pow((j+1)*partition,2));
+//        std::cout << nextRadius<< " and " << previousRadius <<"\n";
+//
+//        for (float i = 0; i < 360.f; i+=step) {
+//            drawSideCilinderTriangle( j,j+1,previousRadius,nextRadius,i,i+step);
+//        }
+//        previousRadius = nextRadius;
+//    }
+//
+//    previousRadius = radius;
+//    //Draw the lower Bound of the sphere
+//    for (int j = 0; j > -halfstacks; j-=1) {
+//        float nextRadius = sqrt(pow(radius,2) - pow((j-1)*partition,2));
+//        std::cout << "Upper "<<nextRadius<< " and Down"  << previousRadius <<"\n";
+//
+//        for (float i = 0; i < 360.f; i+=step) {
+//            drawSideCilinderTriangle( j-1,j,nextRadius,previousRadius,i,i+step);
+//        }
+//        previousRadius = nextRadius;
+//    }
+//    std::cout << "END\n";
 }
 
 void Helper::drawBaseCilinderTriangle(float base, float radius, float angle1, float angle2)

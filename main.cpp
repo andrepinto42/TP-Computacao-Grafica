@@ -48,8 +48,10 @@ void renderScene(void)
 	
 	// set camera
 	glLoadIdentity();
-	gluLookAt(10.0f * cos(moveRotate)+5.f, 10.0f * sin(moveY)+5.f, 10.0f * sin(moveRotate)+5.f ,
-		0.0f, 0.0f, -1.0f,
+    float xPosition =  15.f*cos(moveRotate);
+    float zPosition =  15.f*sin(moveRotate);
+	gluLookAt( xPosition,15.f,zPosition,
+		0.0f, 0.0f, 0.0f,
 		0.0f, 3.0f, 0.0f);
 
     moveY += 0.01f;
@@ -60,7 +62,7 @@ void renderScene(void)
 //    HandlerDrawSquare::DrawPlanesY(5.0f,5.0f);
 //    HandlerDrawSquare::DrawPlanesX(5.0f,5.0f);
 //    HandlerDrawSquare::DrawPlanesZ(5.0f,5.0f);
-    Helper::drawCilinder(5.0f,5.0f,20.0f);
+    Helper::DrawSphere(5.0f, 20.0f,5.0f);
 
 
     // End of frame

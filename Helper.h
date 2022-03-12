@@ -13,7 +13,7 @@ public:
     static float polar2CartX(float radius, float angle);
     static float polar2CartZ(float radius, float angle);
 
-    static void drawCilinder(float radius ,float height,int slice);
+    static void DrawSphere(float radius ,int slices,int stacks);
 
     static void drawBaseCilinderTriangle(float base, float radius, float angle1, float angle2);
 
