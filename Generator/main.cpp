@@ -59,13 +59,14 @@ int main(int argc, char* argv[]) {
     {
         float size = atof( argv[2]);
         float divisions = atof( argv[3]);
-        GenerateCube::DrawPlanesY(size,divisions);
+        std::cout << size << "<- size and divisions ->"<<divisions<<"\n";
         GenerateCube::DrawPlanesX(size,divisions);
+        GenerateCube::DrawPlanesY(size,divisions);
         GenerateCube::DrawPlanesZ(size,divisions);
 
         SaveAllVerticesXML(argv[4]);
     }
-    if (strcmp("plane",argv[1]) == 0)
+    else if (strcmp("plane",argv[1]) == 0)
     {
         std::cout << "hello";
         float size = atof( argv[2]);
@@ -75,7 +76,7 @@ int main(int argc, char* argv[]) {
         SaveAllVerticesXML(argv[4]);
     }
 
-    if (strcmp("sphere",argv[1]) == 0)
+    else if (strcmp("sphere",argv[1]) == 0)
     {
         if (argc == 4)
         {
@@ -90,7 +91,7 @@ int main(int argc, char* argv[]) {
         SaveAllVerticesXML(argv[5]);
     }
 
-    if (strcmp("cone",argv[1]) == 0)
+    else if (strcmp("cone",argv[1]) == 0)
     {
         std::cout << "cone";
         float radius = atof( argv[2]);
@@ -102,8 +103,10 @@ int main(int argc, char* argv[]) {
 
         SaveAllVerticesXML(argv[6]);
     }
-
-
+    else
+    {
+        std::cout << "Shape does not exist!\n";
+    }
 
     return 0;
 }

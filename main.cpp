@@ -14,6 +14,7 @@
 #include "Generator/Vector3.h"
 #include "HandlerModel.h"
 #include "StoreModels.h"
+#include "HandlerDrawSquare.h"
 
 
 using namespace std;
@@ -64,6 +65,10 @@ void renderScene(void)
         allModelsClass[i].Draw();
     }
 
+
+    HandlerDrawSquare::DrawPlanesX(1.f,1.f);
+    HandlerDrawSquare::DrawPlanesY(1.f,1.f);
+    HandlerDrawSquare::DrawPlanesZ(1.f,1.f);
     //HandleDrawSphere::DrawSphere(5.0f, 10.0f, 20.0f);
 
     //DrawCone::DrawConeFunc(1,2,30,3);
@@ -133,7 +138,6 @@ int main(int argc, char** argv)
     //StoreModels::Store(allNameModels[0],&allModelsClass);
     for (int i = 0; i < allNameModels.size(); ++i) {
         StoreModels::Store(duplicadoAllNameModels[i], &allModelsClass);
-
     }
 
 	// put GLUT�s init here

@@ -28,7 +28,7 @@ void HandlerDrawSquare::DrawPlanesZ(float length, float divisions) {
 
     for (float i = 0.0f; i < length; i+=tam) {
         for (float j = startZX-tam; j > endZX-tam; j-=tam) {
-            DrawSquareAxisZ_Backwards(j, i, -startZX+ tam, tam);
+            DrawSquareAxisZ_Backwards(j, i, endZX - tam, tam);
         }
     }
 }
@@ -42,13 +42,13 @@ void HandlerDrawSquare::DrawPlanesX(float length, float divisions) {
 
     for (float i = 0.0f; i < length; i+=tam) {
         for (float j = startZX-tam; j > endZX-tam; j-=tam) {
-            DrawSquareAxisX_Forward(startZX - tam, i, j, tam);
+            DrawSquareAxisX_Forward(startZX -tam, i, j, tam);
         }
     }
 
     for (float i = 0.0f; i < length; i+=tam) {
         for (float j = startZX-tam; j > endZX-tam; j-=tam) {
-            DrawSquareAxisX_Backwards(-startZX + tam, i, j, tam);
+            DrawSquareAxisX_Backwards(endZX-tam, i, j, tam);
         }
     }
 
