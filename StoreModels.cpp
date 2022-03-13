@@ -12,7 +12,6 @@
 
 void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModelsClass)
 {
-    std::cout << "Here "<<nameFile<<"\n";
     TiXmlDocument doc;
     if (!doc.LoadFile(nameFile))
     {

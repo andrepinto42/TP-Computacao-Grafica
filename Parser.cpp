@@ -14,7 +14,7 @@
 using namespace std;
 
 
-vector<const char*> Parser::XML_Parse()
+vector<const char*> Parser::XML_Parse(CameraStatus **cam)
 {
     char nameFile[] = "../xml_syntax.xml";
     TiXmlDocument doc;
@@ -29,7 +29,9 @@ vector<const char*> Parser::XML_Parse()
     {
         pCamera= pRoot->FirstChildElement( "camera" );
         if (pCamera) {
-            CameraStatus *cam = getCameraStatus(pCamera, pParms);
+            //Assign the value so it can be stored in the main class
+            *cam = getCameraStatus(pCamera, pParms);
+            std::cout << (*cam)->posX<<"\n";
         }
 
         pGroup = pRoot->FirstChildElement("group");

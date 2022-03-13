@@ -8,6 +8,7 @@
 
 #include <math.h>
 #include <stdio.h>
+#include <iostream>
 #include "Parser.h"
 #include "Axes.h"
 #include "HandleDrawSphere.h"
@@ -23,7 +24,7 @@ float beta = 0;
 float alpha = 0;
 float r = 10;
 vector<HandlerModel> allModelsClass;
-
+CameraStatus* cam;
 void changeSize(int w, int h)
 {
 	// prevent a divide by zero, when window is too short
@@ -38,7 +39,7 @@ void changeSize(int w, int h)
 	// Load the identity matrix
 	glLoadIdentity();
 	// set the perspective
-	gluPerspective(45.0f, ratio, 1.0f, 1000.0f);
+	gluPerspective(cam->fov, ratio, cam->near, cam->far);
 	// return to the model view matrix mode
 	glMatrixMode(GL_MODELVIEW);
 
@@ -54,9 +55,11 @@ void renderScene(void)
 	// set camera
 	glLoadIdentity();
 
-    gluLookAt(r*cosf(beta)*sinf(alpha), r*sinf(beta), r*cosf(beta)*cosf(alpha),
-              0.0,0.0,0.0,
-              0.0,1.0,0.0);
+    gluLookAt(/*r*cosf(beta)*sinf(alpha)*/ +cam->posX,
+            /*r*sinf(beta)*/ + cam->posY,
+            /*r*cosf(beta)*cosf(alpha)*/ + cam->posZ,
+              cam->lookX,cam->lookY,cam->lookZ,
+              cam->upX,cam->upY,cam->upZ);
 
     // put drawing instructions here
     Axes::DrawAxes();
@@ -64,14 +67,6 @@ void renderScene(void)
     for (int i = 0; i < allModelsClass.size(); ++i) {
         allModelsClass[i].Draw();
     }
-
-
-    HandlerDrawSquare::DrawPlanesX(1.f,1.f);
-    HandlerDrawSquare::DrawPlanesY(1.f,1.f);
-    HandlerDrawSquare::DrawPlanesZ(1.f,1.f);
-    //HandleDrawSphere::DrawSphere(5.0f, 10.0f, 20.0f);
-
-    //DrawCone::DrawConeFunc(1,2,30,3);
 
     // End of frame
 	glutSwapBuffers();
@@ -126,7 +121,8 @@ std::vector<const char*> allNameModels;
 
 int main(int argc, char** argv)
 {
-    allNameModels = Parser::XML_Parse();
+    allNameModels = Parser::XML_Parse(&cam);
+
 
     vector<const char*> duplicadoAllNameModels;
     for (int i = 0; i <allNameModels.size() ; ++i) {

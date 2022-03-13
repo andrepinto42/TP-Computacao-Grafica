@@ -14,3 +14,11 @@ CameraStatus::CameraStatus(float posX, float posY, float posZ, float lookX, floa
         {
 
         }
+
+CameraStatus::CameraStatus():
+    posX(0.f), posY(0.f), posZ(0.f),
+    lookX(0.f), lookY(0.f),lookZ(0.f),
+    upX(0.f), upY(1.f), upZ(0.f),
+    fov(60), near(1),far(1000)
+{
+}
