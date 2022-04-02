@@ -53,10 +53,10 @@ vector<const char*> Parser::XML_Parse(CameraStatus **cam,Transformations** rootT
                 names.push_back(pModel->Attribute("file"));
                 pModel = pModel->NextSiblingElement();
             }
-
+            std::cout << "Read these files -> ";
             for(const char* x : names)
-                std::cout << x<< std::endl;
-
+                std::cout << x << " ";
+            std::cout << "\n";
             return names;
         }
     }
@@ -115,18 +115,17 @@ void Parser::InsertModelsName(Transformations *const *root, TiXmlElement *pModel
     auto pModel = pModels->FirstChildElement();
     while(pModel)
     {
-        (*root)->allParentModels.push_back(pModel->Attribute("file"));
+        (*root)->allParentModelsName.push_back(pModel->Attribute("file"));
         pModel = pModel->NextSiblingElement();
     }
     cout << "Inserted these models ->";
-    for (auto string:(*root)->allParentModels) {
+    for (auto string:(*root)->allParentModelsName) {
         cout << string<<"\n";
     }
 }
 
 
 void Parser::InsertNextChildrenTransformation(Transformations *const *root, TiXmlElement *pAnotherGroup) {
-    printf("There is another Group here!\n");
     //Create a new Tranformation object and store it in the dataStruct of the parent
     Transformations* anotherTransformation = new Transformations();
     (*root)->allChildrenTransformation.push_back(anotherTransformation);

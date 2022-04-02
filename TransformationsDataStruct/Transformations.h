@@ -7,15 +7,17 @@
 #include <vector>
 #include "../HandlerModel.h"
 #include "Transform.h"
+#include "StoreModels.h"
 
 using namespace std;
 
 class Transformations {
 public:
     //Very important to store a pointer because its going to be need to be derefenced
-    //
     vector<Transformations*> allChildrenTransformation;
-    vector<const char *> allParentModels;
+
+    vector<const char *> allParentModelsName;
+    vector<HandlerModel> allModels;
     vector<T_Scale> parentScales;
     vector<T_Rotate> parentRotates;
     vector<T_Translate> parentTranslates;
@@ -36,6 +38,12 @@ public:
         for (int i = 0; i < parentRotates.size(); ++i) {
             printf("Rotate : ");
             PrintInfo(parentRotates[i].angle,parentRotates[i].x,parentRotates[i].y,parentRotates[i].z);
+        }
+
+        for (int i = 0; i < allParentModelsName.size(); ++i) {
+
+            //Read the name of the file and store it in allModelsClass
+            StoreModels::Store(allParentModelsName[i], &(allModels) );
         }
 
         for (auto anotherT:allChildrenTransformation) {

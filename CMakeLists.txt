@@ -13,7 +13,7 @@ add_executable(${PROJECT_NAME} main.cpp
 		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h TransformationsDataStruct/Transformations.cpp TransformationsDataStruct/Transformations.h
 		Axes.cpp Axes.h
 		HandlerDrawSquare.cpp HandlerDrawSquare.h
-		HandleDrawSphere.cpp HandleDrawSphere.h DrawCone.cpp DrawCone.h HandlerModel.cpp HandlerModel.h TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h)
+		HandleDrawSphere.cpp HandleDrawSphere.h DrawCone.cpp DrawCone.h HandlerModel.cpp HandlerModel.h TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h HandleRenderTransform.cpp HandleRenderTransform.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

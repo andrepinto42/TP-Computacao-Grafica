@@ -19,11 +19,12 @@
 #include "HandlerDrawSquare.h"
 #include "StoreModels.h"
 #include "HandlerDrawSquare.h"
+#include "HandleRenderTransform.h"
 float beta = 0;
 float alpha = 0;
 float r = 10;
-vector<HandlerModel> allModelsClass;
 CameraStatus* cam;
+Transformations* t;
 void changeSize(int w, int h)
 {
 	// prevent a divide by zero, when window is too short
@@ -63,9 +64,7 @@ void renderScene(void)
     // put drawing instructions here
     Axes::DrawAxes();
 
-    for (int i = 0; i < allModelsClass.size(); ++i) {
-        allModelsClass[i].Draw();
-    }
+    HandleRenderTransform::Render(t);
 
     // End of frame
 	glutSwapBuffers();
@@ -120,16 +119,12 @@ std::vector<const char*> allNameModels;
 
 int main(int argc, char** argv)
 {
-    Transformations* t = new Transformations();
+    //Initialize the global variable
+    t = new Transformations();
 
     allNameModels = Parser::XML_Parse(&cam,&t);
 
     t->DoSomething();
-
-    for (int i = 0; i < t->allParentModels.size(); ++i) {
-        //Read the name of the file and store it in allModelsClass
-        StoreModels::Store(t->allParentModels[i], &allModelsClass);
-    }
 
 	// put GLUT's init here
 	glutInit(&argc, argv);

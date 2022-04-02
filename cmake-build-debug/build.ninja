@@ -177,6 +177,13 @@ build CMakeFiles/class1.dir/TransformationsDataStruct/Transform.cpp.o: CXX_COMPI
   OBJECT_DIR = CMakeFiles/class1.dir
   OBJECT_FILE_DIR = CMakeFiles/class1.dir/TransformationsDataStruct
 
+build CMakeFiles/class1.dir/HandleRenderTransform.cpp.o: CXX_COMPILER__class1_Debug /home/pinto/Documents/2$ Semestre/Computacao$ Grafica/TP-Computacao-Grafica-master/HandleRenderTransform.cpp || cmake_object_order_depends_target_class1
+  DEP_FILE = CMakeFiles/class1.dir/HandleRenderTransform.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I"/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/,\"tinyxml\"" -I"/usr/include,\"tinyxml/**\""
+  OBJECT_DIR = CMakeFiles/class1.dir
+  OBJECT_FILE_DIR = CMakeFiles/class1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target class1
@@ -185,7 +192,7 @@ build CMakeFiles/class1.dir/TransformationsDataStruct/Transform.cpp.o: CXX_COMPI
 #############################################
 # Link the executable class1
 
-build class1: CXX_EXECUTABLE_LINKER__class1_Debug CMakeFiles/class1.dir/main.cpp.o CMakeFiles/class1.dir/tinyxml/tinyxmlparser.cpp.o CMakeFiles/class1.dir/tinyxml/tinyxmlerror.cpp.o CMakeFiles/class1.dir/tinyxml/tinyxml.cpp.o CMakeFiles/class1.dir/tinyxml/tinystr.cpp.o CMakeFiles/class1.dir/Parser.cpp.o CMakeFiles/class1.dir/CameraStatus.cpp.o CMakeFiles/class1.dir/TransformationsDataStruct/Transformations.cpp.o CMakeFiles/class1.dir/Axes.cpp.o CMakeFiles/class1.dir/HandlerDrawSquare.cpp.o CMakeFiles/class1.dir/HandleDrawSphere.cpp.o CMakeFiles/class1.dir/DrawCone.cpp.o CMakeFiles/class1.dir/HandlerModel.cpp.o CMakeFiles/class1.dir/TransformationsDataStruct/StoreModels.cpp.o CMakeFiles/class1.dir/TransformationsDataStruct/Transform.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so
+build class1: CXX_EXECUTABLE_LINKER__class1_Debug CMakeFiles/class1.dir/main.cpp.o CMakeFiles/class1.dir/tinyxml/tinyxmlparser.cpp.o CMakeFiles/class1.dir/tinyxml/tinyxmlerror.cpp.o CMakeFiles/class1.dir/tinyxml/tinyxml.cpp.o CMakeFiles/class1.dir/tinyxml/tinystr.cpp.o CMakeFiles/class1.dir/Parser.cpp.o CMakeFiles/class1.dir/CameraStatus.cpp.o CMakeFiles/class1.dir/TransformationsDataStruct/Transformations.cpp.o CMakeFiles/class1.dir/Axes.cpp.o CMakeFiles/class1.dir/HandlerDrawSquare.cpp.o CMakeFiles/class1.dir/HandleDrawSphere.cpp.o CMakeFiles/class1.dir/DrawCone.cpp.o CMakeFiles/class1.dir/HandlerModel.cpp.o CMakeFiles/class1.dir/TransformationsDataStruct/StoreModels.cpp.o CMakeFiles/class1.dir/TransformationsDataStruct/Transform.cpp.o CMakeFiles/class1.dir/HandleRenderTransform.cpp.o | /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libglut.so
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libGL.so  /usr/lib/x86_64-linux-gnu/libGLU.so  /usr/lib/x86_64-linux-gnu/libglut.so
   OBJECT_DIR = CMakeFiles/class1.dir

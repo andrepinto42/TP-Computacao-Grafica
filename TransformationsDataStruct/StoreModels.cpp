@@ -16,6 +16,7 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
     if (!doc.LoadFile(nameFile))
     {
         std::cout << "Error loading file " << nameFile<<"\n";
+        doc.Clear();
         return;
     }
 
@@ -48,4 +49,5 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
 
         allModelsClass->push_back(model);
     }
+    doc.Clear();
 }
