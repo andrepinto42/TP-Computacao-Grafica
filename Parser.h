@@ -13,7 +13,7 @@
 
 class Parser {
 public:
-    static std::vector<const char*> XML_Parse(CameraStatus **cam,Transformations** rootTransformation);
+    static void XML_Parse(CameraStatus **cam,Transformations** rootTransformation);
 
     static CameraStatus *getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms);
 

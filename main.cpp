@@ -17,7 +17,6 @@
 #include "HandlerModel.h"
 #include "TransformationsDataStruct/StoreModels.h"
 #include "HandlerDrawSquare.h"
-#include "StoreModels.h"
 #include "HandlerDrawSquare.h"
 #include "HandleRenderTransform.h"
 float beta = 0;
@@ -122,7 +121,7 @@ int main(int argc, char** argv)
     //Initialize the global variable
     t = new Transformations();
 
-    allNameModels = Parser::XML_Parse(&cam,&t);
+    Parser::XML_Parse(&cam,&t);
 
     t->DoSomething();
 

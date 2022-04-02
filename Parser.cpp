@@ -15,7 +15,7 @@
 using namespace std;
 
 
-vector<const char*> Parser::XML_Parse(CameraStatus **cam,Transformations** rootTransformations)
+void Parser::XML_Parse(CameraStatus **cam,Transformations** rootTransformations)
 {
     char nameFile[] = "../xml_04_Groups.xml";
 
@@ -25,12 +25,11 @@ vector<const char*> Parser::XML_Parse(CameraStatus **cam,Transformations** rootT
         std::cout << "Error loading file " << nameFile;
     }
 
-    vector<const char*> names;
     TiXmlElement *pRoot, *pCamera,*pGroup,*pModels,*pModel, *pParms;
     pRoot = doc.FirstChildElement( "world" );
 
     if ( !pRoot )
-        return names;
+        return;
 
     pCamera= pRoot->FirstChildElement( "camera" );
     //Assign the value so it can be stored in the main class
@@ -40,27 +39,7 @@ vector<const char*> Parser::XML_Parse(CameraStatus **cam,Transformations** rootT
     //Second Phase
     pGroup = pRoot->FirstChildElement("group");
     if (pGroup)
-    {
-
         TransformGroupElement(pGroup,rootTransformations);
-
-        pModels = pGroup->FirstChildElement("models");
-        if (pModels)
-        {
-            pModel = pModels->FirstChildElement();
-            while(pModel)
-            {
-                names.push_back(pModel->Attribute("file"));
-                pModel = pModel->NextSiblingElement();
-            }
-            std::cout << "Read these files -> ";
-            for(const char* x : names)
-                std::cout << x << " ";
-            std::cout << "\n";
-            return names;
-        }
-    }
-
 }
 
 CameraStatus *Parser::getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms) {
@@ -106,8 +85,10 @@ void Parser::TransformGroupElement(TiXmlElement *pGroup,Transformations** root) 
         InsertModelsName(root, pModels);
 
     auto pAnotherGroup = pGroup->FirstChildElement("group");
-    if (pAnotherGroup)
+    while (pAnotherGroup){
         InsertNextChildrenTransformation(root, pAnotherGroup);
+        pAnotherGroup = pAnotherGroup->NextSiblingElement("group");
+    }
 
 }
 
@@ -115,8 +96,9 @@ void Parser::InsertModelsName(Transformations *const *root, TiXmlElement *pModel
     auto pModel = pModels->FirstChildElement();
     while(pModel)
     {
-        (*root)->allParentModelsName.push_back(pModel->Attribute("file"));
-        pModel = pModel->NextSiblingElement();
+        // E necessario duplicar a string por alguma razao estranha
+        (*root)->allParentModelsName.push_back(strdup( pModel->Attribute("file")));
+        pModel = pModel->NextSiblingElement("model");
     }
     cout << "Inserted these models ->";
     for (auto string:(*root)->allParentModelsName) {
@@ -139,31 +121,34 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
     float x,y,z,angle;
 
     auto pTranslate = pTransform->FirstChildElement("translate");
-    if (pTranslate){
+    while (pTranslate){
         x = atoi( pTranslate->Attribute("x"));
         y = atoi( pTranslate->Attribute("y"));
         z = atoi( pTranslate->Attribute("z"));
         T_Translate t(x,y,z);
         (*root)->parentTranslates.push_back(t);
+        pTranslate = pTranslate->NextSiblingElement("translate");
     }
 
     auto pScale = pTransform->FirstChildElement("scale");
-    if (pScale){
+    while (pScale){
         x = atoi( pScale->Attribute("x"));
         y = atoi( pScale->Attribute("y"));
         z = atoi( pScale->Attribute("z"));
         T_Scale t(x,y,z);
         (*root)->parentScales.push_back(t);
+        pScale = pScale->NextSiblingElement("scale");
     }
 
     auto pRotate = pTransform->FirstChildElement("rotate");
-    if (pRotate){
+    while (pRotate){
         angle = atoi( pRotate->Attribute("angle"));
         x = atoi( pRotate->Attribute("x"));
         y = atoi( pRotate->Attribute("y"));
         z = atoi( pRotate->Attribute("z"));
         T_Rotate t(angle,x,y,z);
         (*root)->parentRotates.push_back(t);
+        pRotate = pRotate->NextSiblingElement("rotate");
     }
 
 }

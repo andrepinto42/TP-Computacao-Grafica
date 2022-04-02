@@ -7,9 +7,10 @@
     </camera>
     <group>
         <transform>
-        <translate x=4 y=0 z =0 />
+            <translate x=4 y=0 z =0 />
             <rotate angle=30 x=0 y=1 z=0 />
-            <scale x=2 y=0.3 z=1 />
+            <translate x=4 y=0 z =0 />
+<!--            <scale x=2 y=0.3 z=1 />-->
         </transform>
         <models>
             <model file="../Generator/cmake-build-debug/cone.3d" />
@@ -27,6 +28,24 @@
                 </transform>
                 <models>
                     <model file="../Generator/cmake-build-debug/cube.3d" />
+                </models>
+            </group>
+        </group>
+
+        <!--2 group-->
+        <group>
+            <transform>
+                <translate x = 0 y = 1 z = 0/>
+            </transform>
+            <models>
+                <model file="../Generator/cmake-build-debug/sphere.3d" />
+            </models>
+            <group>
+                <transform>
+                    <translate x = 0 y = 4 z = 0/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/sphere.3d" />
                 </models>
             </group>
         </group>

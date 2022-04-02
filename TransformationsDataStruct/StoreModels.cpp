@@ -27,7 +27,7 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
         pConfig= pRoot->FirstChildElement("Configuration" ); //now params
 
         int vertexCount =atoi(pConfig->Attribute("VertexCount"));
-        std::cout << "Number of vertices ->" <<vertexCount<<"\n";
+        std::cout << "Number of vertices ->" <<vertexCount<<" from file"<< nameFile <<"\n";
 
 
         std::vector<Vector3> allVertices;

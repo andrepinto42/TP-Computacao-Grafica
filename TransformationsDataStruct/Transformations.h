@@ -41,7 +41,7 @@ public:
         }
 
         for (int i = 0; i < allParentModelsName.size(); ++i) {
-
+            std::cout << "Goint to store this file -> " << allParentModelsName[i]<<"\n";
             //Read the name of the file and store it in allModelsClass
             StoreModels::Store(allParentModelsName[i], &(allModels) );
         }
