@@ -6,7 +6,10 @@
 
 #define _USE_MATH_DEFINES
 
+<<<<<<< HEAD
 #include <typeinfo>
+=======
+>>>>>>> 767bf6e6f9c1f1d0463993ca5259d5db06a64718
 #include <math.h>
 #include <stdio.h>
 #include <iostream>
@@ -15,9 +18,15 @@
 #include "HandleDrawSphere.h"
 #include "Generator/Vector3.h"
 #include "HandlerModel.h"
+<<<<<<< HEAD
 #include "TransformationsDataStruct/StoreModels.h"
 #include "HandlerDrawSquare.h"
 #include "TransformationsDataStruct/Transformations.h"
+=======
+#include "StoreModels.h"
+#include "HandlerDrawSquare.h"
+
+>>>>>>> 767bf6e6f9c1f1d0463993ca5259d5db06a64718
 
 using namespace std;
 
@@ -122,11 +131,15 @@ std::vector<const char*> allNameModels;
 
 int main(int argc, char** argv)
 {
+<<<<<<< HEAD
     Transformations* t = new Transformations();
 
     allNameModels = Parser::XML_Parse(&cam,&t);
 
     t->DoSomething(t);
+=======
+    allNameModels = Parser::XML_Parse(&cam);
+>>>>>>> 767bf6e6f9c1f1d0463993ca5259d5db06a64718
 
 
     vector<const char*> duplicadoAllNameModels;

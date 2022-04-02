@@ -10,6 +10,7 @@
 #include "tinyxml/tinyxml.h"
 #include "tinyxml/tinystr.h"
 #include "CameraStatus.h"
+<<<<<<< HEAD
 #include "TransformationsDataStruct/Transformations.h"
 
 using namespace std;
@@ -19,12 +20,22 @@ vector<const char*> Parser::XML_Parse(CameraStatus **cam,Transformations** rootT
 {
     char nameFile[] = "../xml_04_Groups.xml";
 
+=======
+#include "Transformations.h"
+using namespace std;
+
+
+vector<const char*> Parser::XML_Parse(CameraStatus **cam)
+{
+    char nameFile[] = "../xml_syntax.xml";
+>>>>>>> 767bf6e6f9c1f1d0463993ca5259d5db06a64718
     TiXmlDocument doc;
     if (!doc.LoadFile(nameFile))
     {
         std::cout << "Error loading file " << nameFile;
     }
 
+<<<<<<< HEAD
     vector<const char*> names;
     TiXmlElement *pRoot, *pCamera,*pGroup,*pModels,*pModel, *pParms;
     pRoot = doc.FirstChildElement( "world" );
@@ -61,6 +72,41 @@ vector<const char*> Parser::XML_Parse(CameraStatus **cam,Transformations** rootT
         }
     }
 
+=======
+    TiXmlElement *pRoot, *pCamera,*pGroup,*pModels,*pModel, *pParms;
+    pRoot = doc.FirstChildElement( "world" );
+    if ( pRoot )
+    {
+        pCamera= pRoot->FirstChildElement( "camera" );
+        if (pCamera) {
+            //Assign the value so it can be stored in the main class
+            *cam = getCameraStatus(pCamera, pParms);
+            std::cout << (*cam)->posX<<"\n";
+        }
+
+        pGroup = pRoot->FirstChildElement("group");
+        if (pGroup)
+        {
+            pModels = pGroup->FirstChildElement("models");
+            if (pModels)
+            {
+                pModel = pModels->FirstChildElement();
+                vector<const char*> names;
+                while(pModel)
+                {
+                    names.push_back(pModel->Attribute("file"));
+                    pModel = pModel->NextSiblingElement();
+                }
+
+                for(const char* x : names)
+                    std::cout << x<< std::endl;
+
+                return names;
+            }
+        }
+
+    }
+>>>>>>> 767bf6e6f9c1f1d0463993ca5259d5db06a64718
 }
 
 CameraStatus *Parser::getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms) {
@@ -94,6 +140,7 @@ CameraStatus *Parser::getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms)
             fov, near, far);
     return cam;
 }
+<<<<<<< HEAD
 
 void Parser::TransformGroupElement(TiXmlElement *pGroup,Transformations** root) {
 
@@ -143,3 +190,5 @@ void Parser::TransformGroupElement(TiXmlElement *pGroup,Transformations** root) 
         TransformGroupElement(pModels,&anotherTransformation);
     }
 }
+=======
+>>>>>>> 767bf6e6f9c1f1d0463993ca5259d5db06a64718
