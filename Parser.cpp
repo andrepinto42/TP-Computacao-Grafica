@@ -99,47 +99,72 @@ void Parser::TransformGroupElement(TiXmlElement *pGroup,Transformations** root) 
 
     auto pTransform = pGroup->FirstChildElement("transform");
     if (pTransform)
-    {
-        float x,y,z,angle;
+        InsertTransformations(root, pTransform);
 
-        auto pTranslate = pTransform->FirstChildElement("translate");
-        if (pTranslate){
-            x = atoi( pTranslate->Attribute("x"));
-            y = atoi( pTranslate->Attribute("y"));
-            z = atoi( pTranslate->Attribute("z"));
-            T_Translate t(x,y,z);
-            (*root)->parentTranslates.push_back(t);
-        }
-
-        auto pScale = pTransform->FirstChildElement("scale");
-        if (pScale){
-            x = atoi( pScale->Attribute("x"));
-            y = atoi( pScale->Attribute("y"));
-            z = atoi( pScale->Attribute("z"));
-            T_Scale t(x,y,z);
-            (*root)->parentScales.push_back(t);
-        }
-
-        auto pRotate = pTransform->FirstChildElement("rotate");
-        if (pRotate){
-            angle = atoi( pRotate->Attribute("angle"));
-            x = atoi( pRotate->Attribute("x"));
-            y = atoi( pRotate->Attribute("y"));
-            z = atoi( pRotate->Attribute("z"));
-            T_Rotate t(angle,x,y,z);
-            (*root)->parentRotates.push_back(t);
-        }
-
-    }
-    auto pModels = pGroup->FirstChildElement("group");
+    auto pModels = pGroup->FirstChildElement("models");
     if (pModels)
+        InsertModelsName(root, pModels);
+
+    auto pAnotherGroup = pGroup->FirstChildElement("group");
+    if (pAnotherGroup)
+        InsertNextChildrenTransformation(root, pAnotherGroup);
+
+}
+
+void Parser::InsertModelsName(Transformations *const *root, TiXmlElement *pModels) {
+    auto pModel = pModels->FirstChildElement();
+    while(pModel)
     {
-        printf("There is another Group here!");
-        //Create a new Tranformation object and store it in the dataStruct of the parent
-        Transformations* anotherTransformation = new Transformations();
-        (*root)->allChildrenTransformation.push_back(*anotherTransformation);
-
-
-        TransformGroupElement(pModels,&anotherTransformation);
+        (*root)->allParentModels.push_back(pModel->Attribute("file"));
+        pModel = pModel->NextSiblingElement();
     }
+    cout << "Inserted these models ->";
+    for (auto string:(*root)->allParentModels) {
+        cout << string<<"\n";
+    }
+}
+
+
+void Parser::InsertNextChildrenTransformation(Transformations *const *root, TiXmlElement *pAnotherGroup) {
+    printf("There is another Group here!\n");
+    //Create a new Tranformation object and store it in the dataStruct of the parent
+    Transformations* anotherTransformation = new Transformations();
+    (*root)->allChildrenTransformation.push_back(anotherTransformation);
+
+    TransformGroupElement(pAnotherGroup,&anotherTransformation);
+}
+
+
+
+void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *pTransform) {
+    float x,y,z,angle;
+
+    auto pTranslate = pTransform->FirstChildElement("translate");
+    if (pTranslate){
+        x = atoi( pTranslate->Attribute("x"));
+        y = atoi( pTranslate->Attribute("y"));
+        z = atoi( pTranslate->Attribute("z"));
+        T_Translate t(x,y,z);
+        (*root)->parentTranslates.push_back(t);
+    }
+
+    auto pScale = pTransform->FirstChildElement("scale");
+    if (pScale){
+        x = atoi( pScale->Attribute("x"));
+        y = atoi( pScale->Attribute("y"));
+        z = atoi( pScale->Attribute("z"));
+        T_Scale t(x,y,z);
+        (*root)->parentScales.push_back(t);
+    }
+
+    auto pRotate = pTransform->FirstChildElement("rotate");
+    if (pRotate){
+        angle = atoi( pRotate->Attribute("angle"));
+        x = atoi( pRotate->Attribute("x"));
+        y = atoi( pRotate->Attribute("y"));
+        z = atoi( pRotate->Attribute("z"));
+        T_Rotate t(angle,x,y,z);
+        (*root)->parentRotates.push_back(t);
+    }
+
 }

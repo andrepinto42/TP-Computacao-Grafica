@@ -124,25 +124,17 @@ int main(int argc, char** argv)
 
     allNameModels = Parser::XML_Parse(&cam,&t);
 
-    t->DoSomething(t);
+    t->DoSomething();
 
-
-    vector<const char*> duplicadoAllNameModels;
-    for (int i = 0; i <allNameModels.size() ; ++i) {
-
-        duplicadoAllNameModels.push_back(strdup(allNameModels[i]));
+    for (int i = 0; i < t->allParentModels.size(); ++i) {
+        //Read the name of the file and store it in allModelsClass
+        StoreModels::Store(t->allParentModels[i], &allModelsClass);
     }
 
-    //ERRO DEMASIADO ESTUPIDO
-    //StoreModels::Store(allNameModels[0],&allModelsClass);
-    for (int i = 0; i < allNameModels.size(); ++i) {
-        StoreModels::Store(duplicadoAllNameModels[i], &allModelsClass);
-    }
-
-	// put GLUT�s init here
+	// put GLUT's init here
 	glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition(100, 100);
+	glutInitWindowPosition(800, 100);
 	glutInitWindowSize(800, 800);
 	glutCreateWindow("CG@DI");
 

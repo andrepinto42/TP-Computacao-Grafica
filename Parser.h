@@ -18,6 +18,12 @@ public:
     static CameraStatus *getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms);
 
     static void TransformGroupElement(TiXmlElement *pElement,Transformations** root);
+
+    static void InsertTransformations(Transformations *const *root, TiXmlElement *pTransform);
+
+    static void InsertNextChildrenTransformation(Transformations *const *root, TiXmlElement *pAnotherGroup);
+
+    static void InsertModelsName(Transformations *const *root, TiXmlElement *pModels);
 };
 
 

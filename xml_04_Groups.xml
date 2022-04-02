@@ -12,7 +12,7 @@
             <scale x=2 y=0.3 z=1 />
         </transform>
         <models>
-            <model file="cone.3d" />
+            <model file="../Generator/cmake-build-debug/cone.3d" />
         </models>
         <group>
             <transform>

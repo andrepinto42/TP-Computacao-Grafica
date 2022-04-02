@@ -1,16 +1,16 @@
 # ninja log v5
 1	426	1648824200345160140	CMakeFiles/class1.dir/TransformationsDataStruct/T_Translate.cpp.o	f14a47d6b5ecfddd
 1	96	1648725147522834529	CMakeFiles/class1.dir/tinyxml/tinystr.cpp.o	b45f3121444d1416
+663	772	1648898453107020614	class1	a9a25d75a8568e15
 0	329	1648725147754836513	CMakeFiles/class1.dir/tinyxml/tinyxmlparser.cpp.o	5a20dbcd568f32a8
-456	544	1648845840744599616	class1	a9a25d75a8568e15
-1	658	1648845823892682040	CMakeFiles/class1.dir/Parser.cpp.o	26ca98ad89b122b1
-0	456	1648845840656600014	CMakeFiles/class1.dir/main.cpp.o	a812b8e4147946d
-1	526	1648845823760682738	CMakeFiles/class1.dir/TransformationsDataStruct/Transformations.cpp.o	b9c5c015e0246122
+2	1368	1648898185185887555	CMakeFiles/class1.dir/Parser.cpp.o	26ca98ad89b122b1
+2	663	1648898452999020198	CMakeFiles/class1.dir/main.cpp.o	a812b8e4147946d
+1	405	1648897527609972659	CMakeFiles/class1.dir/TransformationsDataStruct/Transformations.cpp.o	b9c5c015e0246122
 72	755	1648725148182840170	CMakeFiles/class1.dir/HandleDrawSphere.cpp.o	f5b61605f24feb02
 2	427	1648824200345160140	CMakeFiles/class1.dir/TransformationsDataStruct/T_Rotate.cpp.o	c0b48a2fc06e637
-1	389	1648845823624683456	CMakeFiles/class1.dir/Axes.cpp.o	fe8171e0c1692e20
-1	400	1648845823636683394	CMakeFiles/class1.dir/HandlerDrawSquare.cpp.o	ebce72599d1f708d
+3	1092	1648898184909886278	CMakeFiles/class1.dir/Axes.cpp.o	fe8171e0c1692e20
 0	86	1648893144046936508	build.ninja	133e6680d7bb0451
+4	953	1648898184765885610	CMakeFiles/class1.dir/HandlerDrawSquare.cpp.o	ebce72599d1f708d
 1	474	1648725147902837778	CMakeFiles/class1.dir/tinyxml/tinyxml.cpp.o	f3df2dcd71d265bf
 1	528	1648726272608674334	CMakeFiles/class1.dir/TransformationsDataStruct/StoreModels.cpp.o	c24ab7589586cfe2
 0	87	1648725147514834461	CMakeFiles/class1.dir/tinyxml/tinyxmlerror.cpp.o	34e5f0a11482e4ed
@@ -21,3 +21,5 @@
 2	480	1648824116293315404	CMakeFiles/class1.dir/TransformationsDataStruct/T_Scale.cpp.o	2ababfc1e0b99717
 2	262	1648725147690835966	CMakeFiles/class1.dir/Transformations.cpp.o	c6a7c630a5df8d25
 4	1138	1648838948941098335	CMakeFiles/class1.dir/TransformationsDataStruct/Transform.cpp.o	263a6913179793c5
+1	618	1648898465931069934	CMakeFiles/class1.dir/main.cpp.o	a812b8e4147946d
+618	739	1648898466051070394	class1	a9a25d75a8568e15
