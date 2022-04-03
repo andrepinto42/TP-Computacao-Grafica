@@ -10,10 +10,17 @@ add_executable(${PROJECT_NAME} main.cpp
 		tinyxml/tinyxmlparser.cpp tinyxml/tinyxmlerror.cpp
 		tinyxml/tinyxml.cpp tinyxml/tinyxml.h
 		tinyxml/tinystr.cpp tinyxml/tinystr.h
-		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h TransformationsDataStruct/Transformations.cpp TransformationsDataStruct/Transformations.h
+		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h
+		TransformationsDataStruct/Transformations.cpp TransformationsDataStruct/Transformations.h
 		Axes.cpp Axes.h
-		HandlerDrawSquare.cpp HandlerDrawSquare.h
-		HandleDrawSphere.cpp HandleDrawSphere.h DrawCone.cpp DrawCone.h HandlerModel.cpp HandlerModel.h TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h HandleRenderTransform.cpp HandleRenderTransform.h)
+        DrawBasicPrimitives/HandlerDrawSquare.cpp DrawBasicPrimitives/HandlerDrawSquare.h
+        DrawBasicPrimitives/HandleDrawSphere.cpp DrawBasicPrimitives/HandleDrawSphere.h
+		DrawBasicPrimitives/DrawCone.cpp DrawBasicPrimitives/DrawCone.h
+		HandlerModel.cpp HandlerModel.h
+		TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h
+		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h
+		HandleRenderTransform.cpp HandleRenderTransform.h
+		)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

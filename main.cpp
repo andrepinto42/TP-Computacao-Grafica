@@ -12,12 +12,12 @@
 #include <iostream>
 #include "Parser.h"
 #include "Axes.h"
-#include "HandleDrawSphere.h"
+#include "DrawBasicPrimitives/HandleDrawSphere.h"
 #include "Generator/Vector3.h"
 #include "HandlerModel.h"
 #include "TransformationsDataStruct/StoreModels.h"
-#include "HandlerDrawSquare.h"
-#include "HandlerDrawSquare.h"
+#include "DrawBasicPrimitives/HandlerDrawSquare.h"
+#include "DrawBasicPrimitives/HandlerDrawSquare.h"
 #include "HandleRenderTransform.h"
 float beta = 0;
 float alpha = 0;
@@ -37,9 +37,11 @@ void changeSize(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	// Load the identity matrix
 	glLoadIdentity();
+
 	// set the perspective
-	gluPerspective(cam->fov, ratio, cam->near, cam->far);
-	// return to the model view matrix mode
+    cam->RenderCameraPerspective(ratio);
+
+    // return to the model view matrix mode
 	glMatrixMode(GL_MODELVIEW);
 
 	// et the viewport to be the entire window
@@ -54,11 +56,7 @@ void renderScene(void)
 	// set camera
 	glLoadIdentity();
 
-    gluLookAt(/*r*cosf(beta)*sinf(alpha)*/ +cam->posX,
-            /*r*sinf(beta)*/ + cam->posY,
-            /*r*cosf(beta)*cosf(alpha)*/ + cam->posZ,
-              cam->lookX,cam->lookY,cam->lookZ,
-              cam->upX,cam->upY,cam->upZ);
+    cam->RenderCameraScene();
 
     // put drawing instructions here
     Axes::DrawAxes();
@@ -72,37 +70,32 @@ void renderScene(void)
 void processKeys(unsigned char c, int xx, int yy) {
     // put code to process regular keys in here
     switch (c) {
-        case 'a':
-            alpha-=0.1;
+        case 'a':{
+            cam->MoveCameraLeft();
             break;
-        case 'd' :
-            alpha+=0.1;
+        }
+        case 'd' :{
+            cam->MoveCameraRight();
             break;
-        case 's':
-            if((beta-0.1) >= -M_PI/2) {
-                beta -= 0.1;
+        }
+            case 's':{
+            cam->MoveCameraBackwards();
+            break;
+        }
+            case 'w': {
+                cam->MoveCameraForward();
+                break;
             }
-            break;
-        case 'w':
-            if((beta+0.1) <= M_PI/2) {
-                beta += 0.1;
-            }
-            break;
+            case 'i':{
+                cam->CameraLookUp();
+                break;
+        }
     }
+
     glutPostRedisplay();
 }
 
 void processSpecialKeys(int key, int xx, int yy) {
-    switch (key) {
-        case GLUT_KEY_DOWN:
-            if(r-1>0) {
-                r--;
-            }
-            break;
-        case GLUT_KEY_UP :
-            r++;
-            break;
-    }
     glutPostRedisplay();
 }
 
@@ -136,8 +129,11 @@ int main(int argc, char** argv)
 
     // put callback registry here
 	glutReshapeFunc(changeSize);
-	glutIdleFunc(renderScene);
-	glutDisplayFunc(renderScene);
+
+    //Por questões de otimizações isto pode ser deixado comentado
+    //	glutIdleFunc(renderScene);
+
+    glutDisplayFunc(renderScene);
 
     glutKeyboardFunc(processKeys);
     glutSpecialFunc(processSpecialKeys);

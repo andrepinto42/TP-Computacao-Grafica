@@ -28,6 +28,7 @@ void HandleRenderTransform::Render(Transformations *transformationStruct) {
         glScalef(scale.x,scale.y,scale.z);
     }
 
+    //Chamar instruçoes que desenham todos os vertices
     for (int i = 0; i < transformationStruct->allModels.size(); ++i) {
         transformationStruct->allModels[i].Draw();
     }
@@ -36,6 +37,7 @@ void HandleRenderTransform::Render(Transformations *transformationStruct) {
     for (int i = 0; i < transformationStruct->allChildrenTransformation.size(); ++i) {
         Render(transformationStruct->allChildrenTransformation[i]);
     }
-
+    //Importante dar pop da matrix dessa forma
+    //Quando um as transformacoes de um filho não afetam os seus irmaos :)
     glPopMatrix();
 }

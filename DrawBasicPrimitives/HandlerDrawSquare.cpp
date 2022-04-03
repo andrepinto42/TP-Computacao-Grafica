@@ -2,10 +2,10 @@
 // Created by pinto on 10/03/22.
 //
 
-#include "Axes.h"
-#include "Parser.h"
-#include "tinyxml/tinystr.h"
-#include "tinyxml/tinyxml.h"
+#include "../Axes.h"
+#include "../Parser.h"
+#include "../tinyxml/tinystr.h"
+#include "../tinyxml/tinyxml.h"
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
