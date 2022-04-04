@@ -17,7 +17,7 @@ using namespace std;
 
 void Parser::XML_Parse(CameraStatus **cam,Transformations** rootTransformations)
 {
-    char nameFile[] = "../xml_04_Groups.xml";
+    char nameFile[] = "../solarsystem.xml";
 
     TiXmlDocument doc;
     if (!doc.LoadFile(nameFile))
@@ -122,9 +122,9 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
 
     auto pTranslate = pTransform->FirstChildElement("translate");
     while (pTranslate){
-        x = atoi( pTranslate->Attribute("x"));
-        y = atoi( pTranslate->Attribute("y"));
-        z = atoi( pTranslate->Attribute("z"));
+        x = atof( pTranslate->Attribute("x"));
+        y = atof( pTranslate->Attribute("y"));
+        z = atof( pTranslate->Attribute("z"));
         T_Translate t(x,y,z);
         (*root)->parentTranslates.push_back(t);
         pTranslate = pTranslate->NextSiblingElement("translate");
@@ -132,9 +132,9 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
 
     auto pScale = pTransform->FirstChildElement("scale");
     while (pScale){
-        x = atoi( pScale->Attribute("x"));
-        y = atoi( pScale->Attribute("y"));
-        z = atoi( pScale->Attribute("z"));
+        x = atof( pScale->Attribute("x"));
+        y = atof( pScale->Attribute("y"));
+        z = atof( pScale->Attribute("z"));
         T_Scale t(x,y,z);
         (*root)->parentScales.push_back(t);
         pScale = pScale->NextSiblingElement("scale");
@@ -142,10 +142,10 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
 
     auto pRotate = pTransform->FirstChildElement("rotate");
     while (pRotate){
-        angle = atoi( pRotate->Attribute("angle"));
-        x = atoi( pRotate->Attribute("x"));
-        y = atoi( pRotate->Attribute("y"));
-        z = atoi( pRotate->Attribute("z"));
+        angle = atof( pRotate->Attribute("angle"));
+        x = atof( pRotate->Attribute("x"));
+        y = atof( pRotate->Attribute("y"));
+        z = atof( pRotate->Attribute("z"));
         T_Rotate t(angle,x,y,z);
         (*root)->parentRotates.push_back(t);
         pRotate = pRotate->NextSiblingElement("rotate");

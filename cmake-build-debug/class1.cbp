@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="class1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="class1">
+				<Option output="/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/class1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/edu/Desktop/TP-Computacao-Grafica/,&quot;tinyxml&quot;"/>
+					<Add directory="/usr/include,&quot;tinyxml/**&quot;"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 class1"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="class1/fast">
+				<Option output="/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/class1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/edu/Desktop/TP-Computacao-Grafica/,&quot;tinyxml&quot;"/>
+					<Add directory="/usr/include,&quot;tinyxml/**&quot;"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 class1/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/edu/Desktop/TP-Computacao-Grafica/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Axes.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Axes.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/CameraStatus.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/CameraStatus.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/DrawBasicPrimitives/DrawCone.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/DrawBasicPrimitives/DrawCone.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/DrawBasicPrimitives/HandleDrawSphere.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/DrawBasicPrimitives/HandleDrawSphere.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/DrawBasicPrimitives/HandlerDrawSquare.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/DrawBasicPrimitives/HandlerDrawSquare.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/HandleRenderTransform.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/HandleRenderTransform.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/HandlerModel.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/HandlerModel.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Parser.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Parser.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/TransformationsDataStruct/StoreModels.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/TransformationsDataStruct/StoreModels.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/TransformationsDataStruct/Transform.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/TransformationsDataStruct/Transform.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/TransformationsDataStruct/Transformations.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/TransformationsDataStruct/Transformations.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/main.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/tinyxml/tinystr.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/tinyxml/tinystr.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/tinyxml/tinyxml.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/tinyxml/tinyxml.h">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/tinyxml/tinyxmlerror.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/tinyxml/tinyxmlparser.cpp">
+			<Option target="class1"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
