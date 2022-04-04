@@ -1,4 +1,4 @@
-# Install script for directory: /home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator
+# Install script for directory: /home/edu/Desktop/TP-Computacao-Grafica/Generator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/Generator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/edu/Desktop/TP-Computacao-Grafica/Generator/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

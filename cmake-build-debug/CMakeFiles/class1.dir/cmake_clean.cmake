@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/class1.dir/Axes.cpp.o"
+  "CMakeFiles/class1.dir/Axes.cpp.o.d"
+  "CMakeFiles/class1.dir/CameraStatus.cpp.o"
+  "CMakeFiles/class1.dir/CameraStatus.cpp.o.d"
+  "CMakeFiles/class1.dir/DrawBasicPrimitives/DrawCone.cpp.o"
+  "CMakeFiles/class1.dir/DrawBasicPrimitives/DrawCone.cpp.o.d"
+  "CMakeFiles/class1.dir/DrawBasicPrimitives/HandleDrawSphere.cpp.o"
+  "CMakeFiles/class1.dir/DrawBasicPrimitives/HandleDrawSphere.cpp.o.d"
+  "CMakeFiles/class1.dir/DrawBasicPrimitives/HandlerDrawSquare.cpp.o"
+  "CMakeFiles/class1.dir/DrawBasicPrimitives/HandlerDrawSquare.cpp.o.d"
+  "CMakeFiles/class1.dir/HandleRenderTransform.cpp.o"
+  "CMakeFiles/class1.dir/HandleRenderTransform.cpp.o.d"
+  "CMakeFiles/class1.dir/HandlerModel.cpp.o"
+  "CMakeFiles/class1.dir/HandlerModel.cpp.o.d"
+  "CMakeFiles/class1.dir/Parser.cpp.o"
+  "CMakeFiles/class1.dir/Parser.cpp.o.d"
+  "CMakeFiles/class1.dir/TransformationsDataStruct/StoreModels.cpp.o"
+  "CMakeFiles/class1.dir/TransformationsDataStruct/StoreModels.cpp.o.d"
+  "CMakeFiles/class1.dir/TransformationsDataStruct/Transform.cpp.o"
+  "CMakeFiles/class1.dir/TransformationsDataStruct/Transform.cpp.o.d"
+  "CMakeFiles/class1.dir/TransformationsDataStruct/Transformations.cpp.o"
+  "CMakeFiles/class1.dir/TransformationsDataStruct/Transformations.cpp.o.d"
+  "CMakeFiles/class1.dir/main.cpp.o"
+  "CMakeFiles/class1.dir/main.cpp.o.d"
+  "CMakeFiles/class1.dir/tinyxml/tinystr.cpp.o"
+  "CMakeFiles/class1.dir/tinyxml/tinystr.cpp.o.d"
+  "CMakeFiles/class1.dir/tinyxml/tinyxml.cpp.o"
+  "CMakeFiles/class1.dir/tinyxml/tinyxml.cpp.o.d"
+  "CMakeFiles/class1.dir/tinyxml/tinyxmlerror.cpp.o"
+  "CMakeFiles/class1.dir/tinyxml/tinyxmlerror.cpp.o.d"
+  "CMakeFiles/class1.dir/tinyxml/tinyxmlparser.cpp.o"
+  "CMakeFiles/class1.dir/tinyxml/tinyxmlparser.cpp.o.d"
+  "class1"
+  "class1.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/class1.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
