@@ -94,6 +94,12 @@
 		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateCube.h">
 			<Option target="Generator"/>
 		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateRing.cpp">
+			<Option target="Generator"/>
+		</Unit>
+		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateRing.h">
+			<Option target="Generator"/>
+		</Unit>
 		<Unit filename="/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateSphere.cpp">
 			<Option target="Generator"/>
 		</Unit>

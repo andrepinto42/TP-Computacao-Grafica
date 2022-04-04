@@ -177,6 +177,30 @@ GenerateCube.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/GenerateCube.cpp.s
 .PHONY : GenerateCube.cpp.s
 
+GenerateRing.o: GenerateRing.cpp.o
+.PHONY : GenerateRing.o
+
+# target to build an object file
+GenerateRing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/GenerateRing.cpp.o
+.PHONY : GenerateRing.cpp.o
+
+GenerateRing.i: GenerateRing.cpp.i
+.PHONY : GenerateRing.i
+
+# target to preprocess a source file
+GenerateRing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/GenerateRing.cpp.i
+.PHONY : GenerateRing.cpp.i
+
+GenerateRing.s: GenerateRing.cpp.s
+.PHONY : GenerateRing.s
+
+# target to generate assembly for a file
+GenerateRing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/GenerateRing.cpp.s
+.PHONY : GenerateRing.cpp.s
+
 GenerateSphere.o: GenerateSphere.cpp.o
 .PHONY : GenerateSphere.o
 
@@ -360,6 +384,9 @@ help:
 	@echo "... GenerateCube.o"
 	@echo "... GenerateCube.i"
 	@echo "... GenerateCube.s"
+	@echo "... GenerateRing.o"
+	@echo "... GenerateRing.i"
+	@echo "... GenerateRing.s"
 	@echo "... GenerateSphere.o"
 	@echo "... GenerateSphere.i"
 	@echo "... GenerateSphere.s"

@@ -19,8 +19,7 @@ add_executable(${PROJECT_NAME} main.cpp
 		HandlerModel.cpp HandlerModel.h
 		TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h
 		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h
-		HandleRenderTransform.cpp HandleRenderTransform.h
-		)
+		HandleRenderTransform.cpp HandleRenderTransform.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

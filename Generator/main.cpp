@@ -6,6 +6,7 @@
 #include "GenerateCube.h"
 #include "GenerateSphere.h"
 #include "GenerateCone.h"
+#include "GenerateRing.h"
 #include "Vector3.h"
 
 void DrawSquare(float x, float z, float length);
@@ -102,6 +103,17 @@ int main(int argc, char* argv[]) {
         GenerateCone::GenerateConeFunc(radius,height,slices,stacks);
 
         SaveAllVerticesXML(argv[6]);
+    }
+    else if (strcmp("ring",argv[1]) == 0)
+    {
+        std::cout << "ring";
+        float smallerRadius = atof( argv[2]);
+        float biggerRadius = atof( argv[3]);
+        int slices = atoi( argv[4]);
+
+        GenerateRing::GenerateRingFunc(smallerRadius,biggerRadius,slices);
+
+        SaveAllVerticesXML(argv[5]);
     }
     else
     {

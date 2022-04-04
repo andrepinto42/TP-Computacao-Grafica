@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateCone.cpp" "CMakeFiles/Generator.dir/GenerateCone.cpp.o" "gcc" "CMakeFiles/Generator.dir/GenerateCone.cpp.o.d"
   "/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateCube.cpp" "CMakeFiles/Generator.dir/GenerateCube.cpp.o" "gcc" "CMakeFiles/Generator.dir/GenerateCube.cpp.o.d"
+  "/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateRing.cpp" "CMakeFiles/Generator.dir/GenerateRing.cpp.o" "gcc" "CMakeFiles/Generator.dir/GenerateRing.cpp.o.d"
   "/home/edu/Desktop/TP-Computacao-Grafica/Generator/GenerateSphere.cpp" "CMakeFiles/Generator.dir/GenerateSphere.cpp.o" "gcc" "CMakeFiles/Generator.dir/GenerateSphere.cpp.o.d"
   "/home/edu/Desktop/TP-Computacao-Grafica/Generator/Vector3.cpp" "CMakeFiles/Generator.dir/Vector3.cpp.o" "gcc" "CMakeFiles/Generator.dir/Vector3.cpp.o.d"
   "/home/edu/Desktop/TP-Computacao-Grafica/Generator/main.cpp" "CMakeFiles/Generator.dir/main.cpp.o" "gcc" "CMakeFiles/Generator.dir/main.cpp.o.d"

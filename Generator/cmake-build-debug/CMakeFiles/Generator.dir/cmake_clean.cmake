@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Generator.dir/GenerateCone.cpp.o.d"
   "CMakeFiles/Generator.dir/GenerateCube.cpp.o"
   "CMakeFiles/Generator.dir/GenerateCube.cpp.o.d"
+  "CMakeFiles/Generator.dir/GenerateRing.cpp.o"
+  "CMakeFiles/Generator.dir/GenerateRing.cpp.o.d"
   "CMakeFiles/Generator.dir/GenerateSphere.cpp.o"
   "CMakeFiles/Generator.dir/GenerateSphere.cpp.o.d"
   "CMakeFiles/Generator.dir/Vector3.cpp.o"
