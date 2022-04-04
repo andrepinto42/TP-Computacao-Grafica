@@ -25,7 +25,7 @@ void Parser::XML_Parse(CameraStatus **cam,Transformations** rootTransformations)
         std::cout << "Error loading file " << nameFile;
     }
 
-    TiXmlElement *pRoot, *pCamera,*pGroup,*pModels,*pModel, *pParms;
+    TiXmlElement *pRoot, *pCamera,*pParms;
     pRoot = doc.FirstChildElement( "world" );
 
     if ( !pRoot )
@@ -37,9 +37,15 @@ void Parser::XML_Parse(CameraStatus **cam,Transformations** rootTransformations)
         *cam = getCameraStatus(pCamera, pParms);
 
     //Second Phase
-    pGroup = pRoot->FirstChildElement("group");
-    if (pGroup)
-        TransformGroupElement(pGroup,rootTransformations);
+    //pGroup = pRoot->FirstChildElement("group");
+    //if (pGroup)
+    //  TransformGroupElement(pGroup,rootTransformations);
+
+    auto pAnotherGroup = pRoot->FirstChildElement("group");
+    while (pAnotherGroup){
+        InsertNextChildrenTransformation(rootTransformations, pAnotherGroup);
+        pAnotherGroup = pAnotherGroup->NextSiblingElement("group");
+    }
 }
 
 CameraStatus *Parser::getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms) {

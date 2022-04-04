@@ -62,7 +62,7 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/,\"tinyxml\""
+					"path" : "/home/edu/Desktop/TP-Computacao-Grafica/,\"tinyxml\""
 				},
 				{
 					"backtrace" : 4,
@@ -117,6 +117,16 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "/usr/lib/x86_64-linux-gnu/libglut.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libXmu.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libXi.so",
 				"role" : "libraries"
 			}
 		],
