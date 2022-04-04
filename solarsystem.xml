@@ -8,6 +8,7 @@
     <group>
         <transform>
             <translate x=0 y=0 z=0/>
+            <rotate angle=30 x=0 y=1 z=0/>
         </transform>
         <!--SOL-->
         <group>
@@ -52,7 +53,7 @@
             <group>
                 <transform>
                     <scale x=0.2 y=0.2 z=0.2/>
-                    <translate x=0 y=5 z=0/>
+                    <translate x=0 y=2 z=3/>
                 </transform>
                 <models>
                     <model file="../Generator/cmake-build-debug/sphere2.3d" />
@@ -88,6 +89,16 @@
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d" />
             </models>
+
+            <group>
+                <transform>
+                    <translate x=0 y=1 z=0/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/ring.3d" />
+                </models>
+            </group>
+
         </group>
         <!--URANO-->
         <group>
