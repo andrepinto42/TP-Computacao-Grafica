@@ -4,6 +4,7 @@
 
 #include <valarray>
 #include <GL/glu.h>
+#include <iostream>
 #include "CameraStatus.h"
 #include "Generator/Vector3.h"
 
@@ -26,6 +27,13 @@ CameraStatus::CameraStatus():
 
 
 
+Vector3* CrossProduct(Vector3 v1,Vector3 v2){
+    float x =v1.y*v2.z - v1.z*v2.y;
+    float y = - (v1.x*v2.z - v1.z*v2.x);
+    float z = v1.x*v2.y - v1.y * v2.x;
+    return new Vector3(x,y,z);
+}
+
 
 
 
@@ -36,27 +44,41 @@ void CameraStatus::MoveCameraForward() {
 
     AddVectorCamera(direction);
 }
+
+bool CheckIfCross(Vector3 vector1,Vector3 vector2){
+    return (vector1.x -vector2.x + vector1.y -vector2.y + vector1.z - vector2.z) == 0;
+}
+
+
+//void CameraStatus::MoveCameraRight() {
+//    auto direction =GetDirection(
+//            posX,posY,posZ,
+//            lookX,lookY,lookZ);
+//
+//    float z = direction->z;
+//
+//    float angleZXRight = cosh(z) + (M_PI/2.f);
+//    auto dir = CalculateNormalVector(direction,angleZXRight);
+//
+//    std::cout << CheckIfCross(*direction,*dir)<<"<- cross\n";
+//
+//    AddVectorCamera(dir);
+//}
 void CameraStatus::MoveCameraRight() {
     auto direction =GetDirection(
             posX,posY,posZ,
             lookX,lookY,lookZ);
 
-    float z = direction->z;
-
-    float angleZXRight = cosh(z) + (M_PI/2.f);
-
-    AddVectorCamera(CalculateNormalVector(direction,angleZXRight));
+    auto dir = CrossProduct(Vector3(0.f,1.f,0.f),*direction);
+    AddVectorCamera(dir);
 }
-
 void CameraStatus::MoveCameraLeft() {
     auto direction =GetDirection(
             posX,posY,posZ,
             lookX,lookY,lookZ);
 
-    float z = direction->z;
-    float angleZXRight = cosh(z) - (M_PI/2.f);
-
-    AddVectorCamera(CalculateNormalVector(direction,angleZXRight));
+    auto dir = CrossProduct(*direction, Vector3(0.f,1.f,0.f));
+    AddVectorCamera(dir);
 }
 
 void CameraStatus::MoveCameraBackwards() {
