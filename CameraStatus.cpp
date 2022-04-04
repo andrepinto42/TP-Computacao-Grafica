@@ -7,7 +7,7 @@
 #include "CameraStatus.h"
 #include "Generator/Vector3.h"
 
-static int speed = 5.f;
+static int speed = 1.f;
 
 /*
  * Constructors
@@ -27,30 +27,7 @@ CameraStatus::CameraStatus():
 
 
 
-void CameraStatus::CameraLookUp(){
-    auto direction =GetDirection(
-            posX,posY,posZ,
-            lookX,lookY,lookZ);
 
-    float y = direction->y;
-
-    float angleYX = cosh(y) - (M_PI/2.f);
-    float x = cos(angleYX);
-    y = sin(angleYX);
-
-    float z;
-
-    if (direction->z != 0)
-        z = ( (-direction->x * x) + (- direction->y * y)) / direction->z;
-        //Caso esteja a lidar com o plano em que o z = 0
-    else z = 0;
-
-    free(direction);
-
-    lookX += x;
-    lookY += y;
-    lookZ += z;
-}
 
 void CameraStatus::MoveCameraForward() {
     auto direction =GetDirection(
@@ -118,11 +95,33 @@ Vector3* CameraStatus::CalculateNormalVector(Vector3 *direction, float angleZXRi
     return direction;
 }
 
+float pitch = 0.0f; // The rotation along the x axis
+float yaw = 0.0f; // The rotation along the y axis
+float roll = 0.0f; // The rotation along the z axis
 
+void CameraStatus::CameraLookUp(){
+    roll++;
+}
+void CameraStatus::CameraLookDown(){
+    roll--;
+}
+
+
+void CameraStatus::CameraLookRight(){
+    yaw--;
+}
+void CameraStatus::CameraLookLeft(){
+    yaw++;
+}
 void CameraStatus::RenderCameraScene() {
     gluLookAt(posX, posY, posZ,
               lookX, lookY, lookZ,
               upX, upY, upZ);
+
+    glRotatef(pitch, 1.0f, 0.0f, 0.0f);
+    glRotatef(yaw, 0.0f, 1.0f, 0.0f);
+    glRotatef(roll, 0.0f, 0.0f, 1.0f);
+
 }
 
 void CameraStatus::RenderCameraPerspective(float ratio) {

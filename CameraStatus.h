@@ -50,6 +50,12 @@ public:
     void RenderCameraPerspective(float ratio);
 
     void CameraLookUp();
+
+    void CameraLookDown();
+
+    void CameraLookRight();
+
+    void CameraLookLeft();
 };
 
 

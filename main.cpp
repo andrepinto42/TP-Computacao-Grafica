@@ -90,6 +90,18 @@ void processKeys(unsigned char c, int xx, int yy) {
                 cam->CameraLookUp();
                 break;
         }
+        case 'k':{
+            cam->CameraLookDown();
+            break;
+        }
+        case 'l':{
+            cam->CameraLookRight();
+            break;
+        }
+        case 'j':{
+            cam->CameraLookLeft();
+            break;
+        }
     }
 
     glutPostRedisplay();
