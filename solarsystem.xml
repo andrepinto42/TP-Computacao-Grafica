@@ -8,7 +8,7 @@
     <group>
         <transform>
             <translate x=0 y=0 z=0/>
-            <rotate angle=30 x=0 y=1 z=0/>
+            <!--<rotate angle=30 x=0 y=1 z=0/>-->
         </transform>
         <!--SOL-->
         <group>
@@ -69,6 +69,26 @@
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d" />
             </models>
+            <!--FOBOS-->
+            <group>
+                <transform>
+                    <scale x=0.2 y=0.2 z=0.2/>
+                    <translate x=0 y=2 z=3/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/sphere2.3d" />
+                </models>
+            </group>
+            <!--DEIMOS-->
+            <group>
+                <transform>
+                    <scale x=0.2 y=0.2 z=0.2/>
+                    <translate x=0 y=2 z=-3/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/sphere2.3d" />
+                </models>
+            </group>
         </group>
         <!--JÚPITER-->
         <group>
@@ -79,6 +99,46 @@
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d" />
             </models>
+            <!--IO-->
+            <group>
+                <transform>
+                    <scale x=0.2 y=0.2 z=0.2/>
+                    <translate x=0 y=1.6 z=3/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/sphere2.3d" />
+                </models>
+            </group>
+            <!--EUROPA-->
+            <group>
+                <transform>
+                    <scale x=0.2 y=0.2 z=0.2/>
+                    <translate x=0 y=1.4 z=-3/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/sphere2.3d" />
+                </models>
+            </group>
+            <!--GANIMEDES-->
+            <group>
+                <transform>
+                    <scale x=0.2 y=0.2 z=0.2/>
+                    <translate x=0 y=1.2 z=2/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/sphere2.3d" />
+                </models>
+            </group>
+            <!--CALISTO-->
+            <group>
+                <transform>
+                    <scale x=0.2 y=0.2 z=0.2/>
+                    <translate x=0 y=1.8 z=-1/>
+                </transform>
+                <models>
+                    <model file="../Generator/cmake-build-debug/sphere2.3d" />
+                </models>
+            </group>
         </group>
         <!--SATURNO-->
         <group>
@@ -89,7 +149,7 @@
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d" />
             </models>
-
+            <!--ANEL SATURNO-->
             <group>
                 <transform>
                     <translate x=0 y=1 z=0/>
