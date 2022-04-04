@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "class1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-class1-Debug-aea1f187ad49fca46fd0.json",
+					"jsonFile" : "target-class1-Debug-dfc3d6c6a38c7168d3f5.json",
 					"name" : "class1",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/build",
-		"source" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01"
+		"build" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/cmake-build-debug",
+		"source" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master"
 	},
 	"version" : 
 	{

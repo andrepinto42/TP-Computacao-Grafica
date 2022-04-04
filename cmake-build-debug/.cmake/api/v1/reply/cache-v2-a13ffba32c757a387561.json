@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/build"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -579,7 +579,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1343,7 +1343,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01/build"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/cmake-build-debug"
 		},
 		{
 			"name" : "class1_IS_TOP_LEVEL",
@@ -1367,7 +1367,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/tentativaTP01"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master"
 		}
 	],
 	"kind" : "cache",
