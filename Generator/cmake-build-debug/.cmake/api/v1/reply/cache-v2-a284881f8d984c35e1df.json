@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/edu/Desktop/TP-Computacao-Grafica/Generator/cmake-build-debug"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-j12"
+			"value" : "-j8"
 		},
 		{
 			"name" : "CMAKE_COLOR_MAKEFILE",
@@ -155,7 +155,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/184/bin/cmake/linux/bin/cmake"
+			"value" : "/opt/clion-2021.3.3/bin/cmake/linux/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -167,7 +167,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/184/bin/cmake/linux/bin/cpack"
+			"value" : "/opt/clion-2021.3.3/bin/cmake/linux/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -179,7 +179,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/184/bin/cmake/linux/bin/ctest"
+			"value" : "/opt/clion-2021.3.3/bin/cmake/linux/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/edu/Desktop/TP-Computacao-Grafica/Generator"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -967,7 +967,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/184/bin/cmake/linux/share/cmake-3.21"
+			"value" : "/opt/clion-2021.3.3/bin/cmake/linux/share/cmake-3.21"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1215,7 +1215,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/edu/Desktop/TP-Computacao-Grafica/Generator/cmake-build-debug"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug"
 		},
 		{
 			"name" : "Generator_IS_TOP_LEVEL",
@@ -1239,7 +1239,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/edu/Desktop/TP-Computacao-Grafica/Generator"
+			"value" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator"
 		},
 		{
 			"name" : "ProcessorCount_cmd_nproc",

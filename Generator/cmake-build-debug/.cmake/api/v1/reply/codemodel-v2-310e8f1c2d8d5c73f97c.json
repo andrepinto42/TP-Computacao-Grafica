@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/edu/Desktop/TP-Computacao-Grafica/Generator/cmake-build-debug",
-		"source" : "/home/edu/Desktop/TP-Computacao-Grafica/Generator"
+		"build" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug",
+		"source" : "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator"
 	},
 	"version" : 
 	{

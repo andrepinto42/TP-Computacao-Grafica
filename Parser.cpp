@@ -15,23 +15,21 @@
 using namespace std;
 
 
-void Parser::XML_Parse(CameraStatus **cam,Transformations** rootTransformations)
-{
+void Parser::XML_Parse(CameraStatus **cam, Transformations **rootTransformations) {
     char nameFile[] = "../solarsystem.xml";
 
     TiXmlDocument doc;
-    if (!doc.LoadFile(nameFile))
-    {
+    if (!doc.LoadFile(nameFile)) {
         std::cout << "Error loading file " << nameFile;
     }
 
-    TiXmlElement *pRoot, *pCamera,*pParms;
-    pRoot = doc.FirstChildElement( "world" );
+    TiXmlElement *pRoot, *pCamera, *pParms;
+    pRoot = doc.FirstChildElement("world");
 
-    if ( !pRoot )
+    if (!pRoot)
         return;
 
-    pCamera= pRoot->FirstChildElement( "camera" );
+    pCamera = pRoot->FirstChildElement("camera");
     //Assign the value so it can be stored in the main class
     if (pCamera)
         *cam = getCameraStatus(pCamera, pParms);
@@ -42,45 +40,45 @@ void Parser::XML_Parse(CameraStatus **cam,Transformations** rootTransformations)
     //  TransformGroupElement(pGroup,rootTransformations);
 
     auto pAnotherGroup = pRoot->FirstChildElement("group");
-    while (pAnotherGroup){
+    while (pAnotherGroup) {
         InsertNextChildrenTransformation(rootTransformations, pAnotherGroup);
         pAnotherGroup = pAnotherGroup->NextSiblingElement("group");
     }
 }
 
 CameraStatus *Parser::getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms) {
-    pParms= pBody->FirstChildElement("position" ); //now params
+    pParms = pBody->FirstChildElement("position"); //now params
 
-    float posX =atof(pParms->Attribute("x"));
-    float posY =atof(pParms->Attribute("y"));
-    float posZ =atof(pParms->Attribute("z"));
+    float posX = atof(pParms->Attribute("x"));
+    float posY = atof(pParms->Attribute("y"));
+    float posZ = atof(pParms->Attribute("z"));
 
-    pParms =pParms->NextSiblingElement();
-    float lookX =atof(pParms->Attribute("x"));
-    float lookY =atof(pParms->Attribute("y"));
-    float lookZ =atof(pParms->Attribute("z"));
-
-
-    pParms =pParms->NextSiblingElement();
-    float upX =atof(pParms->Attribute("x"));
-    float upY =atof(pParms->Attribute("y"));
-    float upZ =atof(pParms->Attribute("z"));
+    pParms = pParms->NextSiblingElement();
+    float lookX = atof(pParms->Attribute("x"));
+    float lookY = atof(pParms->Attribute("y"));
+    float lookZ = atof(pParms->Attribute("z"));
 
 
-    pParms =pParms->NextSiblingElement();
-    float fov =atof(pParms->Attribute("fov"));
-    float near =atof(pParms->Attribute("near"));
-    float far =atof(pParms->Attribute("far"));
+    pParms = pParms->NextSiblingElement();
+    float upX = atof(pParms->Attribute("x"));
+    float upY = atof(pParms->Attribute("y"));
+    float upZ = atof(pParms->Attribute("z"));
 
-    CameraStatus* cam = new CameraStatus(
+
+    pParms = pParms->NextSiblingElement();
+    float fov = atof(pParms->Attribute("fov"));
+    float near = atof(pParms->Attribute("near"));
+    float far = atof(pParms->Attribute("far"));
+
+    CameraStatus *cam = new CameraStatus(
             posX, posY, posZ,
             lookX, lookY, lookZ,
-            upX, upY,upZ,
+            upX, upY, upZ,
             fov, near, far);
     return cam;
 }
 
-void Parser::TransformGroupElement(TiXmlElement *pGroup,Transformations** root) {
+void Parser::TransformGroupElement(TiXmlElement *pGroup, Transformations **root) {
 
     auto pTransform = pGroup->FirstChildElement("transform");
     if (pTransform)
@@ -91,7 +89,7 @@ void Parser::TransformGroupElement(TiXmlElement *pGroup,Transformations** root) 
         InsertModelsName(root, pModels);
 
     auto pAnotherGroup = pGroup->FirstChildElement("group");
-    while (pAnotherGroup){
+    while (pAnotherGroup) {
         InsertNextChildrenTransformation(root, pAnotherGroup);
         pAnotherGroup = pAnotherGroup->NextSiblingElement("group");
     }
@@ -100,61 +98,58 @@ void Parser::TransformGroupElement(TiXmlElement *pGroup,Transformations** root) 
 
 void Parser::InsertModelsName(Transformations *const *root, TiXmlElement *pModels) {
     auto pModel = pModels->FirstChildElement();
-    while(pModel)
-    {
+    while (pModel) {
         // E necessario duplicar a string por alguma razao estranha
-        (*root)->allParentModelsName.push_back(strdup( pModel->Attribute("file")));
+        (*root)->allParentModelsName.push_back(strdup(pModel->Attribute("file")));
         pModel = pModel->NextSiblingElement("model");
     }
     cout << "Inserted these models ->";
-    for (auto string:(*root)->allParentModelsName) {
-        cout << string<<"\n";
+    for (auto string: (*root)->allParentModelsName) {
+        cout << string << "\n";
     }
 }
 
 
 void Parser::InsertNextChildrenTransformation(Transformations *const *root, TiXmlElement *pAnotherGroup) {
     //Create a new Tranformation object and store it in the dataStruct of the parent
-    Transformations* anotherTransformation = new Transformations();
+    Transformations *anotherTransformation = new Transformations();
     (*root)->allChildrenTransformation.push_back(anotherTransformation);
 
-    TransformGroupElement(pAnotherGroup,&anotherTransformation);
+    TransformGroupElement(pAnotherGroup, &anotherTransformation);
 }
 
 
-
 void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *pTransform) {
-    float x,y,z,angle;
+    float x, y, z, angle;
+    TiXmlElement* iterator = pTransform->FirstChildElement();
 
-    auto pTranslate = pTransform->FirstChildElement("translate");
-    while (pTranslate){
-        x = atof( pTranslate->Attribute("x"));
-        y = atof( pTranslate->Attribute("y"));
-        z = atof( pTranslate->Attribute("z"));
-        T_Translate t(x,y,z);
-        (*root)->parentTranslates.push_back(t);
-        pTranslate = pTranslate->NextSiblingElement("translate");
+    while(iterator)
+    {
+        auto name =iterator->Value();
+        x = atof(iterator->Attribute("x"));
+        y = atof(iterator->Attribute("y"));
+        z = atof(iterator->Attribute("z"));
+        if (strcmp(name,"translate") == 0)
+        {
+            auto t = new T_Translate(x, y, z);
+            (*root)->parentAllTransforms.push_back(t);
+        }
+        else if (strcmp(name,"scale") == 0)
+        {
+            auto t = new T_Scale (x, y, z);
+            (*root)->parentAllTransforms.push_back(t);
+        }
+        else if (strcmp(name,"rotate") == 0)
+        {
+            angle = atof(iterator->Attribute("angle"));
+            auto t = new T_Rotate (angle,x, y, z);
+            (*root)->parentAllTransforms.push_back(t);
+        }
+        else
+        {
+            std::cout <<"Error parsing XML in the transform method";
+        }
+
+        iterator = iterator->NextSiblingElement();
     }
-
-    auto pScale = pTransform->FirstChildElement("scale");
-    while (pScale){
-        x = atof( pScale->Attribute("x"));
-        y = atof( pScale->Attribute("y"));
-        z = atof( pScale->Attribute("z"));
-        T_Scale t(x,y,z);
-        (*root)->parentScales.push_back(t);
-        pScale = pScale->NextSiblingElement("scale");
-    }
-
-    auto pRotate = pTransform->FirstChildElement("rotate");
-    while (pRotate){
-        angle = atof( pRotate->Attribute("angle"));
-        x = atof( pRotate->Attribute("x"));
-        y = atof( pRotate->Attribute("y"));
-        z = atof( pRotate->Attribute("z"));
-        T_Rotate t(angle,x,y,z);
-        (*root)->parentRotates.push_back(t);
-        pRotate = pRotate->NextSiblingElement("rotate");
-    }
-
 }

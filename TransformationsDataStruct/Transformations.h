@@ -18,13 +18,16 @@ public:
 
     vector<const char *> allParentModelsName;
     vector<HandlerModel> allModels;
+
+    //Avoid object slicing by storing pointers and not storing fixed sized structs
+    vector<Transform*> parentAllTransforms;
     vector<T_Scale> parentScales;
     vector<T_Rotate> parentRotates;
     vector<T_Translate> parentTranslates;
 
     Transformations();
 
-    void DoSomething(){
+    void PrintInfoAndStoreNameModels(){
         for (int i = 0; i < parentScales.size(); ++i) {
             printf("Scale : ");
             PrintInfo(parentScales[i].x,parentScales[i].y,parentScales[i].z);
@@ -47,7 +50,7 @@ public:
         }
 
         for (auto anotherT:allChildrenTransformation) {
-            anotherT->DoSomething();
+            anotherT->PrintInfoAndStoreNameModels();
         }
     }
 

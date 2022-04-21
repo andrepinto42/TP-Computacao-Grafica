@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 
     Parser::XML_Parse(&cam,&t);
 
-    t->DoSomething();
+    t->PrintInfoAndStoreNameModels();
 
 	// put GLUT's init here
 	glutInit(&argc, argv);

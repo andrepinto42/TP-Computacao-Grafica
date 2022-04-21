@@ -1,3 +1,3 @@
-/home/edu/Desktop/TP-Computacao-Grafica/Generator/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/edu/Desktop/TP-Computacao-Grafica/Generator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/edu/Desktop/TP-Computacao-Grafica/Generator/cmake-build-debug/CMakeFiles/Generator.dir
+/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/CMakeFiles/Generator.dir
