@@ -12,6 +12,7 @@
 #endif
 #include <iostream>
 #include "../catmull_rom.h"
+#include "../Timer.h"
 
 class Transform {
 public:
@@ -75,11 +76,13 @@ class T_Catmull_Rom : public Transform{
     bool align;
     float time;
     float posicaoTeaPotCurva = 0;
+    float increaseInterpolation;
 
 public:
     T_Catmull_Rom(float **allPoints, int numberPoints, bool align, float time) :
-    all_Points(allPoints),number_Points(numberPoints),align(align), time(time)
-    { }
+    all_Points(allPoints),number_Points(numberPoints),align(align), time(time*1000)
+    {
+    }
 
     void Print() override{
         std::cout << " I am Catmull";
@@ -88,11 +91,12 @@ public:
     virtual void Apply()
     {
         glPushMatrix();
-        catmull_rom::RenderCatmull(all_Points,number_Points,posicaoTeaPotCurva);
+        catmull_rom::RenderCatmull(all_Points,number_Points,posicaoTeaPotCurva,align);
 
         //To make sure that no more models are affected by the rotations and translations of the catmull curve
         glPopMatrix();
-        posicaoTeaPotCurva+=0.001f;
+        float increase = Timer::GetTime() / time;
+        posicaoTeaPotCurva+= increase;
     }
 };
 

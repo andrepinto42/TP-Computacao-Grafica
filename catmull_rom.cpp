@@ -117,7 +117,7 @@ void renderCatmullRomCurve(float **all_Points,int numberPoints) {
 }
 
 
-void catmull_rom::RenderCatmull(float **all_Points,int numberPoints,float posicaoTeaPotCurva)
+void catmull_rom::RenderCatmull(float **all_Points,int numberPoints,float posicaoTeaPotCurva,bool align)
 {
     renderCatmullRomCurve(all_Points,numberPoints);
 
@@ -129,7 +129,15 @@ void catmull_rom::RenderCatmull(float **all_Points,int numberPoints,float posica
     //Very Important translate that defines the position to be drawn
     glTranslatef(pos[0],pos[1],pos[2]);
 
-    float x[3] = { deriv[0],deriv[1],deriv[2]};
+    if (align)
+        ApplyRotation(deriv);
+
+    glutWireTeapot(0.1);
+
+}
+
+void catmull_rom::ApplyRotation(const float *deriv) {
+    float x[3] = {deriv[0], deriv[1], deriv[2]};
     normalize(x);
 
     float z[3];
@@ -146,8 +154,5 @@ void catmull_rom::RenderCatmull(float **all_Points,int numberPoints,float posica
 
     //Builds the rotation matrix that specifies the orientantion to follow the trajectory of the curve
     glMultMatrixf(m);
-
-    glutWireTeapot(0.1);
-
 }
 

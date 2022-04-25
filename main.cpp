@@ -20,12 +20,11 @@
 #include "DrawBasicPrimitives/HandlerDrawSquare.h"
 #include "HandleRenderTransform.h"
 #include "catmull_rom.h"
+#include "Timer.h"
 
-float beta = 0;
-float alpha = 0;
-float r = 10;
 CameraStatus* cam;
 Transformations* t;
+
 void changeSize(int w, int h)
 {
 	// prevent a divide by zero, when window is too short
@@ -50,6 +49,7 @@ void changeSize(int w, int h)
 	glViewport(0, 0, w, h);
 }
 
+
 void renderScene(void)
 {
 	// clear buffers
@@ -66,6 +66,8 @@ void renderScene(void)
     //Render the objects with the respectives transformations
     HandleRenderTransform::Render(t);
 
+//    std::cout <<Timer::GetTime()<<"\n";
+    Timer::AdjustTimeBetweenFrame();
 
     // End of frame
 	glutSwapBuffers();
@@ -119,6 +121,7 @@ std::vector<const char*> allNameModels;
 
 int main(int argc, char** argv)
 {
+
     //Initialize the global variable
     t = new Transformations();
 
@@ -139,7 +142,7 @@ int main(int argc, char** argv)
 	glutReshapeFunc(changeSize);
 
     //Por questões de otimizações isto pode ser deixado comentado
-    //	glutIdleFunc(renderScene);
+    glutIdleFunc(renderScene);
 
     glutDisplayFunc(renderScene);
 
@@ -151,7 +154,7 @@ int main(int argc, char** argv)
 	glEnable(GL_CULL_FACE);
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-	// enter GLUT�s main cycle
+    // enter GLUT�s main cycle
 	glutMainLoop();
 	return 1;
 }

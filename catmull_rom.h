@@ -18,7 +18,9 @@
 class catmull_rom {
 
 public:
-    static void RenderCatmull(float **arrayPoints,int numberPoints,float posicaoTeaPotCurva);
+    static void RenderCatmull(float **arrayPoints,int numberPoints,float posicaoTeaPotCurva,bool align);
+
+    static void ApplyRotation(const float *deriv);
 };
 
 

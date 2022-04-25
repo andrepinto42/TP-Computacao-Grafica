@@ -7,6 +7,7 @@ PROJECT(class1)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_executable(${PROJECT_NAME} main.cpp
+		Timer.cpp Timer.h
 		tinyxml/tinyxmlparser.cpp tinyxml/tinyxmlerror.cpp
 		tinyxml/tinyxml.cpp tinyxml/tinyxml.h
 		tinyxml/tinystr.cpp tinyxml/tinystr.h
@@ -19,7 +20,8 @@ add_executable(${PROJECT_NAME} main.cpp
 		HandlerModel.cpp HandlerModel.h
 		TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h
 		HandleRenderTransform.cpp HandleRenderTransform.h
-		catmull_rom.cpp catmull_rom.h TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h)
+		catmull_rom.cpp catmull_rom.h
+		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")
