@@ -16,7 +16,7 @@ using namespace std;
 
 
 void Parser::XML_Parse(CameraStatus **cam, Transformations **rootTransformations) {
-    char nameFile[] = "../solarsystem.xml";
+    char nameFile[] = "../solarsystem_withMeteorite.xml";
 
     TiXmlDocument doc;
     if (!doc.LoadFile(nameFile)) {
@@ -126,6 +126,22 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
     while(iterator)
     {
         auto name =iterator->Value();
+
+        //Check if translate can describe catmull-rom Curves
+        if (strcmp(name,"translate") == 0)
+        {
+            auto time=iterator->Attribute("time");
+            auto align =iterator->Attribute("align");
+            if (time!= nullptr && align != nullptr)
+            {
+                CreateCatmull(root, x, y, z, iterator, time, align);
+
+                //Skip to next iteration
+                iterator = iterator->NextSiblingElement();
+                continue;
+            }
+        }
+
         x = atof(iterator->Attribute("x"));
         y = atof(iterator->Attribute("y"));
         z = atof(iterator->Attribute("z"));
@@ -152,4 +168,44 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
 
         iterator = iterator->NextSiblingElement();
     }
+}
+
+void Parser::CreateCatmull(Transformations *const *root,
+                      float x, float y, float z,
+                      TiXmlElement *iterator, const char *time,const char *align)
+{
+    cout << time << " and align " << align << "\n";
+    vector<float> all_points;
+    auto points = iterator->FirstChildElement();
+    while(points)
+    {
+        x = atof(points->Attribute("x"));
+        y = atof(points->Attribute("y"));
+        z = atof(points->Attribute("z"));
+        all_points.push_back(x);
+        all_points.push_back(y);
+        all_points.push_back(z);
+
+        cout << x <<","<<y<<","<<z<<"\n";
+
+        points = points->NextSiblingElement();
+    }
+
+    bool align_Value = strcmp(align, "True") == 0;
+    int numberOfPoints = all_points.size()/3;
+
+    auto arrayPoints = static_cast<float **>(malloc(sizeof(float *) * numberOfPoints ));
+    for (int i = 0; i < numberOfPoints; ++i) {
+        arrayPoints[i] = static_cast<float *>(malloc(sizeof(float) * 3));
+        //Alocate space for the 3 float coordenates
+        for (int j = 0; j < 3; ++j) {
+            arrayPoints[i][j] = all_points[i*3 + j];
+        }
+    }
+
+    //Create a catmull struct to store the necessary data
+    auto t = new T_Catmull_Rom(arrayPoints,  numberOfPoints, align_Value, atof(time));
+    (*root)->parentAllTransforms.push_back(t);
+
+    all_points.clear();
 }

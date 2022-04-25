@@ -19,6 +19,8 @@
 #include "DrawBasicPrimitives/HandlerDrawSquare.h"
 #include "DrawBasicPrimitives/HandlerDrawSquare.h"
 #include "HandleRenderTransform.h"
+#include "catmull_rom.h"
+
 float beta = 0;
 float alpha = 0;
 float r = 10;
@@ -61,7 +63,9 @@ void renderScene(void)
     // put drawing instructions here
     Axes::DrawAxes();
 
+    //Render the objects with the respectives transformations
     HandleRenderTransform::Render(t);
+
 
     // End of frame
 	glutSwapBuffers();
@@ -111,15 +115,7 @@ void processSpecialKeys(int key, int xx, int yy) {
     glutPostRedisplay();
 }
 
-void printInfo() {
-
-	printf("Vendor: %s\n", glGetString(GL_VENDOR));
-	printf("Renderer: %s\n", glGetString(GL_RENDERER));
-	printf("Version: %s\n", glGetString(GL_VERSION));
-}
-
 std::vector<const char*> allNameModels;
-
 
 int main(int argc, char** argv)
 {

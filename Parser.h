@@ -24,6 +24,10 @@ public:
     static void InsertNextChildrenTransformation(Transformations *const *root, TiXmlElement *pAnotherGroup);
 
     static void InsertModelsName(Transformations *const *root, TiXmlElement *pModels);
+
+    static void
+    CreateCatmull(Transformations *const *root, float x, float y, float z, TiXmlElement *iterator, const char *time,
+                  const char *align);
 };
 
 

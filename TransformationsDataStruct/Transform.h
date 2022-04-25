@@ -11,6 +11,7 @@
 #include <GL/glut.h>
 #endif
 #include <iostream>
+#include "../catmull_rom.h"
 
 class Transform {
 public:
@@ -61,6 +62,37 @@ public:
     virtual void Apply()
     {
         glRotatef(angle,x,y,z);
+    }
+};
+
+//3 PHASE OF PROJECT
+//CATMULL ROM CURVES STRUCTURE
+
+class T_Catmull_Rom : public Transform{
+    // Points that make up the loop for catmull-rom interpolation
+    float **all_Points;
+    int number_Points;
+    bool align;
+    float time;
+    float posicaoTeaPotCurva = 0;
+
+public:
+    T_Catmull_Rom(float **allPoints, int numberPoints, bool align, float time) :
+    all_Points(allPoints),number_Points(numberPoints),align(align), time(time)
+    { }
+
+    void Print() override{
+        std::cout << " I am Catmull";
+    }
+
+    virtual void Apply()
+    {
+        glPushMatrix();
+        catmull_rom::RenderCatmull(all_Points,number_Points,posicaoTeaPotCurva);
+
+        //To make sure that no more models are affected by the rotations and translations of the catmull curve
+        glPopMatrix();
+        posicaoTeaPotCurva+=0.001f;
     }
 };
 

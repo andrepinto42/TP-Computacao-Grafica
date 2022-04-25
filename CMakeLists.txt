@@ -18,8 +18,8 @@ add_executable(${PROJECT_NAME} main.cpp
 		DrawBasicPrimitives/DrawCone.cpp DrawBasicPrimitives/DrawCone.h
 		HandlerModel.cpp HandlerModel.h
 		TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h
-		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h
-		HandleRenderTransform.cpp HandleRenderTransform.h)
+		HandleRenderTransform.cpp HandleRenderTransform.h
+		catmull_rom.cpp catmull_rom.h TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

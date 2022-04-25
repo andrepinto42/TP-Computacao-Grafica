@@ -6,8 +6,8 @@
 #define PARSER_CPP_TRANSFORMATIONS_H
 #include <vector>
 #include "../HandlerModel.h"
-#include "Transform.h"
 #include "StoreModels.h"
+#include "Transform.h"
 
 using namespace std;
 
@@ -21,27 +21,25 @@ public:
 
     //Avoid object slicing by storing pointers and not storing fixed sized structs
     vector<Transform*> parentAllTransforms;
-    vector<T_Scale> parentScales;
-    vector<T_Rotate> parentRotates;
-    vector<T_Translate> parentTranslates;
 
     Transformations();
 
     void PrintInfoAndStoreNameModels(){
-        for (int i = 0; i < parentScales.size(); ++i) {
-            printf("Scale : ");
-            PrintInfo(parentScales[i].x,parentScales[i].y,parentScales[i].z);
-        }
 
-        for (int i = 0; i < parentTranslates.size(); ++i) {
-            printf("Translate : ");
-            PrintInfo(parentTranslates[i].x,parentTranslates[i].y,parentTranslates[i].z);
-        }
-
-        for (int i = 0; i < parentRotates.size(); ++i) {
-            printf("Rotate : ");
-            PrintInfo(parentRotates[i].angle,parentRotates[i].x,parentRotates[i].y,parentRotates[i].z);
-        }
+//        for (int i = 0; i < parentScales.size(); ++i) {
+//            printf("Scale : ");
+//            PrintInfo(parentScales[i].x,parentScales[i].y,parentScales[i].z);
+//        }
+//
+//        for (int i = 0; i < parentTranslates.size(); ++i) {
+//            printf("Translate : ");
+//            PrintInfo(parentTranslates[i].x,parentTranslates[i].y,parentTranslates[i].z);
+//        }
+//
+//        for (int i = 0; i < parentRotates.size(); ++i) {
+//            printf("Rotate : ");
+//            PrintInfo(parentRotates[i].angle,parentRotates[i].x,parentRotates[i].y,parentRotates[i].z);
+//        }
 
         for (int i = 0; i < allParentModelsName.size(); ++i) {
             std::cout << "Goint to store this file -> " << allParentModelsName[i]<<"\n";
