@@ -1,3 +1,0 @@
-/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/cmake-build-debug/CMakeFiles/class1.dir
