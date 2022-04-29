@@ -122,10 +122,50 @@ float yaw = 0.0f; // The rotation along the y axis
 float roll = 0.0f; // The rotation along the z axis
 
 void CameraStatus::CameraLookUp(){
-    roll++;
+//    roll++;
+
+    auto direction =GetDirection(
+            posX,posY,posZ,
+            lookX,lookY,lookZ);
+
+    auto dir = CrossProduct(Vector3(0.f,1.f,0.f),*direction);
+
+    auto interpolatedVector = Interpolate(dir,direction,0.1f);
+
+    float distance = Distance(posX,posY,posZ,
+                              lookX,lookY,lookZ);
+
+    interpolatedVector->x = interpolatedVector->x * distance;
+    interpolatedVector->y = interpolatedVector->y * distance;
+    interpolatedVector->z = interpolatedVector->z * distance;
+
+    lookX = interpolatedVector->x;
+    lookY = interpolatedVector->y;
+    lookZ = interpolatedVector->z;
+
+    free(dir);
+    free(interpolatedVector);
 }
 void CameraStatus::CameraLookDown(){
-    roll--;
+//    roll--;
+    auto direction =GetDirection(
+            posX,posY,posZ,
+            lookX,lookY,lookZ);
+
+    float distXZ = sqrt( direction->x * direction->x + direction->z * direction->z);
+    double angle =asin( direction->x / distXZ);
+
+    float dist = DistanceLookAt();
+    std::cout << "Polar : dist= " <<dist<<" angle-> "<<angle<<"\n";
+
+    //Increase by a little
+    angle +=0.01f;
+
+    lookX = sin(angle) * dist;
+    lookZ = cos(angle) * dist;
+
+    std::cout << lookX<<" " <<lookY<<" "<< lookZ<<"\n";
+    free(direction);
 }
 
 
@@ -135,6 +175,7 @@ void CameraStatus::CameraLookRight(){
 void CameraStatus::CameraLookLeft(){
     yaw++;
 }
+
 void CameraStatus::RenderCameraScene() {
     gluLookAt(posX, posY, posZ,
               lookX, lookY, lookZ,
@@ -167,4 +208,21 @@ Vector3* CameraStatus::GetDirection(Vector3 position,Vector3 lookPosition){
     directionZ /= magnitude;
 
     return new Vector3(directionX,directionY,directionZ);
+}
+
+Vector3* CameraStatus::Interpolate(Vector3 *vector1, Vector3 *vector2, float interpolation) {
+    Vector3* vect = new Vector3(
+            vector1->x * (1 - interpolation) + vector2->x * interpolation,
+            vector1->y * (1 - interpolation) + vector2->y * interpolation,
+            vector1->z * (1 - interpolation) + vector2->z * interpolation);
+    return vect;
+}
+
+float CameraStatus::Distance(float x, float y, float z, float x1, float y1, float z1) {
+    return sqrt( pow(x-x1,2) + pow(y-y1,2) +pow(z-z1,2));
+}
+
+float CameraStatus::DistanceLookAt() {
+    return Distance(posX,posY,posZ,
+             lookX,lookY,lookZ);
 }

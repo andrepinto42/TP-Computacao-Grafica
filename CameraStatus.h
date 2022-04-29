@@ -56,6 +56,12 @@ public:
     void CameraLookRight();
 
     void CameraLookLeft();
+
+    static Vector3 *Interpolate(Vector3 *vector1, Vector3 *vector2, float interpolation);
+
+    float Distance(float x, float y, float z, float x1, float y1, float z1);
+
+    float DistanceLookAt();
 };
 
 

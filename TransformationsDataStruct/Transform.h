@@ -66,6 +66,31 @@ public:
     }
 };
 
+
+class T_Rotate_Time : public Transform{
+
+public:
+    float time,x,y,z;
+    float current_angle=0.f;
+    T_Rotate_Time(float time,float x,float y,float z):time(time*1000),x(x),y(y),z(z){}
+    void Print() override{
+        std::cout << " I am Rotate with Time";
+    }
+
+    virtual void Apply()
+    {
+        //10 ms ultima frame
+        //10000ms para chegar a 360
+        //Regra de 3 simples
+        // 10 000 - 360
+        // 10     - a
+        //Tem de incrementar cerca de 10*360/10 000
+
+        current_angle += ((float) Timer::GetTime() * 360)/ time ;
+        glRotatef(current_angle,x,y,z);
+    }
+
+};
 //3 PHASE OF PROJECT
 //CATMULL ROM CURVES STRUCTURE
 

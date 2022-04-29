@@ -35,10 +35,6 @@ void Parser::XML_Parse(CameraStatus **cam, Transformations **rootTransformations
         *cam = getCameraStatus(pCamera, pParms);
 
     //Second Phase
-    //pGroup = pRoot->FirstChildElement("group");
-    //if (pGroup)
-    //  TransformGroupElement(pGroup,rootTransformations);
-
     auto pAnotherGroup = pRoot->FirstChildElement("group");
     while (pAnotherGroup) {
         InsertNextChildrenTransformation(rootTransformations, pAnotherGroup);
@@ -132,6 +128,7 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
         {
             auto time=iterator->Attribute("time");
             auto align =iterator->Attribute("align");
+            //Check if its the special behaviour of the catmull-rom
             if (time!= nullptr && align != nullptr)
             {
                 CreateCatmull(root, x, y, z, iterator, time, align);
@@ -157,8 +154,20 @@ void Parser::InsertTransformations(Transformations *const *root, TiXmlElement *p
         }
         else if (strcmp(name,"rotate") == 0)
         {
-            angle = atof(iterator->Attribute("angle"));
-            auto t = new T_Rotate (angle,x, y, z);
+            Transform* t;
+            const char* timeRotate;
+            //Check if exists the special atribute time
+            if ( (timeRotate = iterator->Attribute("time")) != nullptr)
+            {
+                float timeSeconds = atof(timeRotate);
+                t = new T_Rotate_Time(timeSeconds,x,y,z);
+            }
+            else
+            {
+                angle = atof(iterator->Attribute("angle"));
+                t = new T_Rotate (angle,x, y, z);
+            }
+
             (*root)->parentAllTransforms.push_back(t);
         }
         else
