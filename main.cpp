@@ -21,6 +21,7 @@
 #include "HandleRenderTransform.h"
 #include "catmull_rom.h"
 #include "Timer.h"
+#include "BezierCurves.h"
 
 CameraStatus* cam;
 Transformations* t;
@@ -62,6 +63,9 @@ void renderScene(void)
 
     // put drawing instructions here
     Axes::DrawAxes();
+
+    BezierCurves::DrawBezier();
+
 
     //Render the objects with the respectives transformations
     HandleRenderTransform::Render(t);
