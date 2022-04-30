@@ -22,7 +22,7 @@ void DONTKNOW();
 
 void DrawQuadsWith2Curves(double **arrayCurve1, double **arrayCurve2, int num);
 
-int numSegments = 100;
+int numSegments = 5;
 
 int **all_Curves;
 float **all_Points;
@@ -104,16 +104,16 @@ int ParseTeapotPatch::Stuff() {
 }
 
 void ParseTeapotPatch::Render() {
-
-    glBegin(GL_LINE_STRIP);
-    for (int j = 0; j <totalSize ; ++j) {
-        int *curva = all_Curves[j];
-        for (int i = 0; i < 16; ++i) {
-            int index = curva[i];
-            p_2_GL( all_Points[index]);
-        }
-    }
-    glEnd();
+//
+//    glBegin(GL_LINE_STRIP);
+//    for (int j = 0; j <totalSize ; ++j) {
+//        int *curva = all_Curves[j];
+//        for (int i = 0; i < 16; ++i) {
+//            int index = curva[i];
+//            p_2_GL( all_Points[index]);
+//        }
+//    }
+//    glEnd();
 
 //    int *curva = all_Curves[1];
 //
@@ -127,7 +127,7 @@ void ParseTeapotPatch::Render() {
 //
 //    }
 
-//    DONTKNOW();
+    DONTKNOW();
 }
 
 int weight_ARRAY[16]={
@@ -137,15 +137,16 @@ int weight_ARRAY[16]={
         455,105,15,1
 };
 
+void v3_2_GL(double* d)
+{
+    glVertex3d(d[0],d[1],d[2]);
+}
+
 void DONTKNOW(){
 
-    double*** storePoints = static_cast<double ***>(malloc(sizeof(double **) * totalSize));
 
     for (int k = 0; k < totalSize; ++k) {
-
         int *curva = all_Curves[k];
-
-        storePoints[k] = static_cast<double **>(malloc(sizeof(double *) * numSegments));
 
         for (int i = 0; i <= numSegments; ++i) {
             float t = i / (float)numSegments;
@@ -155,37 +156,47 @@ void DONTKNOW(){
             finalPoint[1] =0.f;
             finalPoint[2] =0.f;
 
-            for (int j = 0; j < 16; ++j) {
-                //Find the weight of the point based on its index
-                double weight = pow(1-t,15-j) *weight_ARRAY[j]*pow(t,j);
+            //203, 203, 203, 203, 204, 205, 206, 207, 208, 208, 208, 208, 209, 210, 211, 212
 
-                int index = curva[j];
-                //Get the 3d_POINT from our struct
-                float* vector3_Point = all_Points[index];
+            //Get the 3d_POINT from our struct
+            //0,-1.5,2
+            glBegin(GL_QUADS);
+            for (int j = 0; j < 4; ++j) {
+                int index1 = curva[j*4 ];
+                int index2 = curva[j*4 +1];
+                int index3 = curva[j*4 +2];
+                int index4 = curva[j*4 +3];
 
-                finalPoint[0] += vector3_Point[0]*weight;
-                finalPoint[1] += vector3_Point[1]*weight;
-                finalPoint[2] += vector3_Point[2]*weight;
+                float* P1 = all_Points[index1];
+                float* P2 = all_Points[index2];
+                float* P3 = all_Points[index3];
+                float* P4 = all_Points[index4];
+
+                // compute coefficients
+                float k1 = (1 - t) * (1 - t) * (1 - t);
+                float k2 = 3 * (1 - t) * (1 - t) * t;
+                float k3 = 3 * (1 - t) * t * t;
+                float k4 = t * t * t;
+                // weight the four control points using coefficients
+                finalPoint[0] = P1[0] * k1 + P2[0] * k2 + P3[0] * k3 + P4[0] * k4;
+                finalPoint[1] = P1[1] * k1 + P2[1] * k2 + P3[1] * k3 + P4[1] * k4;
+                finalPoint[2] = P1[2] * k1 + P2[2] * k2 + P3[2] * k3 + P4[2] * k4;
+
+                v3_2_GL(finalPoint);
             }
-
-            //Store the point so it can be used later
-            storePoints[k][i] = finalPoint;
+            glEnd();
         }
 
 
     }
 
     //Start Drawing
-    for (int i = 0; i < totalSize-1; ++i) {
-        DrawQuadsWith2Curves(storePoints[i],storePoints[i+1],numSegments);
-    }
+//    for (int i = 0; i < totalSize-1; ++i) {
+//        DrawQuadsWith2Curves(storePoints[i],storePoints[i+1],numSegments);
+//    }
 
 }
 
-void v3_2_GL(double* d)
-{
-    glVertex3d(d[0],d[1],d[2]);
-}
 void DrawQuadsWith2Curves(double **arrayCurve1, double **arrayCurve2, int numSegments) {
     glBegin(GL_TRIANGLES);
     //Draw 2 triangle based on 2 curves that one next to another
