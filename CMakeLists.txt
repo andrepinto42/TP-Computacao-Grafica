@@ -21,7 +21,7 @@ add_executable(${PROJECT_NAME} main.cpp
 		TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h
 		HandleRenderTransform.cpp HandleRenderTransform.h
 		catmull_rom.cpp catmull_rom.h
-		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h BezierCurves.cpp BezierCurves.h)
+		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h BezierCurves.cpp BezierCurves.h ParseTeapotPatch.cpp ParseTeapotPatch.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

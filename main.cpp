@@ -5,7 +5,7 @@
 #endif
 
 #define _USE_MATH_DEFINES
-
+#include "ParseTeapotPatch.h"
 #include <typeinfo>
 #include <math.h>
 #include <stdio.h>
@@ -64,7 +64,8 @@ void renderScene(void)
     // put drawing instructions here
     Axes::DrawAxes();
 
-    BezierCurves::DrawBezier();
+    //Totalmente inutil :)
+    //BezierCurves::DrawBezier();
 
 
     //Render the objects with the respectives transformations
@@ -132,6 +133,8 @@ int main(int argc, char** argv)
     Parser::XML_Parse(&cam,&t);
 
     t->PrintInfoAndStoreNameModels();
+
+    ParseTeapotPatch::Stuff();
 
 	// put GLUT's init here
 	glutInit(&argc, argv);

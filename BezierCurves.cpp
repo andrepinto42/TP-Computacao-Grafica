@@ -30,7 +30,7 @@ Vector3 add(Vector3 v,Vector3 v2)
     return {v.x +v2.x,v.y+v2.y,v.z+v2.z};
 }
 float radius = 1.f;
-int maxNumberSegmentsCurve = 15;
+int maxNumberSegmentsCurve = 5;
 void BezierCurves::DrawBezier()
 {
     float angleDiff = (1.f/(float) maxNumberSegmentsCurve) *M_PI*2;
@@ -70,11 +70,14 @@ void v3_2_GL(Vector3 v)
     glVertex3d(v.x,v.y,v.z);
 }
 void BezierCurves::DrawQuadsWith2Curves(std::vector<Vector3> vector1, std::vector<Vector3> vector2) {
-    glBegin(GL_QUADS);
+    glBegin(GL_TRIANGLES);
     //Draw a quad based on 2 curves that one next to another
     for (int i = 0; i < vector1.size()-1; ++i) {
         v3_2_GL(vector2[i]);
         v3_2_GL(vector1[i]);
+        v3_2_GL(vector1[i+1]);
+
+        v3_2_GL(vector2[i]);
         v3_2_GL(vector1[i+1]);
         v3_2_GL(vector2[i+1]);
     }
