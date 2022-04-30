@@ -66,7 +66,7 @@ void renderScene(void)
 
     //Totalmente inutil :)
     //BezierCurves::DrawBezier();
-
+    ParseTeapotPatch::Render();
 
     //Render the objects with the respectives transformations
     HandleRenderTransform::Render(t);

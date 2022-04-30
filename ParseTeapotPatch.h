@@ -10,6 +10,7 @@ class ParseTeapotPatch {
 
 public:
     static int Stuff();
+    static void Render();
 };
 
 
