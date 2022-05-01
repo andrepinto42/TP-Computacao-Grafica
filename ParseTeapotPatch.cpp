@@ -22,7 +22,7 @@ void DONTKNOW();
 
 void DrawQuadsWith2Curves(double **arrayCurve1, double **arrayCurve2, int num);
 
-int numSegments = 5;
+int numSegments = 16;
 
 int **all_Curves;
 float **all_Points;
@@ -144,9 +144,9 @@ void v3_2_GL(double* d)
 
 void DONTKNOW(){
 
-
     for (int k = 0; k < totalSize; ++k) {
         int *curva = all_Curves[k];
+        glBegin(GL_LINE_STRIP);
 
         for (int i = 0; i <= numSegments; ++i) {
             float t = i / (float)numSegments;
@@ -160,7 +160,6 @@ void DONTKNOW(){
 
             //Get the 3d_POINT from our struct
             //0,-1.5,2
-            glBegin(GL_QUADS);
             for (int j = 0; j < 4; ++j) {
                 int index1 = curva[j*4 ];
                 int index2 = curva[j*4 +1];
@@ -184,8 +183,8 @@ void DONTKNOW(){
 
                 v3_2_GL(finalPoint);
             }
-            glEnd();
         }
+        glEnd();
 
 
     }
