@@ -132,7 +132,7 @@ void catmull_rom::RenderCatmull(float **all_Points,int numberPoints,float posica
     if (align)
         ApplyRotation(deriv);
 
-    glutWireTeapot(0.1);
+//    glutWireTeapot(0.1);
 
 }
 

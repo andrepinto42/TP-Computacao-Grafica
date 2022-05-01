@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include <GL/glew.h>
+#include "Transformations.h"
 #include "StoreModels.h"
 #include "../HandlerModel.h"
 
@@ -31,12 +33,18 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
 
 
         std::vector<Vector3> allVertices;
+        std::vector<float> novosPontos;
 
         pVertex = pConfig->NextSiblingElement();
         for (int j = 0; j < vertexCount; ++j) {
             float xVertex=  atof(pVertex->Attribute("x"));
             float yVertex=  atof(pVertex->Attribute("y"));
             float zVertex=  atof(pVertex->Attribute("z"));
+
+            novosPontos.push_back(xVertex);
+            novosPontos.push_back(yVertex);
+            novosPontos.push_back(zVertex);
+
 
             Vector3 v(xVertex,yVertex,zVertex);
             allVertices.push_back(v);
@@ -46,6 +54,20 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
 
         HandlerModel model;
         model.allVertices = allVertices;
+
+        //Store it and increment by 1
+        model.currentPositionVBO = Transformations::globalCurrentPosition;
+        Transformations::globalCurrentPosition +=1;
+
+        model.buffer = Transformations::buffers[/*Increment */model.currentPositionVBO];
+
+        glBindBuffer(GL_ARRAY_BUFFER, model.buffer);
+        glBufferData(GL_ARRAY_BUFFER,
+                     novosPontos.size() * sizeof(float),
+                     &(novosPontos[0]),
+                     GL_STATIC_DRAW);
+
+        std::cout <<"Global position of "<< model.currentPositionVBO<<"\n";
 
         allModelsClass->push_back(model);
     }

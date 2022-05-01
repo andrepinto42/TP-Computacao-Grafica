@@ -17,6 +17,8 @@
 
 class HandlerModel {
 public:
+    int currentPositionVBO;
+    GLuint buffer;
     std::vector<Vector3> allVertices;
     void Draw();
 };

@@ -115,11 +115,11 @@ public:
 
     virtual void Apply()
     {
-        glPushMatrix();
+//        glPushMatrix();
         catmull_rom::RenderCatmull(all_Points,number_Points,posicaoTeaPotCurva,align);
 
         //To make sure that no more models are affected by the rotations and translations of the catmull curve
-        glPopMatrix();
+//        glPopMatrix();
         float increase = Timer::GetTime() / time;
         posicaoTeaPotCurva+= increase;
     }

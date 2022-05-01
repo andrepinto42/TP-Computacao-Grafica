@@ -127,7 +127,7 @@ void ParseTeapotPatch::Render() {
 //
 //    }
 
-    DONTKNOW();
+//    DONTKNOW();
 }
 
 int weight_ARRAY[16]={

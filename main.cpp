@@ -1,3 +1,4 @@
+#include <GL/glew.h>
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
@@ -22,6 +23,7 @@
 #include "catmull_rom.h"
 #include "Timer.h"
 #include "BezierCurves.h"
+#include "TransformationsDataStruct/Transformations.h"
 
 CameraStatus* cam;
 Transformations* t;
@@ -127,14 +129,6 @@ std::vector<const char*> allNameModels;
 int main(int argc, char** argv)
 {
 
-    //Initialize the global variable
-    t = new Transformations();
-
-    Parser::XML_Parse(&cam,&t);
-
-    t->PrintInfoAndStoreNameModels();
-
-    ParseTeapotPatch::Stuff();
 
 	// put GLUT's init here
 	glutInit(&argc, argv);
@@ -160,6 +154,27 @@ int main(int argc, char** argv)
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+
+#ifndef __APPLE__
+    glewInit();
+#endif
+
+    //Initialize the global variable
+    t = new Transformations();
+
+    Parser::XML_Parse(&cam,&t);
+
+    //Initialize the static variables
+
+    glGenBuffers(40,Transformations::buffers);
+
+    t->PrintInfoAndStoreNameModels();
+
+    ParseTeapotPatch::Stuff();
+
+
+    glEnableClientState(GL_VERTEX_ARRAY);
 
     // enter GLUT�s main cycle
 	glutMainLoop();

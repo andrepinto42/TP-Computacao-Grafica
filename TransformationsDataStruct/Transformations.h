@@ -13,6 +13,9 @@ using namespace std;
 
 class Transformations {
 public:
+    inline static GLuint buffers[40] ;
+    inline static int globalCurrentPosition = 0;
+
     //Very important to store a pointer because its going to be need to be derefenced
     vector<Transformations*> allChildrenTransformation;
 
@@ -25,21 +28,6 @@ public:
     Transformations();
 
     void PrintInfoAndStoreNameModels(){
-
-//        for (int i = 0; i < parentScales.size(); ++i) {
-//            printf("Scale : ");
-//            PrintInfo(parentScales[i].x,parentScales[i].y,parentScales[i].z);
-//        }
-//
-//        for (int i = 0; i < parentTranslates.size(); ++i) {
-//            printf("Translate : ");
-//            PrintInfo(parentTranslates[i].x,parentTranslates[i].y,parentTranslates[i].z);
-//        }
-//
-//        for (int i = 0; i < parentRotates.size(); ++i) {
-//            printf("Rotate : ");
-//            PrintInfo(parentRotates[i].angle,parentRotates[i].x,parentRotates[i].y,parentRotates[i].z);
-//        }
 
         for (int i = 0; i < allParentModelsName.size(); ++i) {
             std::cout << "Goint to store this file -> " << allParentModelsName[i]<<"\n";

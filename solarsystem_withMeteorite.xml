@@ -1,6 +1,6 @@
 <world>
     <camera>
-        <position x=10 y=10 z=10 />
+        <position x=100 y=10 z=100 />
         <lookAt x=0 y=0 z=0 />
         <up x=0 y=1, z=0 />
         <projection fov=60 near=1 far=1000 />
@@ -21,26 +21,17 @@
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
             </models>
         </group>
-        <group>
-            <transform>
-                <translate time="10" align="True">
-                    <point x="1" y="0" z="1" />
-                    <point x="0.707" y="0.707" z="1"/>
-                    <point x="0" y="1" z="1" />
-                    <point x="-1" y="0" z="1" />
-                </translate>
-            </transform>
-        </group>
+
         <!--MERCÚRIO-->
         <group>
             <transform>
                 <translate x=30 y=-0.38 z=0/>
                 <scale x=0.38 y=0.38 z=0.38/>
                 <translate time="100" align="True">
-                    <point x="1" y="0" z="1" />
-                    <point x="0.707" y="0.707" z="1"/>
-                    <point x="0" y="1" z="1" />
-                    <point x="-1" y="0" z="1" />
+                    <point x="0" y="0" z="0" />
+                    <point x="-80" y="0" z="-80"/>
+                    <point x="-160" y="1" z="0" />
+                    <point x="-80" y="0" z="80" />
                 </translate>
             </transform>
             <models>
