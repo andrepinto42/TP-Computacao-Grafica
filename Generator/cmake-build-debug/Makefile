@@ -249,6 +249,30 @@ Vector3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/Vector3.cpp.s
 .PHONY : Vector3.cpp.s
 
+bezierPatch.o: bezierPatch.cpp.o
+.PHONY : bezierPatch.o
+
+# target to build an object file
+bezierPatch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/bezierPatch.cpp.o
+.PHONY : bezierPatch.cpp.o
+
+bezierPatch.i: bezierPatch.cpp.i
+.PHONY : bezierPatch.i
+
+# target to preprocess a source file
+bezierPatch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/bezierPatch.cpp.i
+.PHONY : bezierPatch.cpp.i
+
+bezierPatch.s: bezierPatch.cpp.s
+.PHONY : bezierPatch.s
+
+# target to generate assembly for a file
+bezierPatch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Generator.dir/build.make CMakeFiles/Generator.dir/bezierPatch.cpp.s
+.PHONY : bezierPatch.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -393,6 +417,9 @@ help:
 	@echo "... Vector3.o"
 	@echo "... Vector3.i"
 	@echo "... Vector3.s"
+	@echo "... bezierPatch.o"
+	@echo "... bezierPatch.i"
+	@echo "... bezierPatch.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

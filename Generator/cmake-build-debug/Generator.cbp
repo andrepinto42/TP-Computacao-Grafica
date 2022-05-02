@@ -112,6 +112,12 @@
 		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/Vector3.h">
 			<Option target="Generator"/>
 		</Unit>
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/bezierPatch.cpp">
+			<Option target="Generator"/>
+		</Unit>
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/bezierPatch.h">
+			<Option target="Generator"/>
+		</Unit>
 		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/main.cpp">
 			<Option target="Generator"/>
 		</Unit>

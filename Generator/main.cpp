@@ -8,6 +8,7 @@
 #include "GenerateCone.h"
 #include "GenerateRing.h"
 #include "Vector3.h"
+#include "bezierPatch.h"
 
 void DrawSquare(float x, float z, float length);
 
@@ -114,6 +115,15 @@ int main(int argc, char* argv[]) {
         GenerateRing::GenerateRingFunc(smallerRadius,biggerRadius,slices);
 
         SaveAllVerticesXML(argv[5]);
+    }
+    else if(strcmp("bezier",argv[1]) == 0)
+    {
+        auto nameFileIn = argv[2];
+        int tesselation = atoi(argv[3]);
+        auto nameFileOut = argv[4];
+
+        bezierParser(tesselation,nameFileIn,nameFileOut);
+        SaveAllVerticesXML(nameFileOut);
     }
     else
     {

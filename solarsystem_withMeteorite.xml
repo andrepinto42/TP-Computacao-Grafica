@@ -21,6 +21,22 @@
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
             </models>
         </group>
+        <!--Teapot asteroid-->
+        <group>
+            <transform>
+                <translate x=0 y=-20 z=0/>
+                <translate time="24" align="True">
+                    <point x="0" y="0" z="0" />
+                    <point x="-30" y="-5" z="-30"/>
+                    <point x="-90" y="-10" z="0" />
+                    <point x="-30" y="0" z="30" />
+                </translate>
+            </transform>
+            <models>
+                <model file="../Generator/cmake-build-debug/bezier.3d"/>
+            </models>
+        </group>
+
 
         <!--MERCÚRIO-->
         <group>
@@ -33,6 +49,7 @@
                     <point x="-30" y="0" z="30" />
                 </translate>
                 <scale x=0.38 y=0.38 z=0.38/>
+                <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
@@ -51,7 +68,7 @@
                 </translate>
 
                 <scale x=0.95 y=0.95 z=0.95/>
-
+                <rotate time=10 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
@@ -67,6 +84,7 @@
                     <point x="-80" y="1" z="0" />
                     <point x="-40" y="0" z="40" />
                 </translate>
+                <rotate time=10 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
@@ -76,10 +94,10 @@
                 <transform>
                     <translate x=0 y=2 z=3/>
                     <translate time="100" align="True">
-                        <point x="0" y="0" z="0" />
-                        <point x="3" y="0" z="3" />
-                        <point x="0" y="0" z="-6" />
-                        <point x="-3" y="0" z="-3" />
+                        <point x="0" y="-1" z="0" />
+                        <point x="3" y="-1" z="-3" />
+                        <point x="0" y="-1" z="-6" />
+                        <point x="-3" y="-1" z="-3" />
                     </translate>
                     <scale x=0.2 y=0.2 z=0.2/>
                 </transform>
@@ -101,6 +119,7 @@
                 </translate>
 
                 <scale x=0.53 y=0.53 z=0.53/>
+                <rotate time=10 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
@@ -137,6 +156,7 @@
                     <point x="-80" y="0" z="80" />
                 </translate>
                 <scale x=11.2 y=11.2 z=11.2/>
+                <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
@@ -193,6 +213,7 @@
                     <point x="-110" y="0" z="110" />
                 </translate>
                 <scale x=9.45 y=9.45 z=9.45/>
+                <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
@@ -219,6 +240,7 @@
                     <point x="-130" y="0" z="130" />
                 </translate>
                 <scale x=4 y=4 z=4/>
+                <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>
@@ -235,6 +257,7 @@
                     <point x="-145" y="0" z="145" />
                 </translate>
                 <scale x=3.88 y=3.88 z=3.88/>
+                <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphere2.3d"/>

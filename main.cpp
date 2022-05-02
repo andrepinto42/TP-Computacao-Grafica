@@ -170,9 +170,11 @@ int main(int argc, char** argv)
 
     t->PrintInfoAndStoreNameModels();
 
-    ParseTeapotPatch::Stuff();
+//    ParseTeapotPatch::Stuff();
 
     glEnableClientState(GL_VERTEX_ARRAY);
+
+
 
     // enter GLUT�s main cycle
 	glutMainLoop();

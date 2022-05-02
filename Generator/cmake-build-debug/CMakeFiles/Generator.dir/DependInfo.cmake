@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateRing.cpp" "CMakeFiles/Generator.dir/GenerateRing.cpp.o" "gcc" "CMakeFiles/Generator.dir/GenerateRing.cpp.o.d"
   "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateSphere.cpp" "CMakeFiles/Generator.dir/GenerateSphere.cpp.o" "gcc" "CMakeFiles/Generator.dir/GenerateSphere.cpp.o.d"
   "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/Vector3.cpp" "CMakeFiles/Generator.dir/Vector3.cpp.o" "gcc" "CMakeFiles/Generator.dir/Vector3.cpp.o.d"
+  "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/bezierPatch.cpp" "CMakeFiles/Generator.dir/bezierPatch.cpp.o" "gcc" "CMakeFiles/Generator.dir/bezierPatch.cpp.o.d"
   "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/main.cpp" "CMakeFiles/Generator.dir/main.cpp.o" "gcc" "CMakeFiles/Generator.dir/main.cpp.o.d"
   "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinystr.cpp" "CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o" "gcc" "CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o.d"
   "/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinyxml.cpp" "CMakeFiles/Generator.dir/tinyxml/tinyxml.cpp.o" "gcc" "CMakeFiles/Generator.dir/tinyxml/tinyxml.cpp.o.d"

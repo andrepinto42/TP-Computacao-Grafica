@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Generator.dir/GenerateSphere.cpp.o.d"
   "CMakeFiles/Generator.dir/Vector3.cpp.o"
   "CMakeFiles/Generator.dir/Vector3.cpp.o.d"
+  "CMakeFiles/Generator.dir/bezierPatch.cpp.o"
+  "CMakeFiles/Generator.dir/bezierPatch.cpp.o.d"
   "CMakeFiles/Generator.dir/main.cpp.o"
   "CMakeFiles/Generator.dir/main.cpp.o.d"
   "CMakeFiles/Generator.dir/tinyxml/tinystr.cpp.o"

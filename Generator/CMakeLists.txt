@@ -7,4 +7,9 @@ add_executable(Generator main.cpp main.h
         tinyxml/tinyxmlparser.cpp tinyxml/tinyxmlerror.cpp
         tinyxml/tinyxml.cpp tinyxml/tinyxml.h
         tinyxml/tinystr.cpp tinyxml/tinystr.h
-        GenerateCube.cpp GenerateCube.h GenerateSphere.cpp GenerateSphere.h GenerateCone.cpp GenerateCone.h GenerateRing.h GenerateRing.cpp Vector3.cpp Vector3.h )
+        GenerateCube.cpp GenerateCube.h
+        GenerateSphere.cpp GenerateSphere.h
+        GenerateCone.cpp GenerateCone.h
+        GenerateRing.h GenerateRing.cpp
+        Vector3.cpp Vector3.h
+        bezierPatch.cpp bezierPatch.h)
