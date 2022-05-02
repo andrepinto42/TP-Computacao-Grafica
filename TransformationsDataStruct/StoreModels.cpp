@@ -31,8 +31,6 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
         int vertexCount =atoi(pConfig->Attribute("VertexCount"));
         std::cout << "Number of vertices ->" <<vertexCount<<" from file"<< nameFile <<"\n";
 
-
-        std::vector<Vector3> allVertices;
         std::vector<float> novosPontos;
 
         pVertex = pConfig->NextSiblingElement();
@@ -45,19 +43,16 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
             novosPontos.push_back(yVertex);
             novosPontos.push_back(zVertex);
 
-
-            Vector3 v(xVertex,yVertex,zVertex);
-            allVertices.push_back(v);
-
             pVertex = pVertex->NextSiblingElement();
         }
 
         HandlerModel model;
-        model.allVertices = allVertices;
 
         //Store it and increment by 1
         model.currentPositionVBO = Transformations::globalCurrentPosition;
         Transformations::globalCurrentPosition +=1;
+
+        model.numberOfTriangles = novosPontos.size()/3;
 
         model.buffer = Transformations::buffers[/*Increment */model.currentPositionVBO];
 

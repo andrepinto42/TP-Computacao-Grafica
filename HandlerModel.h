@@ -18,8 +18,8 @@
 class HandlerModel {
 public:
     int currentPositionVBO;
+    int numberOfTriangles;
     GLuint buffer;
-    std::vector<Vector3> allVertices;
     void Draw();
 };
 

@@ -35,8 +35,6 @@ void p_2_GL(float* point)
 
 int ParseTeapotPatch::Stuff() {
 
-
-
     ifstream indata; // indata is like cin
     char stringOuput[100]; // variable for input value
     indata.open("../teapot.patch"); // opens the file
@@ -104,29 +102,6 @@ int ParseTeapotPatch::Stuff() {
 }
 
 void ParseTeapotPatch::Render() {
-//
-//    glBegin(GL_LINE_STRIP);
-//    for (int j = 0; j <totalSize ; ++j) {
-//        int *curva = all_Curves[j];
-//        for (int i = 0; i < 16; ++i) {
-//            int index = curva[i];
-//            p_2_GL( all_Points[index]);
-//        }
-//    }
-//    glEnd();
-
-//    int *curva = all_Curves[1];
-//
-//    for (int j = 0; j < 4; ++j) {
-//        glBegin(GL_QUADS);
-//        for (int i = 0; i < 4; ++i) {
-//            int index = curva[i + j*4];
-//            p_2_GL( all_Points[index]);
-//        }
-//        glEnd();
-//
-//    }
-
 //    DONTKNOW();
 }
 

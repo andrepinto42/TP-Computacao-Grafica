@@ -165,14 +165,12 @@ int main(int argc, char** argv)
 
     Parser::XML_Parse(&cam,&t);
 
-    //Initialize the static variables
-
+    //Generate at least 40 buffers to store objects
     glGenBuffers(40,Transformations::buffers);
 
     t->PrintInfoAndStoreNameModels();
 
     ParseTeapotPatch::Stuff();
-
 
     glEnableClientState(GL_VERTEX_ARRAY);
 

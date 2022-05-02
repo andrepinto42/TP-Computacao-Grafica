@@ -6,11 +6,6 @@
 #include "TransformationsDataStruct/Transformations.h"
 
 void HandlerModel::Draw() {
-//    glBegin(GL_TRIANGLES);
-//
-//    for (int i = 0; i < allVertices.size(); ++i) {
-//        glVertex3d(allVertices[i].x,allVertices[i].y,allVertices[i].z);
-//    }
 
     glBindBuffer(GL_ARRAY_BUFFER, Transformations::buffers[currentPositionVBO]);
     glVertexPointer(3, GL_FLOAT, 0, 0);
