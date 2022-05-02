@@ -122,7 +122,7 @@ int main(int argc, char* argv[]) {
         int tesselation = atoi(argv[3]);
         auto nameFileOut = argv[4];
 
-        bezierParser(tesselation,nameFileIn,nameFileOut);
+        ParserBezierFile(tesselation, nameFileIn);
         SaveAllVerticesXML(nameFileOut);
     }
     else

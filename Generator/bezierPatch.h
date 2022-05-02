@@ -24,7 +24,7 @@ public:
     void addPoint(Vector3*);
 };
 
-int bezierParser(int tess,string filePath, string nameFile);
+int ParserBezierFile(int tess, string file);
 void renderTeapot(int tess);
 
 #endif //MAIN_CPP_BEZIERPATCH_H

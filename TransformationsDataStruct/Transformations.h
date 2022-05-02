@@ -27,7 +27,7 @@ public:
 
     Transformations();
 
-    void PrintInfoAndStoreNameModels(){
+    void StoreNameModels_LoadVBO(){
 
         for (int i = 0; i < allParentModelsName.size(); ++i) {
             std::cout << "Goint to store this file -> " << allParentModelsName[i]<<"\n";
@@ -36,7 +36,7 @@ public:
         }
 
         for (auto anotherT:allChildrenTransformation) {
-            anotherT->PrintInfoAndStoreNameModels();
+            anotherT->StoreNameModels_LoadVBO();
         }
     }
 

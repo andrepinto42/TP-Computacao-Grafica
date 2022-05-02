@@ -79,13 +79,6 @@ public:
 
     virtual void Apply()
     {
-        //10 ms ultima frame
-        //10000ms para chegar a 360
-        //Regra de 3 simples
-        // 10 000 - 360
-        // 10     - a
-        //Tem de incrementar cerca de 10*360/10 000
-
         current_angle += ((float) Timer::GetTime() * 360)/ time ;
         glRotatef(current_angle,x,y,z);
     }
@@ -115,11 +108,8 @@ public:
 
     virtual void Apply()
     {
-//        glPushMatrix();
         catmull_rom::RenderCatmull(all_Points,number_Points,posicaoTeaPotCurva,align);
 
-        //To make sure that no more models are affected by the rotations and translations of the catmull curve
-//        glPopMatrix();
         float increase = Timer::GetTime() / time;
         posicaoTeaPotCurva+= increase;
     }

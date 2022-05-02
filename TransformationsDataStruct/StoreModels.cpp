@@ -54,7 +54,7 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
 
         model.numberOfTriangles = novosPontos.size()/3;
 
-        model.buffer = Transformations::buffers[/*Increment */model.currentPositionVBO];
+        model.buffer = Transformations::buffers[model.currentPositionVBO];
 
         glBindBuffer(GL_ARRAY_BUFFER, model.buffer);
         glBufferData(GL_ARRAY_BUFFER,

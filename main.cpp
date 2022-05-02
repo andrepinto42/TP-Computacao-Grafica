@@ -168,13 +168,9 @@ int main(int argc, char** argv)
     //Generate at least 40 buffers to store objects
     glGenBuffers(40,Transformations::buffers);
 
-    t->PrintInfoAndStoreNameModels();
-
-//    ParseTeapotPatch::Stuff();
+    t->StoreNameModels_LoadVBO();
 
     glEnableClientState(GL_VERTEX_ARRAY);
-
-
 
     // enter GLUT�s main cycle
 	glutMainLoop();
