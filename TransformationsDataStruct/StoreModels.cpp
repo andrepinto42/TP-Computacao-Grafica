@@ -29,10 +29,19 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
         pConfig= pRoot->FirstChildElement("Configuration" ); //now params
 
         int vertexCount =atoi(pConfig->Attribute("VertexCount"));
+
+        auto normalCount_A = pConfig->Attribute("NormalCount");
+//        std::cout << "Normals ->" << normalCount_A;
+
+        int normalCount = (normalCount_A) ? atoi(normalCount_A) : 0;
+        if (normalCount>0)
+            std::cout << "There are normals!" << normalCount << "\n";
+
         std::cout << "Number of vertices ->" <<vertexCount<<" from file"<< nameFile <<"\n";
 
         std::vector<float> novosPontos;
 
+        //Start iterating over all the vertex stored in the model.3d file
         pVertex = pConfig->NextSiblingElement();
         for (int j = 0; j < vertexCount; ++j) {
             float xVertex=  atof(pVertex->Attribute("x"));
@@ -46,6 +55,19 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
             pVertex = pVertex->NextSiblingElement();
         }
 
+        //Start iterating over all the normals if they exist stored in the model.3d file
+        for (int j = 0; j < normalCount; ++j) {
+            float xNormal=  atof(pVertex->Attribute("x"));
+            float yNormal=  atof(pVertex->Attribute("y"));
+            float zNormal=  atof(pVertex->Attribute("z"));
+
+            std::cout << xNormal <<" ," << yNormal << " ," << zNormal << "\n";
+//            novosPontos.push_back(xVertex);
+//            novosPontos.push_back(yVertex);
+//            novosPontos.push_back(zVertex);
+
+            pVertex = pVertex->NextSiblingElement();
+        }
         HandlerModel model;
 
         //Store it and increment by 1
@@ -66,5 +88,6 @@ void StoreModels::Store(const char* nameFile,std::vector<HandlerModel> *allModel
 
         allModelsClass->push_back(model);
     }
+    std::cout << "File stored sucessfully\n";
     doc.Clear();
 }

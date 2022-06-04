@@ -183,7 +183,6 @@ void Parser::CreateCatmull(Transformations *const *root,
                       float x, float y, float z,
                       TiXmlElement *iterator, const char *time,const char *align)
 {
-    cout << time << " and align " << align << "\n";
     vector<float> all_points;
     auto points = iterator->FirstChildElement();
     while(points)
@@ -194,8 +193,6 @@ void Parser::CreateCatmull(Transformations *const *root,
         all_points.push_back(x);
         all_points.push_back(y);
         all_points.push_back(z);
-
-        cout << x <<","<<y<<","<<z<<"\n";
 
         points = points->NextSiblingElement();
     }
