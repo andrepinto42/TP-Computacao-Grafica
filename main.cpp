@@ -6,13 +6,12 @@
 #endif
 
 #define _USE_MATH_DEFINES
-#include "ParseTeapotPatch.h"
 #include <math.h>
 #include <stdio.h>
 #include <IL/il.h>
-#include "Parser.h"
-#include "Axes.h"
-#include "HandleRenderTransform.h"
+#include "Parsing/Parser.h"
+#include "Render/Axes.h"
+#include "Render/HandleRenderTransform.h"
 #include "Timer.h"
 #include "TransformationsDataStruct/Transformations.h"
 #include "LightComponent.h"
@@ -72,7 +71,6 @@ void renderScene(void)
     glTranslatef(0.f,-2.f,-5.f);
     glRotatef(-90.f,0.f,1.f,0.f);
     glRotatef(-25.f,0.f,0.f,1.f);
-
     glutSolidTeapot(0.5f);
     glPopMatrix();
 
@@ -85,14 +83,9 @@ void renderScene(void)
     // put drawing instructions here
     Axes::DrawAxes();
 
-    //Totalmente inutil :)
-    //BezierCurves::DrawBezier();
-    ParseTeapotPatch::Render();
-
     //Render the objects with the respectives transformations
     HandleRenderTransform::Render(t);
 
-//    std::cout <<Timer::GetTime()<<"\n";
     Timer::AdjustTimeBetweenFrame();
 
     // End of frame

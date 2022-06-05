@@ -6,7 +6,7 @@
 #include <GL/glu.h>
 #include <iostream>
 #include "CameraStatus.h"
-#include "Generator/Vector3.h"
+#include "../Generator/Vector3.h"
 
 static int speed = 1.f;
 Vector3* normalize(Vector3* v)

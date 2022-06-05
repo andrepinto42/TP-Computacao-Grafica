@@ -5,7 +5,7 @@
 #ifndef PARSER_CPP_CAMERASTATUS_H
 #define PARSER_CPP_CAMERASTATUS_H
 
-#include "Generator/Vector3.h"
+#include "../Generator/Vector3.h"
 
 class CameraStatus {
 public:

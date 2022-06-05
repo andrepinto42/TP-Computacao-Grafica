@@ -3,7 +3,7 @@
 //
 #include <GL/glew.h>
 #include "HandlerModel.h"
-#include "TransformationsDataStruct/Transformations.h"
+#include "../TransformationsDataStruct/Transformations.h"
 
 void HandlerModel::Draw() {
     //Draw Materials
@@ -11,11 +11,9 @@ void HandlerModel::Draw() {
     {
         if (textureStruct != nullptr)
         {
-            //TODO
             glBindTexture(GL_TEXTURE_2D, textureStruct->texture_ID);
             glBindBuffer(GL_ARRAY_BUFFER, textureStruct->bufferTexture_ID);
             glTexCoordPointer(2, GL_FLOAT, 0, 0);
-
         }
         else
         {

@@ -7,18 +7,18 @@
 #include <iostream>
 #include <vector>
 
-#include "tinyxml/tinyxml.h"
-#include "tinyxml/tinystr.h"
-#include "CameraStatus.h"
-#include "TransformationsDataStruct/Transformations.h"
+#include "../tinyxml/tinyxml.h"
+#include "../tinyxml/tinystr.h"
+#include "../Render/CameraStatus.h"
+#include "../TransformationsDataStruct/Transformations.h"
 #include "TextureManager.h"
-#include "LightComponent.h"
+#include "../LightComponent.h"
 
 using namespace std;
 
 
 void Parser::XML_Parse(CameraStatus **cam,vector<LightComponent*> *lights, Transformations **rootTransformations) {
-    char nameFile[] = "../solarsystem_withMeteorite.xml";
+    char nameFile[] = "../xml_files/solarsystem_withMeteorite.xml";
 
     TiXmlDocument doc;
     if (!doc.LoadFile(nameFile)) {

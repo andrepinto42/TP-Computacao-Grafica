@@ -7,7 +7,7 @@
 #include <GL/glew.h>
 
 #include <vector>
-#include "../HandlerModel.h"
+#include "../Render/HandlerModel.h"
 #include "Transform.h"
 using namespace std;
 

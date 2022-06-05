@@ -11,7 +11,7 @@
 #include <GL/glut.h>
 #endif
 #include <iostream>
-#include "../catmull_rom.h"
+#include "../Render/catmull_rom.h"
 #include "../Timer.h"
 
 class Transform {

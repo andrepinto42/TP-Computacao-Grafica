@@ -6,10 +6,10 @@
 #define MAIN_CPP_PARSER_H
 
 
-#include "CameraStatus.h"
-#include "tinyxml/tinyxml.h"
-#include "TransformationsDataStruct/Transformations.h"
-#include "LightComponent.h"
+#include "../Render/CameraStatus.h"
+#include "../tinyxml/tinyxml.h"
+#include "../TransformationsDataStruct/Transformations.h"
+#include "../LightComponent.h"
 #include <vector>
 
 class Parser {

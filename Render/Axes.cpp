@@ -2,9 +2,9 @@
 // Created by pinto on 09/03/22.
 //
 
-#include "Parser.h"
-#include "tinyxml/tinystr.h"
-#include "tinyxml/tinyxml.h"
+#include "../Parsing/Parser.h"
+#include "../tinyxml/tinystr.h"
+#include "../tinyxml/tinyxml.h"
 #include <iostream>
 #include <stdio.h>
 #include <math.h>

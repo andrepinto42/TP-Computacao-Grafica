@@ -13,7 +13,7 @@
 #endif
 
 #include <vector>
-#include "Generator/Vector3.h"
+#include "../Generator/Vector3.h"
 
 class TypeOfMaterial{
 public:

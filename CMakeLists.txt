@@ -11,20 +11,15 @@ add_executable(${PROJECT_NAME} main.cpp
 		tinyxml/tinyxmlparser.cpp tinyxml/tinyxmlerror.cpp
 		tinyxml/tinyxml.cpp tinyxml/tinyxml.h
 		tinyxml/tinystr.cpp tinyxml/tinystr.h
-		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h
+        Parsing/Parser.cpp Parsing/Parser.h Render/CameraStatus.cpp Render/CameraStatus.h
 		TransformationsDataStruct/Transformations.cpp TransformationsDataStruct/Transformations.h
-		Axes.cpp Axes.h
-		TextureManager.cpp TextureManager.h
-		DrawBasicPrimitives/HandlerDrawSquare.cpp DrawBasicPrimitives/HandlerDrawSquare.h
-        DrawBasicPrimitives/HandleDrawSphere.cpp DrawBasicPrimitives/HandleDrawSphere.h
-		DrawBasicPrimitives/DrawCone.cpp DrawBasicPrimitives/DrawCone.h
-		HandlerModel.cpp HandlerModel.h
-		HandleRenderTransform.cpp HandleRenderTransform.h
-		catmull_rom.cpp catmull_rom.h
+		Render/Axes.cpp Render/Axes.h
+		Parsing/TextureManager.cpp Parsing/TextureManager.h
+		Render/HandlerModel.cpp Render/HandlerModel.h
+		Render/HandleRenderTransform.cpp Render/HandleRenderTransform.h
+		Render/catmull_rom.cpp Render/catmull_rom.h
 		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h
-		BezierCurves.cpp BezierCurves.h
-		ParseTeapotPatch.cpp ParseTeapotPatch.h
-        LightComponent.h)
+		LightComponent.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")

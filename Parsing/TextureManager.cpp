@@ -2,7 +2,7 @@
 // Created by pinto on 04/06/22.
 //
 #include <IL/il.h>
-#include "TransformationsDataStruct/Transformations.h"
+#include "../TransformationsDataStruct/Transformations.h"
 #include "TextureManager.h"
 
 unsigned int InitializeTexture(const char* nameFile) {
