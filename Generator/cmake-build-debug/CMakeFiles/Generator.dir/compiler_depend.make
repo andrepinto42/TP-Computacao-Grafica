@@ -884,16 +884,14 @@ CMakeFiles/Generator.dir/bezierPatch.cpp.o: ../bezierPatch.cpp \
   /usr/include/c++/9/bits/stl_bvector.h \
   /usr/include/c++/9/bits/vector.tcc \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/Transformations.h \
+  /usr/include/GL/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/HandlerModel.h \
   /usr/include/GL/glut.h \
   /usr/include/GL/freeglut_std.h \
-  /usr/include/GL/gl.h \
-  /usr/include/GL/glext.h \
-  /usr/include/KHR/khrplatform.h \
-  /usr/include/GL/glu.h \
   /usr/include/c++/9/stdlib.h \
   ../Vector3.h \
-  /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/StoreModels.h \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/Transform.h \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/catmull_rom.h \
   /usr/include/c++/9/math.h \
@@ -1122,15 +1120,13 @@ CMakeFiles/Generator.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/9/sstream \
   /usr/include/c++/9/bits/sstream.tcc \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/Transformations.h \
+  /usr/include/GL/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/HandlerModel.h \
   /usr/include/GL/glut.h \
   /usr/include/GL/freeglut_std.h \
-  /usr/include/GL/gl.h \
-  /usr/include/GL/glext.h \
-  /usr/include/KHR/khrplatform.h \
-  /usr/include/GL/glu.h \
   ../Vector3.h \
-  /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/StoreModels.h \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/Transform.h \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/catmull_rom.h \
   /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Timer.h
@@ -1374,15 +1370,11 @@ CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o: ../tinyxml/tinyxmlparser.c
 
 /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/Transform.h:
 
-/usr/include/GL/glu.h:
-
-/usr/include/KHR/khrplatform.h:
-
-/usr/include/GL/glext.h:
-
 /usr/include/GL/glut.h:
 
 /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/HandlerModel.h:
+
+/usr/include/GL/glu.h:
 
 /home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/Transformations.h:
 
@@ -1478,8 +1470,6 @@ CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o: ../tinyxml/tinyxmlparser.c
 
 /usr/include/c++/9/clocale:
 
-/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/TransformationsDataStruct/StoreModels.h:
-
 /usr/include/c++/9/istream:
 
 /usr/include/c++/9/initializer_list:
@@ -1511,6 +1501,8 @@ CMakeFiles/Generator.dir/tinyxml/tinyxmlparser.cpp.o: ../tinyxml/tinyxmlparser.c
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/c++/9/bits/cpp_type_traits.h:
+
+/usr/include/GL/glew.h:
 
 /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h:
 

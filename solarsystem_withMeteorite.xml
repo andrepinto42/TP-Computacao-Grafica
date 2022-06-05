@@ -1,6 +1,6 @@
 <world>
     <camera>
-        <position x=100 y=0 z=100 />
+        <position x=0 y=0 z=40 />
         <lookAt x=0 y=0 z=0 />
         <up x=0 y=1, z=0 />
         <projection fov=60 near=1 far=1000 />
@@ -70,7 +70,7 @@
                 <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"/>
+                <model file="../Generator/cmake-build-debug/sphereNew.3d"/>
                 <color>
                     <diffuse R="0.01" G="0.01" B="0.01"/>
                 </color>
@@ -92,7 +92,7 @@
                 <rotate time=10 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"/>
+                <model file="../Generator/cmake-build-debug/sphereNew.3d"/>
             </models>
         </group>
         <!--TERRA-->
@@ -108,7 +108,7 @@
                 <rotate time=10 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d">
+                <model file="../Generator/cmake-build-debug/sphereNew.3d">
 <!--                    <texture file="../textures/earthPixel.jpg"/>-->
                     <color>
                         <ambient R="" G="0" B="0.5"/>
@@ -132,7 +132,7 @@
                     <scale x=0.2 y=0.2 z=0.2/>
                 </transform>
                 <models>
-                    <model file="../Generator/cmake-build-debug/sphereNormal.3d">
+                    <model file="../Generator/cmake-build-debug/sphereNew.3d">
                         <color>
                             <ambient R="0.5" G="0.5" B="0.5"/>
                             <emissive R="0" G="0" B="0"/>
@@ -160,7 +160,7 @@
                 <rotate time=10 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d">
+                <model file="../Generator/cmake-build-debug/sphereNew.3d">
                 <color>
                     <ambient R="0.75" G="0" B="0.0"/>
                     <emissive R="0" G="0" B="0"/>
@@ -177,7 +177,7 @@
                     <translate x=0 y=2 z=3/>
                 </transform>
                 <models>
-                    <model file="../Generator/cmake-build-debug/sphereNormal.3d" />
+                    <model file="../Generator/cmake-build-debug/sphereNew.3d" />
                 </models>
             </group>
             <!--DEIMOS-->
@@ -187,7 +187,7 @@
                     <translate x=0 y=2 z=-3/>
                 </transform>
                 <models>
-                    <model file="../Generator/cmake-build-debug/sphereNormal.3d" />
+                    <model file="../Generator/cmake-build-debug/sphereNew.3d" />
                 </models>
             </group>
         </group>
@@ -205,7 +205,7 @@
                 <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"> <!-- Marked -->
+                <model file="../Generator/cmake-build-debug/sphereNew.3d"> <!-- Marked -->
                     <texture file="../textures/lowDirt.jpeg"/>
                 </model>
             </models>
@@ -216,7 +216,7 @@
                     <scale x=0.2 y=0.2 z=0.2/>
                 </transform>
                 <models>
-                    <model file="../Generator/cmake-build-debug/sphereNormal.3d" />
+                    <model file="../Generator/cmake-build-debug/sphereNew.3d" />
                 </models>
             </group>
             <!--EUROPA-->
@@ -226,7 +226,7 @@
                     <scale x=0.2 y=0.2 z=0.2/>
                 </transform>
                 <models>
-                    <model file="../Generator/cmake-build-debug/sphereNormal.3d" />
+                    <model file="../Generator/cmake-build-debug/sphereNew.3d" />
                 </models>
             </group>
             <!--GANIMEDES-->
@@ -236,7 +236,7 @@
                     <scale x=0.2 y=0.2 z=0.2/>
                 </transform>
                 <models>
-                    <model file="../Generator/cmake-build-debug/sphereNormal.3d" />
+                    <model file="../Generator/cmake-build-debug/sphereNew.3d" />
                 </models>
             </group>
             <!--CALISTO-->
@@ -246,7 +246,7 @@
                     <scale x=0.2 y=0.2 z=0.2/>
                 </transform>
                 <models>
-                    <model file="../Generator/cmake-build-debug/sphereNormal.3d" />
+                    <model file="../Generator/cmake-build-debug/sphereNew.3d" />
                 </models>
             </group>
         </group>
@@ -264,7 +264,7 @@
                 <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"/>
+                <model file="../Generator/cmake-build-debug/sphereNew.3d"/>
             </models>
             <!--ANEL SATURNO-->
             <group>
@@ -291,7 +291,7 @@
                 <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"/>
+                <model file="../Generator/cmake-build-debug/sphereNew.3d"/>
             </models>
         </group>
         <!--NEPTUNO-->
@@ -308,7 +308,7 @@
                 <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"/>
+                <model file="../Generator/cmake-build-debug/sphereNew.3d"/>
             </models>
         </group>
     </group>
