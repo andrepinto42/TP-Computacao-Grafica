@@ -68,9 +68,11 @@ void renderScene(void)
     // set camera
 	glLoadIdentity();
 
-    SetUpLighting();
 
     cam->RenderCameraScene();
+
+    //Render lighting after the camera so it doesnt follow everywhere
+    SetUpLighting();
 
     // put drawing instructions here
     Axes::DrawAxes();
