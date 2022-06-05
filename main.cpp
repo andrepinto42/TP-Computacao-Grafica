@@ -68,6 +68,14 @@ void renderScene(void)
     // set camera
 	glLoadIdentity();
 
+    glPushMatrix();
+    glTranslatef(0.f,-2.f,-5.f);
+    glRotatef(-90.f,0.f,1.f,0.f);
+    glRotatef(-25.f,0.f,0.f,1.f);
+
+    glutSolidTeapot(0.5f);
+    glPopMatrix();
+
 
     cam->RenderCameraScene();
 
@@ -93,39 +101,36 @@ void renderScene(void)
 
 void processKeys(unsigned char c, int xx, int yy) {
     // put code to process regular keys in here
-    switch (c) {
-        case 'a':{
-            cam->MoveCameraLeft();
-            break;
+    if (c == 'a'){
+        cam->MoveCameraLeft();
+    }
+    if (c == 'd')
+    {
+        cam->MoveCameraRight();
+    }
+    if (c == 's')
+    {
+        cam->MoveCameraBackwards();
+    }
+    if (c == 'w')
+        {
+            cam->MoveCameraForward();
         }
-        case 'd' :{
-            cam->MoveCameraRight();
-            break;
-        }
-            case 's':{
-            cam->MoveCameraBackwards();
-            break;
-        }
-            case 'w': {
-                cam->MoveCameraForward();
-                break;
-            }
-            case 'i':{
-                cam->CameraLookUp();
-                break;
-        }
-        case 'k':{
-            cam->CameraLookDown();
-            break;
-        }
-        case 'l':{
-            cam->CameraLookRight();
-            break;
-        }
-        case 'j':{
-            cam->CameraLookLeft();
-            break;
-        }
+    if (c == 'i')
+        {
+            cam->RotateUpNew();
+    }
+    if (c == 'k')
+    {
+        cam->RotateDownNew();
+    }
+    if (c == 'l')
+    {
+        cam->RotateRightNew();
+    }
+    if (c == 'j')
+    {
+        cam->RotateLeftNew();
     }
 
     glutPostRedisplay();

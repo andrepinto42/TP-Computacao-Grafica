@@ -28,7 +28,7 @@
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphereSun.3d"> <!-- Marked -->
-<!--                    <texture file="../textures/kitty.jpeg"/>-->
+<!--                    <texture file="../textures/sunmap.jpg"/>-->
                     <color>
                         <ambient R="100" G="100" B="0"/>
                         <emissive R="0" G="0" B="0"/>
@@ -109,13 +109,13 @@
             </transform>
             <models>
                 <model file="../Generator/cmake-build-debug/sphereNormal.3d">
-                    <texture file="../textures/earthPixel.jpg"/>
+<!--                    <texture file="../textures/earthPixel.jpg"/>-->
                     <color>
-                        <ambient R="100" G="0" B="100"/>
+                        <ambient R="" G="0" B="0.5"/>
                         <emissive R="0" G="0" B="0"/>
                         <specular R="0" G="0" B="0"/>
-                        <diffuse R="0" G="0" B="0"/>
-                        <shininess value="0"/>
+                        <diffuse R="0" G="0" B="200"/>
+                        <shininess value="128"/>
                     </color>
                 </model>
             </models>
@@ -134,10 +134,10 @@
                 <models>
                     <model file="../Generator/cmake-build-debug/sphereNormal.3d">
                         <color>
-                            <ambient R="0" G="0" B="100"/>
+                            <ambient R="0.5" G="0.5" B="0.5"/>
                             <emissive R="0" G="0" B="0"/>
                             <specular R="0" G="0" B="0"/>
-                            <diffuse R="0" G="0" B="75"/>
+                            <diffuse R="0.25" G="0.25" B=".25"/>
                             <shininess value="0"/>
                         </color>
                     </model>
@@ -160,7 +160,15 @@
                 <rotate time=10 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"/>
+                <model file="../Generator/cmake-build-debug/sphereNormal.3d">
+                <color>
+                    <ambient R="0.75" G="0" B="0.0"/>
+                    <emissive R="0" G="0" B="0"/>
+                    <specular R="0" G="0" B="0"/>
+                    <diffuse R="0.9" G="0.1" B="0.1"/>
+                    <shininess value="0"/>
+                </color>
+                </model>
             </models>
             <!--FOBOS-->
             <group>
@@ -197,7 +205,9 @@
                 <rotate time=100 x=0 y=1 z=0/>
             </transform>
             <models>
-                <model file="../Generator/cmake-build-debug/sphereNormal.3d"/> <!-- Marked -->
+                <model file="../Generator/cmake-build-debug/sphereNormal.3d"> <!-- Marked -->
+                    <texture file="../textures/lowDirt.jpeg"/>
+                </model>
             </models>
             <!--IO-->
             <group>

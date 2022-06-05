@@ -62,6 +62,16 @@ public:
     float Distance(float x, float y, float z, float x1, float y1, float z1);
 
     float DistanceLookAt();
+
+    void RotateRightNew();
+
+    void RotateUpNew();
+
+    void LookNewDir();
+
+    void RotateDownNew();
+
+    void RotateLeftNew();
 };
 
 

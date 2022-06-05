@@ -9,15 +9,79 @@
 #include "Generator/Vector3.h"
 
 static int speed = 1.f;
+Vector3* normalize(Vector3* v)
+{
+    float magnitude = sqrt(v->x * v->x + v->y*v->y + v->z*v->z);
+    v->x = v->x/magnitude;
+    v->y = v->y/magnitude;
+    v->z = v->z/magnitude;
+}
 
 /*
  * Constructors
  */
-CameraStatus::CameraStatus(float posX, float posY, float posZ, float lookX, float lookY, float lookZ, float upX,
-                           float upY, float upZ, float fov, float near, float far) :
-        posX(posX), posY(posY), posZ(posZ), lookX(lookX), lookY(lookY),lookZ(lookZ), upX(upX), upY(upY),
-        upZ(upZ), fov(fov), near(near),far(far) {}
+CameraStatus::CameraStatus(float posX, float posY, float posZ,
+                           float lookX, float lookY, float lookZ,
+                           float upX,float upY, float upZ,
+                           float fov, float near, float far) :
+                           posX(posX), posY(posY), posZ(posZ),
+                           upX(upX), upY(upY),upZ(upZ), fov(fov), near(near),far(far)
+{
 
+    auto dir = GetDirection(lookX,lookY,lookZ,posX,posY,posZ);
+    normalize(dir);
+
+    this->lookX = posX + dir->x;
+    this->lookY = posY + dir->y;
+    this->lookZ = posZ + dir->z;
+
+    std::cout << this->lookX<<" " <<this->lookY<< " "<< this->lookZ << "\n";
+
+    free(dir);
+}
+
+#include <math.h>
+
+const static float angleIncrement = 5.f;
+static int currentAngleHorizontal = 0.f;
+static int currentAngleVertical = 0.f;
+
+void CameraStatus::LookNewDir()
+{
+    float x = cos(currentAngleVertical * M_PI/180.f) * cos(currentAngleHorizontal * M_PI / 180.f);
+    float z = cos(currentAngleVertical * M_PI/180.f) * sin(currentAngleHorizontal * M_PI / 180.f);
+    float y = sin(currentAngleVertical * M_PI / 180.f);
+
+    this->lookX = posX + x;
+    this->lookY = posY + y;
+    this->lookZ = posZ + z;
+
+    std::cout << lookX<<" " <<lookY<< " "<< lookZ << "\n";
+}
+void CameraStatus::RotateRightNew()
+{
+    currentAngleHorizontal += angleIncrement;
+    LookNewDir();
+}
+
+void CameraStatus::RotateLeftNew()
+{
+    currentAngleHorizontal -= angleIncrement;
+    LookNewDir();
+}
+
+void CameraStatus::RotateUpNew()
+{
+    currentAngleVertical += angleIncrement;
+    LookNewDir();
+}
+
+
+void CameraStatus::RotateDownNew()
+{
+    currentAngleVertical -= angleIncrement;
+    LookNewDir();
+}
 CameraStatus::CameraStatus():
     posX(0.f), posY(0.f), posZ(0.f),
     lookX(0.f), lookY(0.f),lookZ(0.f),
@@ -49,21 +113,6 @@ bool CheckIfCross(Vector3 vector1,Vector3 vector2){
     return (vector1.x -vector2.x + vector1.y -vector2.y + vector1.z - vector2.z) == 0;
 }
 
-
-//void CameraStatus::MoveCameraRight() {
-//    auto direction =GetDirection(
-//            posX,posY,posZ,
-//            lookX,lookY,lookZ);
-//
-//    float z = direction->z;
-//
-//    float angleZXRight = cosh(z) + (M_PI/2.f);
-//    auto dir = CalculateNormalVector(direction,angleZXRight);
-//
-//    std::cout << CheckIfCross(*direction,*dir)<<"<- cross\n";
-//
-//    AddVectorCamera(dir);
-//}
 void CameraStatus::MoveCameraRight() {
     auto direction =GetDirection(
             posX,posY,posZ,
@@ -180,6 +229,7 @@ void CameraStatus::RenderCameraScene() {
     gluLookAt(posX, posY, posZ,
               lookX, lookY, lookZ,
               upX, upY, upZ);
+
 
     glRotatef(pitch, 1.0f, 0.0f, 0.0f);
     glRotatef(yaw, 0.0f, 1.0f, 0.0f);
