@@ -55,8 +55,6 @@ void CameraStatus::LookNewDir()
     this->lookX = posX + x;
     this->lookY = posY + y;
     this->lookZ = posZ + z;
-
-    std::cout << lookX<<" " <<lookY<< " "<< lookZ << "\n";
 }
 void CameraStatus::RotateRightNew()
 {
