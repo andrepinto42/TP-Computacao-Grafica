@@ -16,9 +16,9 @@
 
 using namespace std;
 
-
 void Parser::XML_Parse(CameraStatus **cam,vector<LightComponent*> *lights, Transformations **rootTransformations) {
     char nameFile[] = "../xml_files/solarsystem_withMeteorite.xml";
+//    char nameFile[] = "../xml_files/testNormals.xml";
 
     TiXmlDocument doc;
     if (!doc.LoadFile(nameFile)) {
