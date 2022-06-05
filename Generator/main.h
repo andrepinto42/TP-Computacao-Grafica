@@ -8,6 +8,8 @@
 class main{
 public:
     static void PushVertex(float x,float y,float z);
+
+    static void PushNormal(float x, float y, float z);
 };
 
 #endif //MAIN_CPP_MAIN_H

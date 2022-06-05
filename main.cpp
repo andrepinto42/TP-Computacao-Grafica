@@ -7,26 +7,19 @@
 
 #define _USE_MATH_DEFINES
 #include "ParseTeapotPatch.h"
-#include <typeinfo>
 #include <math.h>
 #include <stdio.h>
-#include <iostream>
+#include <IL/il.h>
 #include "Parser.h"
 #include "Axes.h"
-#include "DrawBasicPrimitives/HandleDrawSphere.h"
-#include "Generator/Vector3.h"
-#include "HandlerModel.h"
-#include "TransformationsDataStruct/StoreModels.h"
-#include "DrawBasicPrimitives/HandlerDrawSquare.h"
-#include "DrawBasicPrimitives/HandlerDrawSquare.h"
 #include "HandleRenderTransform.h"
-#include "catmull_rom.h"
 #include "Timer.h"
-#include "BezierCurves.h"
 #include "TransformationsDataStruct/Transformations.h"
+#include "LightComponent.h"
 
 CameraStatus* cam;
 Transformations* t;
+vector<LightComponent*> lights;
 
 void changeSize(int w, int h)
 {
@@ -51,15 +44,31 @@ void changeSize(int w, int h)
 	// et the viewport to be the entire window
 	glViewport(0, 0, w, h);
 }
+void InitLighting()
+{
+    glEnable(GL_LIGHTING);
+    for (int i = 0; i < lights.size(); ++i) {
+        lights[i]->SetLight();
+    }
+
+}
+void SetUpLighting()
+{
+    for (int i = 0; i < lights.size(); ++i) {
+        lights[i]->RenderLight();
+    }
+}
 
 
 void renderScene(void)
 {
 	// clear buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
-	// set camera
+    glClearColor(0.f,0.f,0.f,0.f);
+    // set camera
 	glLoadIdentity();
+
+    SetUpLighting();
 
     cam->RenderCameraScene();
 
@@ -130,23 +139,21 @@ int main(int argc, char** argv)
 {
 
 
-	// put GLUT's init here
 	glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
 	glutInitWindowPosition(800, 100);
 	glutInitWindowSize(800, 800);
 	glutCreateWindow("CG@DI");
 
-    glPolygonMode(GL_FRONT,GL_LINE);
+    //Renders only lines and doesnt use the material
+//        glPolygonMode(GL_FRONT,GL_LINE);
 
     // put callback registry here
 	glutReshapeFunc(changeSize);
 
     //Por questões de otimizações isto pode ser deixado comentado
     glutIdleFunc(renderScene);
-
     glutDisplayFunc(renderScene);
-
     glutKeyboardFunc(processKeys);
     glutSpecialFunc(processSpecialKeys);
 
@@ -156,21 +163,36 @@ int main(int argc, char** argv)
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
 
+
+
+
 #ifndef __APPLE__
     glewInit();
 #endif
 
+    //Load the image Loader
+    ilInit();
+    //Generate at least 40 buffers to store objects
+    glGenBuffers(MAX_BUFFERS,Transformations::buffers);
+    glGenBuffers(MAX_BUFFERS,Transformations::buffersNormals);
+    glGenBuffers(MAX_BUFFERS,Transformations::buffersTexture);
+
     //Initialize the global variable
     t = new Transformations();
 
-    Parser::XML_Parse(&cam,&t);
+    Parser::XML_Parse(&cam,&lights,&t);
 
-    //Generate at least 40 buffers to store objects
-    glGenBuffers(40,Transformations::buffers);
 
     t->StoreNameModels_LoadVBO();
 
+    //Initialize the lighting system
+    InitLighting();
+
     glEnableClientState(GL_VERTEX_ARRAY);
+    glEnable(GL_TEXTURE_2D);
+    glEnableClientState(GL_NORMAL_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+
 
     // enter GLUT�s main cycle
 	glutMainLoop();

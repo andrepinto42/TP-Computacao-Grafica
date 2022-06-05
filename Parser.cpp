@@ -11,11 +11,13 @@
 #include "tinyxml/tinystr.h"
 #include "CameraStatus.h"
 #include "TransformationsDataStruct/Transformations.h"
+#include "TextureManager.h"
+#include "LightComponent.h"
 
 using namespace std;
 
 
-void Parser::XML_Parse(CameraStatus **cam, Transformations **rootTransformations) {
+void Parser::XML_Parse(CameraStatus **cam,vector<LightComponent*> *lights, Transformations **rootTransformations) {
     char nameFile[] = "../solarsystem_withMeteorite.xml";
 
     TiXmlDocument doc;
@@ -34,6 +36,11 @@ void Parser::XML_Parse(CameraStatus **cam, Transformations **rootTransformations
     if (pCamera)
         *cam = getCameraStatus(pCamera, pParms);
 
+    auto pLights = pRoot->FirstChildElement("lights");
+    if (pLights)
+    {
+        getLightsScene(pLights,lights);
+    }
     //Second Phase
     auto pAnotherGroup = pRoot->FirstChildElement("group");
     while (pAnotherGroup) {
@@ -97,12 +104,84 @@ void Parser::InsertModelsName(Transformations *const *root, TiXmlElement *pModel
     while (pModel) {
         // E necessario duplicar a string por alguma razao estranha
         (*root)->allParentModelsName.push_back(strdup(pModel->Attribute("file")));
+
+        auto pTexture = pModel->FirstChildElement("texture");
+        if (pTexture)
+        {
+            auto texture_ID = InitializeTexture(pTexture->Attribute("file"));
+
+            //Creates a new Structure
+            TextureStruct* textureStruct = new TextureStruct();
+
+            textureStruct->texture_ID = texture_ID;
+            textureStruct->bufferTexture_ID = Transformations::buffersTexture[Transformations::globalCurrentPositionTexture];
+            Transformations::globalCurrentPositionTexture +=1;
+
+            (*root)->arraytextureStruct.push_back(textureStruct);
+            //Store the position of the texture
+            (*root)->positionOfTexture.push_back((*root)->allParentModelsName.size()-1);
+
+            std::cout<<"Texture id "<<textureStruct->texture_ID<< " ID DO BUFFER ->" << textureStruct->bufferTexture_ID << "\n";
+        }
+        //Check if has more materials
+        auto pColor = pModel->FirstChildElement("color");
+        if (pColor)
+        {
+            InitializeMaterials(root, pColor);
+        }
         pModel = pModel->NextSiblingElement("model");
     }
     cout << "Inserted these models ->";
     for (auto string: (*root)->allParentModelsName) {
         cout << string << "\n";
     }
+}
+
+void Parser::InitializeMaterials(Transformations *const *root, TiXmlElement *pColor) {
+    TypeOfMaterial* newMaterial = new TypeOfMaterial();
+
+    auto pDiffuse = pColor->FirstChildElement("diffuse");
+    if (pDiffuse)
+    {
+        newMaterial->arrDifuse[0] = atof(pDiffuse->Attribute("R"));
+        newMaterial->arrDifuse[1] = atof(pDiffuse->Attribute("G"));
+        newMaterial->arrDifuse[2] = atof(pDiffuse->Attribute("B"));
+    }
+
+    auto pSpecular = pColor->FirstChildElement("specular");
+    if (pSpecular)
+    {
+        newMaterial->arrSpecular[0] = atof(pSpecular->Attribute("R"));
+        newMaterial->arrSpecular[1] = atof(pSpecular->Attribute("G"));
+        newMaterial->arrSpecular[2] = atof(pSpecular->Attribute("B"));
+    }
+
+
+    auto pAmbient = pColor->FirstChildElement("ambient");
+    if (pAmbient)
+    {
+        newMaterial->arrAmbient[0] = atof(pAmbient->Attribute("R"));
+        newMaterial->arrAmbient[1] = atof(pAmbient->Attribute("G"));
+        newMaterial->arrAmbient[2] = atof(pAmbient->Attribute("B"));
+    }
+
+    auto pEmissive = pColor->FirstChildElement("emissive");
+    if (pEmissive)
+    {
+        newMaterial->arrEmissive[0] = atof(pEmissive->Attribute("R"));
+        newMaterial->arrEmissive[1] = atof(pEmissive->Attribute("G"));
+        newMaterial->arrEmissive[2] = atof(pEmissive->Attribute("B"));
+    }
+
+    auto pShininess = pColor->FirstChildElement("shininess");
+    if (pShininess)
+    {
+        newMaterial->shininess = atof(pShininess->Attribute("value"));
+    }
+
+    (*root)->arrayTypeOfMaterials.push_back(newMaterial);
+    int indexOfMaterial = (*root)->allParentModelsName.size()-1;
+    (*root)->positionOfMaterial.push_back(indexOfMaterial);
 }
 
 
@@ -215,3 +294,42 @@ void Parser::CreateCatmull(Transformations *const *root,
 
     all_points.clear();
 }
+
+void Parser::getLightsScene(TiXmlElement *pElement, vector<LightComponent *> *vector1) {
+    auto lightComp =    pElement->FirstChildElement("light");
+
+    while(lightComp)
+    {
+        auto tipo =lightComp->Attribute("type");
+        if (strcmp(tipo,"point") ==0)
+        {
+            LightPoint* l1 = new LightPoint();
+
+            l1->currentPos = LightComponent::currentNumberLights;
+            LightComponent::currentNumberLights++;
+
+            l1->posX = atof(lightComp->Attribute("posX"));
+            l1->posY = atof(lightComp->Attribute("posY"));
+            l1->posZ = atof(lightComp->Attribute("posZ"));
+
+            vector1->push_back(l1);
+        }
+        else if (strcmp(tipo,"directional") == 0)
+        {
+            LightDirection* l1 = new LightDirection();
+
+            l1->currentPos = LightComponent::currentNumberLights;
+            LightComponent::currentNumberLights++;
+
+            l1->posX = atof(lightComp->Attribute("dirX"));
+            l1->posY = atof(lightComp->Attribute("dirY"));
+            l1->posZ = atof(lightComp->Attribute("dirZ"));
+
+            vector1->push_back(l1);
+        }
+
+        lightComp = lightComp->NextSiblingElement();
+    }
+
+}
+

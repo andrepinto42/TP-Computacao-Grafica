@@ -14,14 +14,17 @@ add_executable(${PROJECT_NAME} main.cpp
 		Parser.cpp Parser.h CameraStatus.cpp CameraStatus.h
 		TransformationsDataStruct/Transformations.cpp TransformationsDataStruct/Transformations.h
 		Axes.cpp Axes.h
-        DrawBasicPrimitives/HandlerDrawSquare.cpp DrawBasicPrimitives/HandlerDrawSquare.h
+		TextureManager.cpp TextureManager.h
+		DrawBasicPrimitives/HandlerDrawSquare.cpp DrawBasicPrimitives/HandlerDrawSquare.h
         DrawBasicPrimitives/HandleDrawSphere.cpp DrawBasicPrimitives/HandleDrawSphere.h
 		DrawBasicPrimitives/DrawCone.cpp DrawBasicPrimitives/DrawCone.h
 		HandlerModel.cpp HandlerModel.h
-		TransformationsDataStruct/StoreModels.cpp TransformationsDataStruct/StoreModels.h
 		HandleRenderTransform.cpp HandleRenderTransform.h
 		catmull_rom.cpp catmull_rom.h
-		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h BezierCurves.cpp BezierCurves.h ParseTeapotPatch.cpp ParseTeapotPatch.h )
+		TransformationsDataStruct/Transform.cpp TransformationsDataStruct/Transform.h
+		BezierCurves.cpp BezierCurves.h
+		ParseTeapotPatch.cpp ParseTeapotPatch.h
+        LightComponent.h)
 
 find_package(OpenGL REQUIRED)
 include_directories(${OpenGL_INCLUDE_DIRS},"tinyxml")
@@ -66,7 +69,13 @@ else (WIN32) #Linux and Mac
 		link_libraries(${GLEW_LIBRARIES})
 	endif(NOT APPLE)
 
-	target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} )
+
+	find_package(DevIL REQUIRED)
+	link_libraries(${IL_LIBRARIES} )
+	include_directories(${IL_INCLUDE_DIR})
+
+
+	target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  ${GLEW_LIBRARIES} ${IL_LIBRARIES})
 	if(NOT GLUT_FOUND)
 		message(ERROR ": GLUT not found!")
 	endif(NOT GLUT_FOUND)

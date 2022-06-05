@@ -107,6 +107,9 @@ void renderCatmullRomCurve(float **all_Points,int numberPoints) {
 // draw curve using line segments with GL_LINE_LOOP
     glBegin(GL_LINE_LOOP);
     float nivelDeInterpolacao = 0.f;
+    float color[4] = {1.f,1.f,1.f,0.f};
+
+    glMaterialfv(GL_FRONT,GL_AMBIENT, color);
 
     for (int i = 0; i < TESSELATION; ++i) {
         getGlobalCatmullRomPoint(nivelDeInterpolacao,  pos,  deriv,all_Points,numberPoints);

@@ -14,12 +14,18 @@ void DrawSquare(float x, float z, float length);
 
 
 static std::vector<Vector3> allVectors;
+static std::vector<Vector3> allNormals;
 
 void main::PushVertex(float x, float y, float z) {
     Vector3 *v1 =  new Vector3(x,y,z);
     allVectors.push_back(*v1);
 }
 
+
+void main::PushNormal(float x, float y, float z) {
+    Vector3 *v1 =  new Vector3(x,y,z);
+    allNormals.push_back(*v1);
+}
 
 void SaveAllVerticesXML(char* nameFile) {
     TiXmlDocument doc;
@@ -33,6 +39,7 @@ void SaveAllVerticesXML(char* nameFile) {
     TiXmlElement * config = new TiXmlElement( "Configuration" );
     root->LinkEndChild( config );
     config->SetDoubleAttribute("VertexCount", allVectors.size());
+    config->SetDoubleAttribute("NormalCount",allNormals.size());
 
     for (int i = 0; i <allVectors.size() ; i++) {
         TiXmlElement * cxn = new TiXmlElement( "Vertex" );
@@ -40,6 +47,14 @@ void SaveAllVerticesXML(char* nameFile) {
         cxn->SetDoubleAttribute("x", allVectors[i].x);
         cxn->SetDoubleAttribute("y", allVectors[i].y);
         cxn->SetDoubleAttribute("z", allVectors[i].z);
+    }
+
+    for (int i = 0; i < allNormals.size(); ++i) {
+        TiXmlElement * cxn = new TiXmlElement( "Normal" );
+        root->LinkEndChild( cxn );
+        cxn->SetDoubleAttribute("x", allNormals[i].x);
+        cxn->SetDoubleAttribute("y", allNormals[i].y);
+        cxn->SetDoubleAttribute("z", allNormals[i].z);
     }
 
     doc.SaveFile(nameFile);

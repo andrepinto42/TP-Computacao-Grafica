@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug"/>
+				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug"/>
+				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug"/>
+				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Generator">
-				<Option output="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Generator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug"/>
+				<Option output="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Generator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Generator"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Generator"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Generator/fast">
-				<Option output="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Generator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug"/>
+				<Option output="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Generator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,74 +75,74 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Generator/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-Computacao-Grafica-master/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Generator/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pinto/Documents/2\ Semestre/Computacao\ Grafica/TP-CG-Fase3_Grupo16_Source/Generator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateCone.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateCone.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateCone.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateCone.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateCube.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateCube.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateCube.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateCube.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateRing.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateRing.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateRing.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateRing.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateSphere.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateSphere.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/GenerateSphere.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/GenerateSphere.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/Vector3.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/Vector3.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/Vector3.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/Vector3.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/bezierPatch.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/bezierPatch.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/bezierPatch.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/bezierPatch.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/main.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/main.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/main.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/main.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinystr.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/tinyxml/tinystr.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinystr.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/tinyxml/tinystr.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinyxml.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/tinyxml/tinyxml.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinyxml.h">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/tinyxml/tinyxml.h">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinyxmlerror.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/tinyxml/tinyxmlerror.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/tinyxml/tinyxmlparser.cpp">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/tinyxml/tinyxmlparser.cpp">
 			<Option target="Generator"/>
 		</Unit>
-		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-Computacao-Grafica-master/Generator/CMakeLists.txt">
+		<Unit filename="/home/pinto/Documents/2 Semestre/Computacao Grafica/TP-CG-Fase3_Grupo16_Source/Generator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

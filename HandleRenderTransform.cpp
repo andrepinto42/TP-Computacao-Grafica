@@ -1,6 +1,7 @@
 //
 // Created by pinto on 02/04/22.
 //
+#include <GL/glew.h>
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else

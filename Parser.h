@@ -9,11 +9,12 @@
 #include "CameraStatus.h"
 #include "tinyxml/tinyxml.h"
 #include "TransformationsDataStruct/Transformations.h"
+#include "LightComponent.h"
 #include <vector>
 
 class Parser {
 public:
-    static void XML_Parse(CameraStatus **cam,Transformations** rootTransformation);
+    static void XML_Parse(CameraStatus **cam, vector<LightComponent*> lights, Transformations** rootTransformation);
 
     static CameraStatus *getCameraStatus(TiXmlElement *pBody, TiXmlElement *pParms);
 
@@ -28,6 +29,14 @@ public:
     static void
     CreateCatmull(Transformations *const *root, float x, float y, float z, TiXmlElement *iterator, const char *time,
                   const char *align);
+
+    static void InitializeMaterials(Transformations *const *root, TiXmlElement *pColor);
+
+    static void getLightsScene(TiXmlElement *pElement, vector<LightComponent *> vector1);
+
+    static void XML_Parse(CameraStatus **cam, vector<LightComponent *> *lights, Transformations **rootTransformations);
+
+    static void getLightsScene(TiXmlElement *pElement, vector<LightComponent *> *vector1);
 };
 
 
